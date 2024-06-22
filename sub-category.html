@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#17202A",
+              secondary: "#ffffff",
+              acent: "#BD2A28",
+              white: "#FFFFFF",
+              pastelBlue: "#B8C4CC", // Text Color
+              "taupeGray.": "#888888", // Border Color
+              overlay: "rgba(0, 0, 0, 0.5)",
+            },
+            boxShadow: {
+              xl: "0px 5px 20px 0px rgba(0, 0, 0, 0.20)",
+              "2xl": "0px 0px 10px 0px rgba(0, 0, 0, 0.20) inset",
+              "3xl": "0px 0px 20px 0px rgba(255, 255, 255, 0.20) inset",
+            },
+            fontSize: {
+              xs: ["12px", "14px"],
+              sm: ["14px", "20px"],
+              base: ["16px", "19px"],
+              lg: ["19px", "22px"],
+              xl: ["23px", "28px"],
+              "2xl": ["28px", "34px"],
+              "3xl": ["33px", "40px"],
+              "4xl": ["42px", "52px"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <style>
+      .accordion .accordion-item2 {
+        border-bottom: 1px solid #e5e5e5;
+      }
+      .accordion button {
+        position: relative;
+        display: block;
+        text-align: left;
+        width: 100%;
+        padding: 25px 0;
+        color: rgb(38, 38, 38);
+        font-size: 1.15rem;
+        font-weight: 400;
+        border: none;
+        background: none;
+        outline: none;
+      }
+
+      .accordion button:hover,
+      .accordion button:focus {
+        cursor: pointer;
+      }
+
+      .accordion button:hover::after,
+      .accordion button:focus::after {
+        cursor: pointer;
+      }
+
+      .accordion button .accordion-title {
+        padding: 1em 1.5em 1em 0;
+      }
+
+      .accordion button .icon {
+        display: inline-block;
+        position: absolute;
+        top: 18px;
+        right: 0;
+        width: 22px;
+        height: 22px;
+        border: 1px solid;
+        border-radius: 22px;
+      }
+
+      .accordion button .icon::before {
+        display: block;
+        position: absolute;
+        content: "";
+        top: 9px;
+        left: 5px;
+        width: 10px;
+        height: 2px;
+        background: currentColor;
+      }
+      .accordion button .icon::after {
+        display: block;
+        position: absolute;
+        content: "";
+        top: 5px;
+        left: 9px;
+        width: 2px;
+        height: 10px;
+        background: currentColor;
+      }
+
+      /* .accordion button[aria-expanded="true"] {
+        color: #03b5d2;
+      } */
+      .accordion button[aria-expanded="true"] .icon::after {
+        width: 0;
+      }
+      .accordion button[aria-expanded="true"] + .accordion-content {
+        opacity: 1;
+        max-height: 11em;
+        transition: all 200ms linear;
+        will-change: opacity, max-height;
+      }
+      .accordion .accordion-content {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        transition: opacity 200ms linear, max-height 200ms linear;
+        will-change: opacity, max-height;
+      }
+      .accordion .accordion-content p {
+        font-size: 1rem;
+        font-weight: 300;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="bg-white">
+        <div class="mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+          <div class="border-b border-gray-200 mb-[40px] pb-[20px]">
+            <button id="toggleButtonShow uppercase font-medium">
+              show filters
+            </button>
+          </div>
+
+          <div class="flex gap-[42px] w-full">
+            <div class="max-w-[392px] w-full" id="mySection">
+              <div class="container">
+                <div class="flex justify-between">
+                  <h2>FILTER BY:</h2>
+                  <div><button id="toggleButton">cross</button></div>
+                </div>
+                <div class="accordion">
+                  <div class="accordion-item2">
+                    <button id="accordion-button-1" aria-expanded="false">
+                      <span class="accordion-title">Categories</span>
+                      <span class="icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="accordion-content">
+                      <div class="space-y-6 pb-2">
+                        <div class="flex items-center">
+                          <input
+                            id="color-0-mobile"
+                            name="color[]"
+                            value="white"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-0-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >White</label
+                          >
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="color-1-mobile"
+                            name="color[]"
+                            value="beige"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-1-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >Beige</label
+                          >
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="color-2-mobile"
+                            name="color[]"
+                            value="blue"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-2-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >Blue</label
+                          >
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="color-3-mobile"
+                            name="color[]"
+                            value="brown"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-3-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >Brown</label
+                          >
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="color-4-mobile"
+                            name="color[]"
+                            value="green"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-4-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >Green</label
+                          >
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="color-5-mobile"
+                            name="color[]"
+                            value="purple"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-5-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >Purple</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item2">
+                    <button id="accordion-button-2" aria-expanded="false">
+                      <span class="accordion-title">Colors</span>
+                      <span class="icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="accordion-content">
+                      <div class="space-y-6 pb-2">
+                        <div class="flex items-center">
+                          <input
+                            id="color-0-mobile"
+                            name="color[]"
+                            value="white"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-0-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >White</label
+                          >
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="color-1-mobile"
+                            name="color[]"
+                            value="beige"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-1-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >Beige</label
+                          >
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="color-2-mobile"
+                            name="color[]"
+                            value="blue"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-2-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >Blue</label
+                          >
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="color-3-mobile"
+                            name="color[]"
+                            value="brown"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-3-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >Brown</label
+                          >
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="color-4-mobile"
+                            name="color[]"
+                            value="green"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-4-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >Green</label
+                          >
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="color-5-mobile"
+                            name="color[]"
+                            value="purple"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-5-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >Purple</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item2">
+                    <button id="accordion-button-3" aria-expanded="false">
+                      <span class="accordion-title">Collections</span>
+                      <span class="icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="accordion-content">
+                      <div class="space-y-6 pb-2">
+                        <div class="flex items-center">
+                          <input
+                            id="color-0-mobile"
+                            name="color[]"
+                            value="white"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-0-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >White</label
+                          >
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="color-1-mobile"
+                            name="color[]"
+                            value="beige"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-1-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >Beige</label
+                          >
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="color-2-mobile"
+                            name="color[]"
+                            value="blue"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-2-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >Blue</label
+                          >
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="color-3-mobile"
+                            name="color[]"
+                            value="brown"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-3-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >Brown</label
+                          >
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="color-4-mobile"
+                            name="color[]"
+                            value="green"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-4-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >Green</label
+                          >
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="color-5-mobile"
+                            name="color[]"
+                            value="purple"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-5-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >Purple</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item2">
+                    <button id="accordion-button-4" aria-expanded="false">
+                      <span class="accordion-title">Size</span>
+                      <span class="icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="accordion-content">
+                      <div class="space-y-6 pb-2">
+                        <div class="flex items-center">
+                          <input
+                            id="color-0-mobile"
+                            name="color[]"
+                            value="white"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-0-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >White</label
+                          >
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="color-1-mobile"
+                            name="color[]"
+                            value="beige"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-1-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >Beige</label
+                          >
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="color-2-mobile"
+                            name="color[]"
+                            value="blue"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-2-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >Blue</label
+                          >
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="color-3-mobile"
+                            name="color[]"
+                            value="brown"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-3-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >Brown</label
+                          >
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="color-4-mobile"
+                            name="color[]"
+                            value="green"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-4-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >Green</label
+                          >
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="color-5-mobile"
+                            name="color[]"
+                            value="purple"
+                            type="checkbox"
+                            class="h-4 w-4 border-gray-300 text-black focus:ring-transparent text-black"
+                          />
+                          <label
+                            for="color-5-mobile"
+                            class="ml-3 text-sm text-gray-500"
+                            >Purple</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 gap-x-[15px] w-full"
+            >
+              <a href="#" class="group">
+                <div
+                  class="aspect-h-1 aspect-w-1 w-full overflow-hidden bg-gray-200 xl:aspect-h-8 xl:aspect-w-7"
+                >
+                  <img
+                    src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg"
+                    alt="Tall slender porcelain bottle with natural clay textured body and cork stopper."
+                    class="h-full w-full object-cover object-center group-hover:opacity-75"
+                  />
+                </div>
+                <div class="mt-[10px] flex justify-between">
+                  <div>
+                    <h3 class="text-base font-medium text-gray-900">
+                      Mr. Brunello folding acetate
+                    </h3>
+                  </div>
+                  <div><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <p
+                  class="text-sm text-gray-700 text-[rgb(38, 38, 38)] text-base"
+                >
+                  $<span class="pl-1">48</span>
+                </p>
+              </a>
+              <a href="#" class="group">
+                <div
+                  class="aspect-h-1 aspect-w-1 w-full overflow-hidden bg-gray-200 xl:aspect-h-8 xl:aspect-w-7"
+                >
+                  <img
+                    src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg"
+                    alt="Olive drab green insulated bottle with flared screw lid and flat top."
+                    class="h-full w-full object-cover object-center group-hover:opacity-75"
+                  />
+                </div>
+                <div class="mt-[10px] flex justify-between">
+                  <div>
+                    <h3 class="text-base font-medium text-gray-900">
+                      Mr. Brunello folding acetate
+                    </h3>
+                  </div>
+                  <div><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <p
+                  class="text-sm text-gray-700 text-[rgb(38, 38, 38)] text-base"
+                >
+                  $<span class="pl-1">48</span>
+                </p>
+              </a>
+              <a href="#" class="group">
+                <div
+                  class="aspect-h-1 aspect-w-1 w-full overflow-hidden bg-gray-200 xl:aspect-h-8 xl:aspect-w-7"
+                >
+                  <img
+                    src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg"
+                    alt="Person using a pen to cross a task off a productivity paper card."
+                    class="h-full w-full object-cover object-center group-hover:opacity-75"
+                  />
+                </div>
+                <div class="mt-[10px] flex justify-between">
+                  <div>
+                    <h3 class="text-base font-medium text-gray-900">
+                      Mr. Brunello folding acetate
+                    </h3>
+                  </div>
+                  <div><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <p
+                  class="text-sm text-gray-700 text-[rgb(38, 38, 38)] text-base"
+                >
+                  $<span class="pl-1">48</span>
+                </p>
+              </a>
+              <a href="#" class="group">
+                <div
+                  class="aspect-h-1 aspect-w-1 w-full overflow-hidden bg-gray-200 xl:aspect-h-8 xl:aspect-w-7"
+                >
+                  <img
+                    src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg"
+                    alt="Hand holding black machined steel mechanical pencil with brass tip and top."
+                    class="h-full w-full object-cover object-center group-hover:opacity-75"
+                  />
+                </div>
+                <div class="mt-[10px] flex justify-between">
+                  <div>
+                    <h3 class="text-base font-medium text-gray-900">
+                      Mr. Brunello folding acetate
+                    </h3>
+                  </div>
+                  <div><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <p
+                  class="text-sm text-gray-700 text-[rgb(38, 38, 38)] text-base"
+                >
+                  $<span class="pl-1">48</span>
+                </p>
+              </a>
+
+              <!-- More products... -->
+            </div>
+          </div>
+        </div>
+        <div class="border-b border-gray-200 pb-[80px]">
+          <p class="text-center font-semibold">1-15 of 15 products</p>
+        </div>
+      </div>
+    </div>
+    <!---footer--->
+    <footer class="bg-white" aria-labelledby="footer-heading">
+      <h2 id="footer-heading" class="sr-only">Footer</h2>
+      <div class="mx-auto max-w-7xl px-6 pb-8 pt-12 lg:px-8">
+        <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+          <div class="grid grid-cols-2 gap-8 xl:col-span-2">
+            <div class="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 class="text-sm font-semibold leading-6 text-gray-900">
+                  Solutions
+                </h3>
+                <ul role="list" class="mt-6 space-y-4">
+                  <li>
+                    <a
+                      href="#"
+                      class="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      >Marketing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      >Analytics</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      >Commerce</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      >Insights</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-10 md:mt-0">
+                <h3 class="text-sm font-semibold leading-6 text-gray-900">
+                  Support
+                </h3>
+                <ul role="list" class="mt-6 space-y-4">
+                  <li>
+                    <a
+                      href="#"
+                      class="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      >Pricing</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      >Documentation</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      >Guides</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      >API Status</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 class="text-sm font-semibold leading-6 text-gray-900">
+                  Company
+                </h3>
+                <ul role="list" class="mt-6 space-y-4">
+                  <li>
+                    <a
+                      href="#"
+                      class="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      >About</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      >Blog</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      >Jobs</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      >Press</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      >Partners</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-10 md:mt-0">
+                <h3 class="text-sm font-semibold leading-6 text-gray-900">
+                  Legal
+                </h3>
+                <ul role="list" class="mt-6 space-y-4">
+                  <li>
+                    <a
+                      href="#"
+                      class="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      >Claim</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      >Privacy</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                      >Terms</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="mt-10 xl:mt-0">
+            <h3 class="text-sm font-semibold leading-6 text-gray-900">
+              Subscribe to our newsletter
+            </h3>
+            <p class="mt-2 text-sm leading-6 text-gray-600">
+              The latest news, articles, and resources, sent to your inbox
+              weekly.
+            </p>
+            <form class="mt-6 sm:flex sm:max-w-md">
+              <label for="email-address" class="sr-only">Email address</label>
+              <input
+                type="email"
+                name="email-address"
+                id="email-address"
+                autocomplete="email"
+                required
+                class="w-full min-w-0 rounded-md border border-black bg-white px-3 py-1.5 text-base text-gray-900 shadow-sm placeholder:text-gray-400 focus:outline-none sm:w-64 sm:text-sm sm:leading-6 xl:w-full"
+                placeholder="Enter your email"
+              />
+              <div class="mt-[10px] sm:ml-4 sm:mt-0 sm:flex-shrink-0">
+                <button
+                  type="submit"
+                  class="flex w-full items-center justify-center rounded-md bg-black hover:bg-white hover:text-black border text-white border-black px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-white focus:outline-none"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div
+        class="border-t border-gray-900/10 md:flex md:items-center md:justify-between"
+      >
+        <div
+          class="max-w-7xl px-6 lg:px-8 py-8 mx-auto flex md:justify-between justify-center items-center w-full md:flex-row flex-col"
+        >
+          <div class="flex space-x-6 md:order-2">
+            <a href="#" class="text-gray-400 hover:text-gray-500">
+              <span class="sr-only">Facebook</span>
+              <svg
+                class="h-6 w-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-gray-500">
+              <span class="sr-only">Instagram</span>
+              <svg
+                class="h-6 w-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-gray-500">
+              <span class="sr-only">X</span>
+              <svg
+                class="h-6 w-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z"
+                />
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-gray-500">
+              <span class="sr-only">GitHub</span>
+              <svg
+                class="h-6 w-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-gray-500">
+              <span class="sr-only">YouTube</span>
+              <svg
+                class="h-6 w-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+          <div>
+            <p class="mt-4 text-xs leading-5 text-gray-500 md:order-1 md:mt-0">
+              &copy; 2020 Your Company, Inc. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!---footer-end-here--->
+    <script>
+      const items = document.querySelectorAll(".accordion button");
+
+      function toggleAccordion() {
+        const itemToggle = this.getAttribute("aria-expanded");
+
+        for (i = 0; i < items.length; i++) {
+          items[i].setAttribute("aria-expanded", "false");
+        }
+
+        if (itemToggle == "false") {
+          this.setAttribute("aria-expanded", "true");
+        }
+      }
+
+      items.forEach((item) => item.addEventListener("click", toggleAccordion));
+      const toggleButton = document.getElementById("toggleButton");
+      const mySection = document.getElementById("mySection");
+
+      toggleButton.addEventListener("click", function () {
+        // Toggle the visibility of the section
+        mySection.style.display =
+          mySection.style.display === "none" || mySection.style.display === ""
+            ? "none"
+            : "block";
+      });
+      const toggleButtonShow = document.getElementById("toggleButtonShow");
+      const mySection2 = document.getElementById("mySection");
+
+      toggleButtonShow.addEventListener("click", function () {
+        // Toggle the visibility of the section
+        mySection.style.display =
+          mySection.style.display === "block" || mySection.style.display === ""
+            ? "block"
+            : "none";
+      });
+    </script>
+  </body>
+</html>

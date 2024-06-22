@@ -1,0 +1,186 @@
+#navigation{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.headline{
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    width: 100%;
+}
+
+#category-nav-area{
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.category-nav-top-row{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 25vh;
+    gap: 1rem;
+}
+
+.visited-link{
+    font-family: "gteesti";
+    font-size: 1rem;
+    text-decoration: underline;
+    color: #6f6f6f;
+    cursor: pointer;
+}
+
+.visited-link:nth-child(even){
+    text-decoration: none;
+}
+
+.unvisited-link{
+    font-family: "gteesti";
+    font-size: 1rem;
+    text-decoration: none;
+    color: #262626;
+    cursor: pointer;
+}
+
+.category-nav-middle-row{
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-category-heading{
+    font-family: "gteesti";
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.middle-category-sub-text{
+    font-family: "gteesti-light";
+    font-size: 1rem;
+    color: #262626;
+    letter-spacing: 2px;
+}
+
+.category-nav-bottom-row{
+    display: flex;
+    padding: 2rem;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.bottom-left,.bottom-right{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 1rem;
+}
+.bottom-left{
+    flex: 2;
+}
+.bottom-right{
+    flex: 1;
+}
+
+.filter{
+    font-family: "gteesti";
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.button-control.dark{
+    color: black;
+}
+
+.selection-icons{
+    width: 1rem;
+}
+
+#selection-preference{
+    font-family: "gteesti";
+    font-size: 1rem;
+    background: none;
+    border: none;
+    padding: 2px;
+    color: #6f6f6f;
+}
+
+#selection-preference:focus{
+    outline: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.option-selected{
+    font-family: "gteesti-light";
+    font-size: 1rem;
+    color: #6f6f6f;
+    background-color: none;
+}
+
+#category-products{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 12rem;
+}
+
+#category-products.small{
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.wishlist{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,.7);
+}
+
+.product{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: "gteesti-light";
+}
+
+.product-image{
+    width: 100%;
+}
+
+.products-control{
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.product-listing{
+    font-family: "gteesti-light";
+}
+
+.view-more{
+    background-color: white;
+    border: 1px solid #262626;
+    color: #262626;
+    text-transform: capitalize;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-family: "gteesti-light";
+    transition: all 0.25s linear;
+}
+
+.view-more:hover{
+    background-color: #e5e5e5;
+    border-color: #e5e5e5;
+}

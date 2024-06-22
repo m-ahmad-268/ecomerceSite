@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coats, overcoats, leather jackets and lightweight down jackets | Brunello Cucinelli</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style-category.css">
+    <link rel="icon" type="image/x-icon" href="images/thumbnail.jpeg">
+    <script src="https://kit.fontawesome.com/cc10e75e99.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./scripts/script-category.js" defer></script>
+</head>
+<body>
+    <section id="navigation" class="light">
+        <div class="top-row">
+            <div class="top-row-left">
+                <div class="nav-item">
+                    <i class="fa-solid fa-globe"></i>
+                    <span class="nav-item-text flip-text">Italy</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-solid fa-headset"></i>
+                    <span class="nav-item-text flip-text">Contact Us</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span class="nav-item-text flip-text">Boutique</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-solid fa-phone-flip"></i>
+                    <span class="nav-item-text flip-text">+39 075 886 0497</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span class="nav-item-text flip-text">Newsletter</span>
+                </div>
+            </div>
+           
+            <div class="top-row-right">
+                <div class="nav-item">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+                <div class="nav-item">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+            </div>
+        </div>
+        <div class="top-row-middle">
+            <span class="logo dark" id="logo"><img src="./images/logo-white.svg"/></span>
+        </div>
+        <div class="bottom-row br" id="bottom-row-nav">
+            <div class="nav-item">
+                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(1)">NEW ARRIVALS</span>
+            </div>
+            <div class="nav-item">
+                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(2)">WOMEN</span>
+            </div>
+            <div class="nav-item">
+                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(3)">MEN</span>
+            </div>
+            <div class="nav-item">
+                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(4)">FRAGRANCES</span>
+            </div>
+            <div class="nav-item">
+                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(5)">EYE WEAR</span>
+            </div>
+            <div class="nav-item">
+                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(6)">KIDS</span>
+            </div>
+            <div class="nav-item">
+                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(7)">GIFTS</span>
+            </div>
+            <div class="nav-item">
+                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(8)">LIFESTYLE</span>
+            </div>
+            <div class="nav-item">
+                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(9)">STORIES</span>
+            </div>
+        </div>
+        <div class="selected-nav-container" id="selected-nav-container" onmouseleave="washSelectedNavContainer()"></div>
+        <div class="sub-nav-container" id="sub-nav-container"></div>
+        <div class="gap"></div>
+        <div class="headline">
+            <button class="button-control" onclick="toggleHeadline()">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="headline-text-content">
+                <span class="headline-item active">Get the latest updates by subscribing to our <a class="headline-link">Newsletter</a></span>
+                <span class="headline-item">Book an <a class="headline-link">appointment</a> to our Boutiques</span>
+            </div>
+            <button class="button-control" onclick="toggleHeadline()">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+    <section id="category-nav-area">
+        <div class="category-nav-top-row">
+            <a class="visited-link">Women</a>
+            <span class="visited-link">/</span>
+            <a class="visited-link">Ready to Wear</a>
+            <span class="visited-link">/</span>
+            <a class="unvisited-link">Coats & Jackets</a>
+        </div>
+        <div class="category-nav-middle-row">
+            <span class="middle-category-heading">Coats & Jackets</span>
+            <span class="middle-category-sub-text">Coats and Overcoats, sporty Jackets, Leather Jackets and lightweight Down Jackets.</span>
+            <span class="middle-category-sub-text">Elegant silhouettes and refined materials accompany the women's outerwear line</span>
+            <span class="middle-category-sub-text">every season.</span>
+        </div>
+        <div class="category-nav-bottom-row">
+            <div class="bottom-left">
+                <span class="filter">Show Filters</span>
+                <button class="button-control dark" onclick="toggleFilter()">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="bottom-right">
+                <span class="filter">Sort By:</span>
+                <select id="selection-preference">
+                    <!-- <i class="fa-solid fa-sort-down"></i> -->
+                    <option value="NA" selected class="option-selected">Select...</option>
+                    <option value="price-lth" class="option-selected">Price: Low to High</option>
+                    <option value="price-htl" class="option-selected">Price: High to Low</option>
+                    <option value="new" class="option-selected">New In</option>
+                </select>
+                <!-- <span class="filter">WALL</span>
+                <i class="fa-regular fa-square"></i> -->
+                <span class="filter">GRID</span>
+                <span class="box"><img src="./images/icons/grid-small.png" class="selection-icons" id="2x2-grid" onclick="girdSelected('2x2')" /></span>
+                <span class="box"><img src="./images/icons/grid-selected.png" class="selection-icons" id="3x3-grid" onclick="girdSelected('3x3')" /></span>
+            </div>
+        </div>
+    </section>
+    <section id="category-products">
+        <div class="product">
+            <span class="wishlist"><i class="fa-regular fa-heart"></i></span>
+            <img class="product-image" src="./images/category/01.jpg"/>
+            <span class="product-title">Double-knit cardigan</span>
+            <span class="product-price">€ 6.500,00</span>
+        </div>
+        <div class="product" onclick="loadProduct()">
+            <span class="wishlist"><i class="fa-regular fa-heart"></i></span>
+            <img class="product-image" src="./images/category/02.jpg"/>
+            <span class="product-title">Double-knit cardigan</span>
+            <span class="product-price">€ 6.500,00</span>
+        </div>
+        <div class="product">
+            <span class="wishlist"><i class="fa-regular fa-heart"></i></span>
+            <img class="product-image" src="./images/category/01.jpg"/>
+            <span class="product-title">Double-knit cardigan</span>
+            <span class="product-price">€ 6.500,00</span>
+        </div>
+        <div class="product">
+            <span class="wishlist"><i class="fa-regular fa-heart"></i></span>
+            <img class="product-image" src="./images/category/02.jpg"/>
+            <span class="product-title">Double-knit cardigan</span>
+            <span class="product-price">€ 6.500,00</span>
+        </div>
+        <div class="product">
+            <span class="wishlist"><i class="fa-regular fa-heart"></i></span>
+            <img class="product-image" src="./images/category/01.jpg"/>
+            <span class="product-title">Double-knit cardigan</span>
+            <span class="product-price">€ 6.500,00</span>
+        </div>
+        <div class="product">
+            <span class="wishlist"><i class="fa-regular fa-heart"></i></span>
+            <img class="product-image" src="./images/category/02.jpg"/>
+            <span class="product-title">Double-knit cardigan</span>
+            <span class="product-price">€ 6.500,00</span>
+        </div>
+        <div class="product">
+            <span class="wishlist"><i class="fa-regular fa-heart"></i></span>
+            <img class="product-image" src="./images/category/01.jpg"/>
+            <span class="product-title">Double-knit cardigan</span>
+            <span class="product-price">€ 6.500,00</span>
+        </div>
+        <div class="product">
+            <span class="wishlist"><i class="fa-regular fa-heart"></i></span>
+            <img class="product-image" src="./images/category/02.jpg"/>
+            <span class="product-title">Double-knit cardigan</span>
+            <span class="product-price">€ 6.500,00</span>
+        </div>
+        <div class="product">
+            <span class="wishlist"><i class="fa-regular fa-heart"></i></span>
+            <img class="product-image" src="./images/category/01.jpg"/>
+            <span class="product-title">Double-knit cardigan</span>
+            <span class="product-price">€ 6.500,00</span>
+        </div>
+    </section>
+    <div class="products-control">
+        <span class="product-listing">1-9 of 40 products</span>
+        <button class="view-more"><span>View 31 More</span></button>
+    </div>
+    <section id="footer">
+        <div class="footer-subscription">
+            <span class="footer-links-heading">Newsletter</span>
+            <div class="enter-email">
+                <input type="text" placeholder="Enter e-mail" class="email-sub" />
+                <button class="email-sub-button">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>SUBSCRIBE</span>
+                </button>
+            </div>
+        </div>
+        <div class="footer-area">
+            <div class="footer-links">
+                <span class="footer-links-heading">Customer Care</span>
+                <div class="footer-link-container">
+                    <a href="#" class="footer-link-bottom link">Exclusive Services</a>
+                    <a href="#" class="footer-link-bottom link">Orders and Returns</a>
+                    <a href="#" class="footer-link-bottom link">Size Guide</a>
+                    <a href="#" class="footer-link-bottom link">Contact Us</a>
+                    <a href="#" class="footer-link-bottom link">Boutique Locator</a>
+                    <a href="#" class="footer-link-bottom link">Wishlist</a>
+                    <a href="#" class="footer-link-bottom link">FAQ</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <span class="footer-links-heading">Philosophy</span>
+                <div class="footer-link-container">
+                    <a href="#" class="footer-link-bottom link">Beauty</a>
+                    <a href="#" class="footer-link-bottom link">The Company</a>
+                    <a href="#" class="footer-link-bottom link">Craftsmanship and Manual Skills</a>
+                    <a href="#" class="footer-link-bottom link">Solomeo</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <span class="footer-links-heading">General Information</span>
+                <div class="footer-link-container">
+                    <a href="#" class="footer-link-bottom link">Legal Area</a>
+                    <a href="#" class="footer-link-bottom link">Privacy Policy</a>
+                    <a href="#" class="footer-link-bottom link">Cookie Policy</a>
+                    <a href="#" class="footer-link-bottom link">Investor Relations</a>
+                </div>
+            </div>
+            <div class="footer-subscription">
+                <span class="footer-links-subheading">Follow us on</span>
+                <div class="footer-socials">
+                    <a href="#" class="footer-socials-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="footer-socials-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="footer-socials-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="footer-socials-icon"><i class="fa-brands fa-pinterest"></i></a>
+                    <a href="#" class="footer-socials-icon"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="footer-socials-icon"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" class="footer-socials-icon"><i class="fa-brands fa-spotify"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-left">
+                <span class="copy-right-text">2024 &copy; Brunello Cucinelli SpA Vat 01886120540</span>
+            </div>
+            <div class="footer-bottom-right">
+            </div>
+        </div>
+    </section>
+</body>
+</html>
