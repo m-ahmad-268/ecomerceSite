@@ -89,30 +89,23 @@ body {
 
 #top {
     display: flex;
+    /* position: relative; */
+    /* flex-direction: column; */
     color: rgb(245, 238, 238);
-    flex-direction: column;
-    /* background-color: rgb(0, 255, 34); */
-    background: url(../images/bg-01.jpg) no-repeat;
+    /* background-color: aqua; */
+    background-image: url(../images/bg-01.jpg);
+    background-size: cover;
+    /* Ensure the image covers the entire div */
+    /* background-position: center; */
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Prevent the image from repeating */
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    height: 120vh;
-    transition: all 0.5s ease-in-out;
-}
-
-/* .navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-} */
-
-#flex-container {
-    display: flex;
-    position: relative;
-    width: 100%;
-    font-size: 30px;
-    height: 20vh;
     text-align: center;
+    overflow: hidden;
+    height: 90vh;
+    transition: all 0.5s ease-in-out;
 }
 
 .flex-item-left {
@@ -209,7 +202,6 @@ body {
 }
 
 .heading-links:hover {
-    /* letter-spacing: 5px; */
     text-decoration: underline;
 }
 
@@ -644,14 +636,39 @@ body {
 }
 
 @media (max-width: 480px) {
+
+    .exclusive-item {
+        height: 40vh; /* Further adjust height for very small screens */
+    }
+
+    #top {
+        height: 100vh;
+        background-color: aqua;
+        /* Further adjust the height for very small screens */
+        /* background-size: contain; / */
+    }
+
+    .email-sub input {
+        width: inherit !important;
+    }
+
     .top-row-middle {
         /* background-color: aqua !important;
         flex-direction: column; */
         align-items: center;
     }
 
+    .enter-email {
+        gap: .4rem;
+    }
+
+    .footer-subscription {
+        margin-left: 0 !important;
+    }
+
     .mobile-menu-panel {
         width: 100% !important;
+        height: 100% !important;
     }
 
     .nav-item-text {
@@ -767,23 +784,26 @@ body {
     cursor: pointer;
 }
 
-.hero-heading {
-    font-size: 2.5rem;
+.content {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    margin-top: 1.5em;
+    /* Responsive font size */
     font-family: "gteesti-light";
+    /* margin: 10px 0; */
 }
 
 .hero-subheading {
     font-size: 1.25rem;
-    font-family: "gteesti-light";
 }
 
 .hero-links {
     display: flex;
-    width: inherit;
-    gap: 2em;
-    flex-direction: row;
-    color: white;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 1rem;
+    flex-direction: row;
 }
 
 .hero-link,
@@ -791,10 +811,12 @@ body {
     font-size: 1.25rem;
     font-family: "gteesti-light";
     color: white;
+    padding: 10px;
     text-decoration: underline;
     transition: all 300ms ease-in-out;
     /* z-index: 1; */
     /* position: relative; */
+    /* Semi-transparent background */
 }
 
 .hero-link:hover {
@@ -829,10 +851,11 @@ body {
     display: flex;
     width: 100%;
     flex-direction: row;
+    flex-wrap: wrap;
     color: white;
     justify-content: center;
     align-items: center;
-    gap: 5em;
+    gap: 3em;
     padding: 2rem;
 
     .cta-link,
@@ -851,29 +874,41 @@ body {
     }
 }
 
-#exclusive {
-    overflow: hidden;
+#exclusive .hero-link {
+  padding: 10px 20px;
+  border-radius: 5px;
 }
-
-#exclusive,
-.exclusive-item {
+#exclusive {
     display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    /* Space between items */
+    gap: 20px; 
+    padding: 20px;
     transition: transform 0.9s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .exclusive-item {
-    width: 50vw;
-    background: url(../images/exclusive-01.jpeg) no-repeat;
-    height: 100vh;
+    /* 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2em;
+    gap: 2em; */
+
+    background: url(../images/exclusive-01.jpeg) no-repeat;
+    flex: 1 1 calc(50% - 40px);
+    /* Flex items take up 50% minus the gap */
+    height: 80vh;
+    /* Set a fixed height for the items */
+    background-size: cover;
+    /* Ensure the background image covers the entire div */
+    background-position: center;
+    /* Center the background image */
+    display: flex;
+    background-color: aqua;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .exclusive-item:nth-child(2) {
@@ -905,6 +940,7 @@ body {
 
 #new-arrivals {
     display: flex;
+    position: relative;
     width: 100%;
     flex-direction: column;
     color: white;
@@ -928,7 +964,7 @@ body {
 
 #sl,
 .sl-links {
-    display: flex;
+    display: none;
     width: 100%;
     /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../images/both-sl.jpg) no-repeat;
     background-size: cover; */
@@ -1015,7 +1051,6 @@ body {
     height: auto;
     display: flex;
     text-align: center;
-    flex-direction: column;
     justify-items: center;
     flex-wrap: wrap;
     /* align-items: flex-start; */
@@ -1026,24 +1061,22 @@ body {
     flex-wrap: wrap;
     text-align: justify;
     flex-direction: row;
-    gap: 1rem;
     justify-content: space-around;
-    align-items: flex-start;
+    /* align-items: flex-start; */
     width: inherit;
-    padding: 4rem;
+    padding: 1rem;
 }
 
-/* .footer-area div{
-    width: 25% !important;
-} */
-
-.footer-info,
 .footer-subscription {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 2em;
+    gap: .4em;
+    width: 100%;
+    text-align: start;
+    padding: 1rem;
+    margin-left: 4rem;
     font-family: "gteesti";
+    font-size: 1.3em;
     color: #2B2B2B;
 
     a {
@@ -1051,13 +1084,6 @@ body {
     }
 
     ;
-    font-size: 0.8em;
-}
-
-.footer-subscription {
-    padding: 2rem;
-    display: flex;
-    padding-bottom: 1rem;
 }
 
 .footer-info-item {
@@ -1074,8 +1100,6 @@ body {
 }
 
 .footer-bottom {
-    flex: 0.5;
-    /* background: #003854; */
     display: flex;
     flex-direction: row;
     gap: 2em;
@@ -1088,7 +1112,7 @@ body {
 
 .footer-bottom-right,
 .footer-bottom-left {
-    flex: 3 1 300px;
+    flex: 1;
     display: flex;
     flex-direction: row;
     /* justify-content: center; */
@@ -1122,14 +1146,10 @@ body {
 }
 
 .footer-links {
-    flex: 2 3 150px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 1rem;
-}
-
-.footer-links-heading {
+    padding: .3em;
     font-family: "gteesti";
     color: #2B2B2B;
     font-size: 1.2rem;
@@ -1138,12 +1158,13 @@ body {
 .footer-link-container {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     gap: 1.2rem;
-    justify-content: center;
 
     a {
         font-family: "gteesti-light";
         color: #2B2B2B;
+        width: 200px;
         font-size: 1rem;
         text-decoration: none;
     }
@@ -1160,26 +1181,60 @@ body {
     }
 }
 
-.footer-socials,
-.enter-email {
+.footer-socials {
     display: flex;
+    flex-wrap: wrap;
+    /* background-color: aqua; */
     flex-direction: row;
-    justify-content: flex-start;
-    gap: 2em;
+    justify-content: center;
+    gap: 1em;
 }
 
 .enter-email {
-    flex: 3 1;
-    gap: 0;
-    align-items: center;
+    /* align-items: center; */
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* align-items: center; */
+}
+
+.email-sub-1 {
+    flex: 1 1;
+}
+
+.email-sub input {
+    width: 100%;
+    height: 100%;
+    padding: 0.9rem;
+
+    /* background-color: antiquewhite; */
 }
 
 .email-sub {
-    width: inherit;
-    padding: 0.9rem;
-    border: 1px solid #262626;
+    flex: 1 1;
     font-size: 1.2rem;
     /* border-radius: 0.5em; */
+}
+
+.email-sub-button {
+    /* width: 4em; */
+    /* height: 1.25em; */
+    /* border-radius: 2vmin; */
+    padding: 1.1rem;
+    background-color: #262626;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: .8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: -1px; */
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .email-sub:focus {
@@ -1188,27 +1243,6 @@ body {
 
 .email-sub::placeholder {
     font-family: "gteesti";
-}
-
-.email-sub-button {
-    padding: 1.1rem;
-    /* width: 4em; */
-    /* height: 1.25em; */
-    background-color: #262626;
-    border: none;
-    cursor: pointer;
-    color: white;
-    font-size: 1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 0.5px solid #262626;
-    /* border-radius: 2vmin; */
-    margin-left: -1px;
-    transition: all 0.5s ease-in-out;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
 }
 
 .email-sub-button>span {
@@ -1222,18 +1256,12 @@ body {
     color: #262626;
 }
 
-
-.footer-links-subheading {
-    font-family: "gteesti";
-    color: #2B2B2B;
-    font-size: 1.2rem;
-}
-
 .footer-socials-icon {
     color: #262626;
-    font-size: 2em;
+    font-size: 1em;
 }
 
+/* 
 .footer-socials-icon:hover {
     text-decoration: none;
     font-size: 2.1em;
@@ -1242,7 +1270,7 @@ body {
 .footer-socials-icon:active {
     text-decoration: none;
     color: #2B2B2B;
-}
+} */
 
 .copy-right-text {
     font-size: 1rem;
