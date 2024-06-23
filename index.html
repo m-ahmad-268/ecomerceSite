@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,9 @@
     <link rel="icon" type="image/x-icon" href="images/thumbnail.jpeg">
     <script src="https://kit.fontawesome.com/cc10e75e99.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./scripts/script.js" defer></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <section id="navigation">
         <div class="top-row">
@@ -34,7 +37,7 @@
                     <span class="nav-item-text flip-text">Newsletter</span>
                 </div>
             </div>
-           
+
             <div class="top-row-right">
                 <div class="nav-item">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -51,11 +54,72 @@
             </div>
         </div>
         <div class="top-row-middle">
-            <span class="logo" id="logo"><img src="./images/logo-white.svg"/></span>
+            <div class="top-row-left">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </div>
+            <span class="logo" id="logo"><img src="./images/logo-white.svg" /></span>
+            <div class="top-row-right">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+        </div>
+        <div class="overlay" id="overlay"></div>
+        <div class="mobile-menu-panel" id="mobile-menu">
+            <!-- <button class="close-btn" id="close-btn">Close</button> -->
+            <ul class="mobile-nav-list">
+                <li>
+                        <a href="#" class="menu-item">Home</a>
+                </li>  
+                <li><a href="#" class="menu-item">About</a></li>
+                <li>
+                    <a href="#" class="menu-item">Services</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Our Story</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="menu-item">Contact</a>
+                    <ul class="sub-menu">
+                        <li>
+                            <div class="extended-content">
+                                <img src="./images/new-arrivals-01.avif" alt="Image 1" class="responsive-img">
+                                <p>Some text for the first extended content. Some text for the first extended content.
+                                    Some text
+                                    for the first extended content. Some text for the first extended content.
+                                    Some text for the first extended content. Some text for the first extended content.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="extended-content">
+                                <img src="./images/new-arrivals-03.avif" alt="Image 1" class="responsive-img">
+                                <p>Some text for the first extended content. Some text for the first extended content.
+                                    Some text
+                                    for the first extended content. Some text for the first extended content.
+                                    Some text for the first extended content. Some text for the first extended content.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="menu-item">Profile</a>
+                    <ul class="sub-menu">
+                        <li>
+                            <div class="extended-content">
+                                <img src="./images/new-arrivals-03.avif" alt="Image 2" class="responsive-img">
+                                <p>Some text for the second extended content.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </div>
         <div class="bottom-row br" id="bottom-row-nav">
             <div class="nav-item">
-                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(1)">NEW ARRIVALS</span>
+                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(1)">NEW
+                    ARRIVALS</span>
             </div>
             <div class="nav-item">
                 <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(2)">WOMEN</span>
@@ -64,7 +128,8 @@
                 <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(3)">MEN</span>
             </div>
             <div class="nav-item">
-                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(4)">FRAGRANCES</span>
+                <span class="nav-item-text special-link"
+                    onmouseenter="populateSelectedNavContainer(4)">FRAGRANCES</span>
             </div>
             <div class="nav-item">
                 <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(5)">EYE WEAR</span>
@@ -82,7 +147,8 @@
                 <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(9)">STORIES</span>
             </div>
         </div>
-        <div class="selected-nav-container" id="selected-nav-container" onmouseleave="washSelectedNavContainer()"></div>
+        <div class="selected-nav-container" id="selected-nav-container" onmouseleave="washSelectedNavContainer()">
+        </div>
         <div class="sub-nav-container" id="sub-nav-container"></div>
         <div class="gap"></div>
         <div class="headline">
@@ -90,24 +156,125 @@
                 <i class="fa-solid fa-chevron-left"></i>
             </button>
             <div class="headline-text-content">
-                <span class="headline-item active">Get the latest updates by subscribing to our <a class="headline-link">Newsletter</a></span>
+                <span class="headline-item active">Get the latest updates by subscribing to our <a
+                        class="headline-link">Newsletter</a></span>
                 <span class="headline-item">Book an <a class="headline-link">appointment</a> to our Boutiques</span>
             </div>
             <button class="button-control" onclick="toggleHeadline()">
                 <i class="fa-solid fa-chevron-right"></i>
             </button>
         </div>
-    </section>
-    <section id="top">
-        <div class="banner-slide">
-            <span class="hero-heading">AUTHENTIC RETREAT</span>
-            <span class="hero-subheading">Spring-Summer 2024</span>
-            <div class="hero-links">
-                <a class="hero-link" href="#">WOMEN'S NEW ARRIVALS</a>
-                <a class="hero-link" href="#">MEN'S NEW ARRIVALS</a>
+        <!-- <div class="row selected-nav-container" id="selected-nav-container-1"
+            onmouseenter="showDiv('selected-nav-container-1')" onmouseleave="hideDiv('selected-nav-container-1')">
+            <div class="col col-xs-12 nav-container-item">
+                <img src="./images/new-arrivals-01.avif" class="image-nav-area" />
+                <a class="redirect-link" href="#">WOMEN</a>
             </div>
+            <div class="col col-xs-12 nav-container-item">
+                <img src="./images/new-arrivals-02.avif" class="image-nav-area" />
+                <a class="redirect-link" href="#">MEN</a>
+            </div>
+            <div class="col col-xs-12 nav-container-item">
+                <img src="./images/new-arrivals-03.avif" class="image-nav-area" id="kids-photo" />
+                <a class="redirect-link" href="#">KIDS</a>
+            </div>
+            <div class="col col-xs-12 nav-container-item">
+                <img src="./images/new-arrivals-04.avif" class="image-nav-area" />
+                <a class="redirect-link" href="#">EYEWEAR</a>
+            </div>
+            <div class=" col col-xs-12 nav-container-item">
+                <img src="./images/new-arrivals-05.avif" class="image-nav-area" />
+                <a class="redirect-link" href="#">LIFESTYLE</a>
+            </div>
+        </div> -->
+        <!-- <div class="row selected-nav-container" id="selected-nav-container-2"
+                onmouseenter="showDiv('selected-nav-container-2')" onmouseleave="hideDiv('selected-nav-container-2')">
+                <div class="col-md-3 col-xs-12">
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <a class="heading-links">READY TO WEAR</a>
+                        </div>
+                    </div>
+                    <a class="content-links" href="./category.html">Coats & Jackets</a>
+                    <a class="content-links">Knitwear</a>
+                    <a class="content-links">Blazers</a>
+                    <a class="content-links">Dresses & Jumpsuits</a>
+                    <a class="content-links">Matching Sets</a>
+                    <a class="content-links">T-shirts & Tops</a>
+                    <a class="content-links">Shirts</a>
+                    <a class="content-links">Skirts</a>
+                    <a class="content-links">Pants</a>
+                    <a class="content-links">Denim</a>
+                    <a class="content-links">Travelwear</a>
+                    <a class="content-links">All Ready to Wear</a>
+                </div>
+                <div class="nav-container-women">
+                    <a class="heading-links">SHOES</a>
+                    <a class="content-links">Heels</a>
+                    <a class="content-links">Sneakers</a>
+                    <a class="content-links">Boots</a>
+                    <a class="content-links">Loafers & Flat Shoes</a>
+                    <a class="content-links">Sandals</a>
+                    <a class="content-links">All Shoes</a>
+                </div>
+                <div class="nav-container-women">
+                    <a class="heading-links">ACCESSORIES</a>
+                    <a class="content-links">Eyewear</a>
+                    <a class="content-links">Small Leather Goods</a>
+                    <a class="content-links">Jewelry Creations</a>
+                    <a class="content-links">Scarves</a>
+                    <a class="content-links">Matching Sets</a>
+                    <a class="content-links">Hats</a>
+                    <a class="content-links">Belts</a>
+                    <a class="content-links">Other Accessories</a>
+                    <a class="content-links">All Accessories</a>
+                    <a class="heading-links">BAGS</a>
+                    <a class="content-links">Mini Bags & Clutches</a>
+                    <a class="content-links">Crossbody Bags & Backpacks</a>
+                    <a class="content-links">Handbags & Shoppers</a>
+                    <a class="content-links">All Bags</a>
+                </div>
+                <div class="nav-container-women">
+                    <a class="heading-links">NEW ARRIVALS</a>
+                    <a class="heading-links">High Summer</a>
+                    <a class="heading-links">Fragrances</a>
+                    <a class="heading-links">Tennis Sets</a>
+                    <a class="heading-links">Neverending Stories</a>
+                    <a class="heading-links">Cashmere</a>
+                    <a class="heading-links">Shop by Look</a>
+                </div>
+                <div class="nav-container-women">
+                    <a class="heading-links">EXCLUSIVE SERVICES</a>
+                    <a class="heading-links">CASA CUCINELLI</a>
+                    <a class="heading-links">VICUÑA</a>
+                </div>
+                <div class="last-elements">
+                    <div class="nav-container-women">
+                        <a class="heading-links">Eyewear</a>
+                        <img src="./images/women-eyewear.avif" class="women-nav-img" />
+                        <a class="content-links">discover more</a>
+                    </div>
+                    <div class="nav-container-women">
+                        <a class="heading-links">New Arrivals</a>
+                        <img src="./images/new-arrivals-women.avif" class="women-nav-img" />
+                        <a class="content-links">discover more</a>
+                    </div>
+                </div>
+            </div> -->
+    </section>
+
+    <section id="top">
+        <!-- inside banner -->
+        <span class="hero-heading">AUTHENTIC RETREAT</span>
+        <span class="hero-subheading">Spring-Summer 2024</span>
+        <div class="hero-links">
+            <a class="hero-link" href="#">WOMEN'S NEW ARRIVALS</a>
+            <a class="hero-link" href="#">MEN'S NEW ARRIVALS</a>
         </div>
-        <div class="banner-slide">
+        <!-- inside banner -->
+        <!-- <div class="banner-slide">
+        </div> -->
+        <!-- <div class="banner-slide">
             <span class="hero-heading">AUTHENTIC RETREAT</span>
             <span class="hero-subheading">Spring-Summer 2024</span>
             <div class="hero-links">
@@ -129,7 +296,7 @@
             <div class="hero-links">
                 <a class="hero-link" href="#">KIDS' NEW ARRIVALS</a>
             </div>
-        </div>
+        </div> -->
     </section>
     <section id="cta">
         <a class="cta-link" href="#">WOMEN</a>
@@ -152,15 +319,16 @@
     </section>
     <section id="new-arrivals">
         <span class="na-heading">NEW ARRIVALS</span>
-        <span class="na-subheading">Be inspired by the breezy and authentic feel of the Spring-Summer 2024 creations.</span>
+        <span class="na-subheading">Be inspired by the breezy and authentic feel of the Spring-Summer 2024
+            creations.</span>
     </section>
     <section id="sl">
         <img src="./images/both-sl.jpg" id="bg-element-sl">
         <div class="sl-links" onmouseleave="resetBg()">
-            <a class="sl-link" href="#" onmouseenter="changeBg(1)" >WOMEN</a>
-            <a class="sl-link" href="#" onmouseenter="changeBg(2)" >MEN</a>
-            <a class="sl-link" href="#" onmouseenter="changeBg(3)" >KIDS</a>
-            <a class="sl-link" href="#" onmouseenter="changeBg(4)" >LIFESTYLE</a>
+            <a class="sl-link" href="#" onmouseenter="changeBg(1)">WOMEN</a>
+            <a class="sl-link" href="#" onmouseenter="changeBg(2)">MEN</a>
+            <a class="sl-link" href="#" onmouseenter="changeBg(3)">KIDS</a>
+            <a class="sl-link" href="#" onmouseenter="changeBg(4)">LIFESTYLE</a>
         </div>
     </section>
     <section id="footer">
@@ -222,9 +390,50 @@
             <div class="footer-bottom-left">
                 <span class="copy-right-text">2024 &copy; Brunello Cucinelli SpA Vat 01886120540</span>
             </div>
-            <div class="footer-bottom-right">
-            </div>
         </div>
     </section>
 </body>
+<script>
+    // const menuIcon = document.getElementById('menu-icon');
+
+    // menuItems.forEach(item => {
+    //     item.addEventListener('click', function (event) {
+    //         event.preventDefault();
+
+    //         menuItems.forEach(i => {
+    //             if (i !== item) {
+    //                 i.style.display = 'none';
+    //             }
+    //         });
+
+    //         // Center text and show submenu
+    //         item.classList.add('centered');
+    //         const subMenu = item.querySelector('.sub-menu');
+    //         if (subMenu) {
+    //             subMenu.classList.add('show');
+    //         }
+
+    //         // // Add close button
+    //         // const closeSubMenuBtn = document.createElement('button');
+    //         // closeSubMenuBtn.textContent = 'Close';
+    //         // closeSubMenuBtn.className = 'btn btn-secondary';
+    //         // item.insertBefore(closeSubMenuBtn, item.f);
+
+    //         // closeSubMenuBtn.addEventListener('click', function(e) {
+    //         //     e.stopPropagation();
+    //         //     item.removeChild(closeSubMenuBtn);
+    //         //     item.classList.remove('centered');
+    //         //     if (subMenu) {
+    //         //         subMenu.classList.remove('show');
+    //         //     }
+    //         //     menuItems.forEach(i => {
+    //         //         i.style.display = 'block';
+    //         //     });
+    //         // });
+
+           
+        // });
+    // });
+</script>
+
 </html>

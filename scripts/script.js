@@ -1,13 +1,13 @@
 selectedHeadline = 1
 
-function toggleHeadline(){
-    if(selectedHeadline == 1){
+function toggleHeadline() {
+    if (selectedHeadline == 1) {
         document.getElementsByClassName('headline-item')[1].classList.remove('active')
         setTimeout(() => {
             document.getElementsByClassName('headline-item')[0].classList.add('active')
         }, 400)
         selectedHeadline = 0
-    }else{
+    } else {
         document.getElementsByClassName('headline-item')[0].classList.remove('active')
         setTimeout(() => {
             document.getElementsByClassName('headline-item')[1].classList.add('active')
@@ -16,48 +16,252 @@ function toggleHeadline(){
     }
 }
 
-window.addEventListener('scroll', function() {
-    const verticalScrollPosition = window.scrollY
+document.addEventListener('DOMContentLoaded', function () {
+    const navbar = document.getElementById('navigation');
+    const logo = document.getElementById('logo');
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 20) { // You can adjust this value as needed
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+});
+
+window.addEventListener('scroll', function () {
+    const verticalScrollPosition = window.scrollY;
+    const screenWidth = window.innerWidth;
     var flipTexts = document.getElementsByClassName('flip-text')
     var bottomRowNav = document.getElementById('bottom-row-nav')
-    if(verticalScrollPosition >= 10){
+    if (verticalScrollPosition >= 10) {
         document.getElementById('navigation').classList.add('light')
-        document.getElementById('logo').style.display = 'none'
-        
-        for(let i=0; i<flipTexts.length; i++){
+        // if (screenWidth >= 1200) {
+        //     document.getElementById('logo').style.display = 'none';
+        // } else {
+        //     document.getElementById('logo').style.display = 'block';
+        // }
+        // document.getElementById('logo').style.display = 'none'
+
+        for (let i = 0; i < flipTexts.length; i++) {
             flipTexts[i].style.display = 'none'
         }
 
         bottomRowNav.style.marginTop = '-2.75rem'
 
-    }else{
+    } else {
         document.getElementById('navigation').classList.remove('light')
         document.getElementById('logo').style.display = 'block'
-        
-        for(let i=0; i<flipTexts.length; i++){
+
+        for (let i = 0; i < flipTexts.length; i++) {
             flipTexts[i].style.display = 'block'
         }
 
         bottomRowNav.style.marginTop = '0'
-        
+
     }
 });
 
-function washSelectedNavContainer(){
+const menuIcon = document.getElementById('menu-icon');
+const mobileMenu = document.getElementById('mobile-menu');
+// const closeButton = document.getElementById('close-btn');
+const overlay = document.getElementById('overlay');
+const menuItems = document.querySelectorAll('.menu-item');
+
+// menuIcon.addEventListener('click', function () {
+//     mobileMenu.style.left = '0'; // Open the menu
+//     mobileMenu.style.display = 'flex';
+//     overlay.style.display = 'block';
+
+// });
+
+menuIcon.addEventListener('click', function () {
+    if (mobileMenu.style.left === '0px') {
+        mobileMenu.style.left = '-100%';
+        overlay.style.display = 'none';
+        menuIcon.classList.remove('fa-times');
+        menuIcon.classList.add('fa-bars');
+    } else {
+        mobileMenu.style.left = '0';
+        mobileMenu.style.display = 'flex';
+        overlay.style.display = 'block';
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-times');
+    }
+});
+
+// closeButton.addEventListener('click', function () {
+//     mobileMenu.style.left = '-100%'; // Close the menu
+//     overlay.style.display = 'none';
+// });
+
+overlay.addEventListener('click', function () {
+    mobileMenu.style.left = '-100%';
+    overlay.style.display = 'none';
+    menuIcon.classList.remove('fa-times');
+    menuIcon.classList.add('fa-bars');
+});
+
+menuItems.forEach(item => {
+    item.addEventListener('click', function (event) {
+        event.preventDefault();
+
+
+
+        // Center text
+
+
+        // Show sub-menu if it exists
+        // const subMenu = item.querySelector('.sub-menu');
+        // if (subMenu) {
+        //     subMenu.classList.add('show');
+        // }
+
+        const subMenu = this.nextElementSibling;
+
+        if (subMenu && subMenu.classList.contains('sub-menu')) {
+            if (subMenu.style.display === 'block') {
+                item.classList.remove('centered');
+                subMenu.style.display = 'none';
+                menuItems.forEach(i => {
+                    i.style.display = 'block';
+                });
+            } else {
+                // Hide all menu items
+                menuItems.forEach(i => {
+                    if (i !== item) {
+                        i.style.display = 'none';
+                    }
+                });
+                subMenu.style.display = 'block';
+                item.classList.add('centered');
+            }
+        }
+
+        // Add close button
+        // const closeSubMenuBtn = document.createElement('button');
+        // closeSubMenuBtn.textContent = 'Close';
+        // closeSubMenuBtn.className = 'close-submenu-btn';
+        // item.insertBefore(closeSubMenuBtn, item.firstChild);
+
+        // Close sub-menu button functionality
+        // closeSubMenuBtn.addEventListener('click', function (e) {
+        //     e.stopPropagation();
+        //     // Remove close button
+        //     item.removeChild(closeSubMenuBtn);
+        //     // Remove centered text class
+        //     item.classList.remove('centered');
+        //     // Hide sub-menu
+        //     if (subMenu) {
+        //         subMenu.classList.remove('show');
+        //     }
+        //     // Show all menu items again
+        //     menuItems.forEach(i => {
+        //         i.style.display = 'block';
+        //     });
+        // });
+    });
+});
+
+
+function washSelectedNavContainer() {
+    const navbar = document.getElementById('navigation');
     var selectedNavContainer = document.getElementById('selected-nav-container')
     selectedNavContainer.classList.remove('active')
-    document.getElementById('navigation').classList.remove('light')
+    if (navbar && navbar?.classList && navbar?.classList.length) {
+        let chk = false;
+        for (let i = 0; i < navbar.classList.length; i++) {
+            if (navbar.classList[i] == 'scrolled') {
+                chk = true;
+            }
+        }
+        if (!chk) {
+            document.getElementById('navigation').classList.remove('light')
+            document.getElementById('logo').classList.add('dark')
+        }
+    }
     document.getElementsByClassName('headline')[0].classList.remove('disabled')
     document.getElementById('logo').classList.remove('dark')
 
-    document.getElementById('selected-nav-container').classList.remove('index1')    
+    selectedNavContainer.classList.remove('index1');
+    selectedNavContainer.classList.remove('text-items');
     selectedNavContainer.innerHTML = ''
-    document.getElementById('sub-nav-container').classList.remove('active')
-    document.getElementById('sub-nav-container').innerHTML = ''
+    const subNavBar = document.getElementById('sub-nav-container');
+    subNavBar.style.borderTop = 'none'
+    subNavBar.classList.remove('active')
+    subNavBar.innerHTML = ''
+
+    // border-top: .0625rem solid #e5e5e5;
+
+
 
 }
 
-function populateSelectedNavContainer(index){
+function showDiv(id) {
+    document.getElementById(id).classList.add('active');
+    document.getElementById('navigation').classList.add('light')
+    document.getElementsByClassName('headline')[0].classList.add('disabled')
+    document.getElementById('logo').classList.add('dark')
+}
+
+function hideDiv(id) {
+    document.getElementById(id).classList.remove('active');
+    washSelectedNavContainer(id);
+}
+
+// const menuIcon = document.getElementById('menu-icon');
+// const mobileMenu = document.getElementById('mobile-menu');
+// const closeButton = document.getElementById('close-btn');
+
+// $(document).ready(function () {
+//     $('.nav-item').hover(
+//         function () {
+//             debugger
+//             var target = $(this).data('target');
+//             $('.selected-nav-container').removeClass('active');
+//             $(target).addClass('active');
+//         },
+//         function () {
+//             var target = $(this).data('target');
+//             $(target).removeClass('active');
+//         }
+//     );
+//     $('.selected-nav-container').hover(
+//         function () {
+//             $(this).addClass('active');
+//         },
+//         function () {
+//             $(this).removeClass('active');
+//         }
+//     );
+// });
+
+
+// $(document).ready(function(){
+//     $('.nav-item').hover(
+//         function() {
+//             debugger
+//             var target = $(this).data('target');
+//             $('.selected-nav-container').removeClass('active');
+//             $(target).addClass('active');
+//         },
+//         function() {
+//             var target = $(this).data('target');
+//             $(target).removeClass('active');
+//         }
+//     );
+//     $('.selected-nav-container').hover(
+//         function() {
+//             debugger
+//             $(this).addClass('active');
+//         },
+//         function() {
+//             $(this).removeClass('active');
+//         }
+//     );
+// });
+
+function populateSelectedNavContainer(index) {
     var selectedNavContainer = document.getElementById('selected-nav-container')
     selectedNavContainer.classList.add('active')
     selectedNavContainer.classList.remove('text-items')
@@ -70,7 +274,7 @@ function populateSelectedNavContainer(index){
 
     selectedNavContainer.style.opacity = 0
 
-    if(index == 1){        
+    if (index == 1) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.innerHTML = `
         <div class="nav-container-item">
@@ -95,7 +299,7 @@ function populateSelectedNavContainer(index){
         </div>
         `
         var navContainerItems = document.getElementsByClassName('nav-container-item')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -104,7 +308,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 2){
+    if (index == 2) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.classList.add('text-items')
         selectedNavContainer.innerHTML = `
@@ -143,11 +347,12 @@ function populateSelectedNavContainer(index){
                 <a class="content-links">Belts</a>
                 <a class="content-links">Other Accessories</a>
                 <a class="content-links">All Accessories</a>
-                <a class="heading-links">BAGS</a> 
-                <a class="content-links">Mini Bags & Clutches</a>
-                <a class="content-links">Crossbody Bags & Backpacks</a>
-                <a class="content-links">Handbags & Shoppers</a>
-                <a class="content-links">All Bags</a>
+                 <a class="heading-links">BAGS</a> 
+            <a class="content-links">Mini Bags & Clutches</a>
+            <a class="content-links">Crossbody Bags & Backpacks</a>
+            <a class="content-links">Handbags & Shoppers</a>
+            <a class="content-links">All Bags</a>
+               
             </div>
             <div class="nav-container-women">            
                 <a class="heading-links">NEW ARRIVALS</a>
@@ -175,10 +380,10 @@ function populateSelectedNavContainer(index){
                     <a class="content-links">discover more</a>
                 </div>
             </div>
-        `
+            `
 
         var navContainerItems = document.getElementsByClassName('nav-container-women')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -193,7 +398,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 3){
+    if (index == 3) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.classList.add('text-items')
         selectedNavContainer.innerHTML = `
@@ -261,7 +466,7 @@ function populateSelectedNavContainer(index){
         `
 
         var navContainerItems = document.getElementsByClassName('nav-container-women')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -276,7 +481,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 4){
+    if (index == 4) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.innerHTML = `
         <div class="nav-container-fragrances">
@@ -293,7 +498,7 @@ function populateSelectedNavContainer(index){
         </div>
         `
         var navContainerItems = document.getElementsByClassName('nav-container-fragrances')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -302,7 +507,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 5){
+    if (index == 5) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.innerHTML = `
         <div class="nav-container-eyewear">
@@ -315,7 +520,7 @@ function populateSelectedNavContainer(index){
         </div>
         `
         var navContainerItems = document.getElementsByClassName('nav-container-eyewear')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -324,7 +529,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 6){
+    if (index == 6) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.classList.add('text-items')
         selectedNavContainer.innerHTML = `
@@ -385,7 +590,7 @@ function populateSelectedNavContainer(index){
         `
 
         var navContainerItems = document.getElementsByClassName('nav-container-women')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -400,7 +605,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 7){        
+    if (index == 7) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.innerHTML = `
         <div class="nav-container-item">
@@ -425,7 +630,7 @@ function populateSelectedNavContainer(index){
         </div>
         `
         var navContainerItems = document.getElementsByClassName('nav-container-item')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -439,7 +644,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 8){
+    if (index == 8) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.classList.add('text-items')
         selectedNavContainer.innerHTML = `
@@ -486,7 +691,7 @@ function populateSelectedNavContainer(index){
         `
 
         var navContainerItems = document.getElementsByClassName('nav-container-women')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -501,7 +706,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 9){        
+    if (index == 9) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.innerHTML = `
         <div class="nav-container-stories">
@@ -526,7 +731,7 @@ function populateSelectedNavContainer(index){
             <a href="#" class="central-link-anchor">DISCOVER ALL THE STORIES</a>
         `
         var navContainerItems = document.getElementsByClassName('nav-container-stories')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -540,7 +745,7 @@ fadeInterval = '700ms'
 f_Interval = 250
 interpolationFunction = 'cubic-bezier(1,0,.78,1)'
 
-function resetBg(){
+function resetBg() {
     document.getElementById('bg-element-sl').style.animation = `fadeOut ${fadeInterval} ${interpolationFunction} 1 forwards`
     setTimeout(() => {
         document.getElementById('bg-element-sl').src = './images/both-sl.jpg';
@@ -550,19 +755,19 @@ function resetBg(){
     }, f_Interval)
 }
 
-function changeBg(index){
+function changeBg(index) {
     document.getElementById('bg-element-sl').style.animation = `fadeOut ${fadeInterval} ${interpolationFunction} 1 forwards`
     setTimeout(() => {
-        if(index == 1){
+        if (index == 1) {
             document.getElementById('bg-element-sl').src = './images/women-sl.jpg'
         }
-        if(index == 2){
+        if (index == 2) {
             document.getElementById('bg-element-sl').src = './images/men-sl.jpg'
         }
-        if(index == 3){
+        if (index == 3) {
             document.getElementById('bg-element-sl').src = './images/kids-sl.jpg'
         }
-        if(index == 4){
+        if (index == 4) {
             document.getElementById('bg-element-sl').src = './images/lifestyle-sl.jpg'
         }
     }, f_Interval)
