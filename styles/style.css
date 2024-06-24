@@ -121,9 +121,6 @@ body {
 }
 
 @media (max-width: 600px) {
-    /* .footer-area div{
-        width: 50% !important;
-    } */
 
     .nav-container-women.active {
         flex-wrap: wrap !important;
@@ -635,10 +632,16 @@ body {
     }
 }
 
+@media (max-width: 800px) {
+    .email-sub-1{
+        margin: 5px;
+    }
+}
 @media (max-width: 480px) {
 
     .exclusive-item {
-        height: 40vh; /* Further adjust height for very small screens */
+        height: 40vh;
+        /* Further adjust height for very small screens */
     }
 
     #top {
@@ -658,8 +661,21 @@ body {
         align-items: center;
     }
 
+    .footer-links-heading.hel {
+        text-align: center;
+    }
+
     .enter-email {
         gap: .4rem;
+    }
+
+    .footer-area {
+        padding-left: 5px;
+        justify-content: start !important;
+    }
+
+    .footer-socials {
+        margin-top: -14px;
     }
 
     .footer-subscription {
@@ -875,14 +891,15 @@ body {
 }
 
 #exclusive .hero-link {
-  padding: 10px 20px;
-  border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
+
 #exclusive {
     display: flex;
     flex-wrap: wrap;
     /* Space between items */
-    gap: 20px; 
+    gap: 20px;
     padding: 20px;
     transition: transform 0.9s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -1061,10 +1078,10 @@ body {
     flex-wrap: wrap;
     text-align: justify;
     flex-direction: row;
-    justify-content: space-around;
-    /* align-items: flex-start; */
+    justify-content: space-between;
     width: inherit;
-    padding: 1rem;
+    /* align-items: flex-start; */
+    /* padding: 1rem; */
 }
 
 .footer-subscription {
@@ -1073,11 +1090,13 @@ body {
     gap: .4em;
     width: 100%;
     text-align: start;
-    padding: 1rem;
-    margin-left: 4rem;
     font-family: "gteesti";
-    font-size: 1.3em;
     color: #2B2B2B;
+
+    span{
+        font-weight: 400;
+        font-size: 20px;
+    }
 
     a {
         color: #2B2B2B;
@@ -1102,20 +1121,16 @@ body {
 .footer-bottom {
     display: flex;
     flex-direction: row;
-    gap: 2em;
-    justify-content: center;
-    align-items: center;
     width: inherit;
+    align-items: center;
     height: 4em;
-    padding: 3rem;
 }
 
-.footer-bottom-right,
+/* .footer-bottom-right,
 .footer-bottom-left {
     flex: 1;
     display: flex;
     flex-direction: row;
-    /* justify-content: center; */
     align-items: center;
     gap: 2em;
     color: #AAAAAA;
@@ -1132,7 +1147,7 @@ body {
         color: #AAAAAA;
         font-family: "gteesti";
     }
-}
+} */
 
 .footer-link-bottom.link:hover {
     text-decoration: none;
@@ -1149,10 +1164,14 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: .3em;
+    padding: .6em;
     font-family: "gteesti";
     color: #2B2B2B;
-    font-size: 1.2rem;
+
+    span {
+        font-size: 16px;
+
+    }
 }
 
 .footer-link-container {
@@ -1165,7 +1184,7 @@ body {
         font-family: "gteesti-light";
         color: #2B2B2B;
         width: 200px;
-        font-size: 1rem;
+        font-size: 14px;
         text-decoration: none;
     }
 
@@ -1200,28 +1219,50 @@ body {
 }
 
 .email-sub-1 {
-    flex: 1 1;
+    background-color: black;
+    font-size: 12px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px;
+    color: rgb(111,111,111);
+    
+    span {
+        color: white;
+        font-family: gteesti;
+    }
 }
-
+/* 
 .email-sub input {
     width: 100%;
     height: 100%;
     padding: 0.9rem;
 
-    /* background-color: antiquewhite; */
-}
+} */
 
 .email-sub {
-    flex: 1 1;
-    font-size: 1.2rem;
-    /* border-radius: 0.5em; */
+    background-color: aqua;
+    font-size: 16px;
+    height: 54px;
+    font-weight: 700;
+    font-family: "gteesti";
+    letter-spacing: 0.15rem;    
+    border: 0.8px solid rgb(111,111,111);
+}
+
+.footer-head{
+    float: left;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 .email-sub-button {
     /* width: 4em; */
     /* height: 1.25em; */
     /* border-radius: 2vmin; */
-    padding: 1.1rem;
+    /* padding: 1.1rem; */
+    
     background-color: #262626;
     border: none;
     cursor: pointer;
@@ -1273,10 +1314,10 @@ body {
 } */
 
 .copy-right-text {
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1.5625rem;
     letter-spacing: .5px;
-    color: #6f6f6f;
+    color: rgb(111,111,111);
 }
 
 .footer-bottom {
