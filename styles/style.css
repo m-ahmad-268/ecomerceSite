@@ -198,10 +198,6 @@ body {
     width: 220px;
 }
 
-.heading-links:hover {
-    text-decoration: underline;
-}
-
 .heading-links:active,
 .heading-links:visited {
     color: #262626;
@@ -220,10 +216,6 @@ body {
 .content-links:active {
     color: #262626;
     text-decoration: none;
-}
-
-.content-links:hover {
-    text-decoration: underline;
 }
 
 .nav-container-fragrances {
@@ -643,9 +635,8 @@ body {
 }
 @media (max-width: 480px) {
 
-    .exclusive-item {
-        height: 40vh;
-        /* Further adjust height for very small screens */
+    #exclusive {
+        flex-direction: column !important;
     }
 
     #top {
@@ -679,6 +670,14 @@ body {
 
     .enter-email {
         gap: .4rem;
+    }
+
+    .sl-link{
+        font-size: 14px !important;
+    }
+    
+    .sl-links{
+        gap: 1em !important;
     }
 
     .footer-area {
@@ -783,11 +782,11 @@ body {
 
 .headline-item {
     opacity: 0;
-    font-size: 1rem;
+    font-size: 14px;
     transition: opacity 200ms linear;
     font-weight: normal;
     font-family: "gteesti-light";
-    letter-spacing: 3px;
+    letter-spacing: 0.5px;
 }
 
 .headline-item:last-child {
@@ -836,21 +835,23 @@ body {
 
 .hero-link,
 .hero-link:visited {
-    font-size: 1.25rem;
-    font-family: "gteesti-light";
+    font-size: 14px;
+    font-family: "GTEesti";
     color: white;
+    line-height: 21px;
     padding: 10px;
-    text-decoration: underline;
+    border-bottom: 1px solid white;
+    letter-spacing: 3px;
     transition: all 300ms ease-in-out;
     /* z-index: 1; */
     /* position: relative; */
     /* Semi-transparent background */
 }
 
-.hero-link:hover {
-    font-size: 1.35rem;
-    text-decoration: underline;
-}
+/* .hero-link:hover {
+    font-size: 16px;
+    opacity: .8;
+} */
 
 .banner-slide {
     width: 100vw;
@@ -883,58 +884,44 @@ body {
     color: white;
     justify-content: center;
     align-items: center;
-    gap: 3em;
-    padding: 2rem;
+    gap: 2em;
+    padding: 1em;
 
     .cta-link,
     .cta-link:visited {
-        font-size: 1.75rem;
+        font-size: 16px;
         font-family: "gteesti-light";
-        color: #262626;
+        color: rgb(111,111,111);
         text-decoration: none;
-        opacity: 0.3;
+        letter-spacing: 4px;
         transition: all 300ms ease-in-out;
     }
 
     .cta-link:hover {
         text-decoration: none;
-        opacity: 1;
+       color: black;
+       opacity: 1;
     }
-}
-
-#exclusive .hero-link {
-    padding: 10px 20px;
-    border-radius: 5px;
 }
 
 #exclusive {
     display: flex;
     flex-wrap: wrap;
-    /* Space between items */
-    gap: 20px;
-    padding: 20px;
+    height: 100vh;
+    flex-direction: row;
     transition: transform 0.9s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .exclusive-item {
-    /* 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2em; */
-
     background: url(../images/exclusive-01.jpeg) no-repeat;
     flex: 1 1 calc(50% - 40px);
     /* Flex items take up 50% minus the gap */
-    height: 80vh;
     /* Set a fixed height for the items */
     background-size: cover;
     /* Ensure the background image covers the entire div */
     background-position: center;
     /* Center the background image */
     display: flex;
-    background-color: aqua;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -942,11 +929,6 @@ body {
 
 .exclusive-item:nth-child(2) {
     background: url(../images/exclusive-02.jpeg) no-repeat;
-}
-
-.exclusive-item:hover {
-    transform-origin: 50% 50%;
-    transform: scale(1.2);
 }
 
 #campaign {
@@ -975,35 +957,35 @@ body {
     color: white;
     justify-content: center;
     align-items: center;
-    gap: 3em;
-    padding: 2rem;
+    gap: 1em;
+    padding: 0.5em;
 }
 
 .na-heading {
-    font-size: 2.5rem;
+    font-size: 1.5em;
     font-family: "gteesti-normal";
     color: black;
 }
 
 .na-subheading {
-    font-size: 1.5rem;
+    font-size: 1em;
     font-family: "gteesti-light";
     color: black;
 }
 
 #sl,
 .sl-links {
-    display: none;
-    width: 100%;
     /* background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../images/both-sl.jpg) no-repeat;
     background-size: cover; */
-    height: 100vh;
     /* position: relative; */
+    /* width: 100%; */
+    /* height: 100vh; */
+    display: flex;
     justify-content: center;
     align-items: center;
     color: black;
-    flex-direction: row;
-    gap: 4em;
+    flex-direction: column;
+    gap: 2em;
     transition: background-image 0.8s ease-in-out;
 }
 
@@ -1057,7 +1039,7 @@ body {
 
 .sl-link,
 .sl-link:active {
-    font-size: 1.75rem;
+    font-size: 16px;
     font-family: "gteesti-light";
     color: white;
     text-decoration: none;
