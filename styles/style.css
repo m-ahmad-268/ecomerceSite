@@ -568,9 +568,10 @@ body {
 
     display: flex;
     flex-direction: row;
-    gap: 1em;
+    gap: 5px;
     font-size: 0.75em;
     justify-content: center;
+    align-items: center;
     cursor: pointer;
     position: relative;
 
@@ -633,11 +634,14 @@ body {
       margin-bottom: 10px !important;
     }
 }
-@media (max-width: 480px) {
-
+@media (max-width: 680px) {
     #exclusive {
         flex-direction: column !important;
     }
+
+}
+@media (max-width: 480px) {
+
 
     #top {
         height: 100vh;
@@ -1179,6 +1183,7 @@ body {
         color: #2B2B2B;
         width: 200px;
         font-size: 14px;
+        font-weight: 300 !important;
         text-decoration: none;
     }
 
