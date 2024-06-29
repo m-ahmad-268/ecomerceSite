@@ -46,10 +46,10 @@
                     <i class="fa-regular fa-heart"></i>
                 </div>
                 <div class="nav-item">
-                    <i class="fa-regular fa-user"></i>
+                    <i class="fa-regular fa-user" id="user-icon"></i>
                 </div>
                 <div class="nav-item">
-                    <i class="fa-solid fa-bag-shopping"></i>
+                    <i class="fa-solid fa-bag-shopping" id="cart-icon"></i>
                 </div>
             </div>
         </div>
@@ -64,6 +64,59 @@
             </div>
         </div>
         <div class="overlay" id="overlay"></div>
+        <div class="cart" id="cart-menu">
+            <div class="cart-header">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span>Your Selection (1)</span>
+                <div class="close-btn">
+                    <i class="fa-solid fa-times" id="close-icon"></i>
+                </div>
+            </div>
+
+            <div class="car-mid">
+                <div class="cart-item">
+                    <img src="images/exclusive-01.jpeg" alt="PayPal Logo">
+                    <div class="cart-item-detail">
+                        <div class="item-header">
+                            <span>Down Vest</span>
+                            <i class="fa fa-trash"></i>
+                        </div>
+                        <span>Color: Lignite Grey</span>
+                        <span>Size: 36</span>
+                        <span>SKU: 242M0W077855C407802</span>
+                        <div class="item-footer">
+                            <span class="add-item">
+                                <i class="fa fa-minus"></i> 1 <i class="fa fa-plus"></i>
+                            </span>
+                            <span class="item-price">
+                                € 5.500,00
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="totalAmount">
+                <span>Subtotal</span>
+                <span class="float-right p-0 m-0">€ 5.500,00</span>
+            </div>
+
+            <div class="button-content">
+                <div class="cart-btn">
+                    <button class="cartBtn" type="button">Go to Cart</button>
+                </div>
+                <div class="checkout-text">
+                    or proceed with quick payment
+                </div>
+                <div class="payPal-btn">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal Logo">
+                </div>
+                <div class="btn-last-stat">
+                    The gift option is not available with Express Checkout
+                </div>
+            </div>
+        </div>
+        </div>
         <div class="mobile-menu-panel" id="mobile-menu">
             <!-- <button class="close-btn" id="close-btn">Close</button> -->
             <ul class="mobile-nav-list">
@@ -114,30 +167,27 @@
                         </li>
                     </ul>
                 </li>
-                <div class="">
-
-                    <li>
-                        <a class="menu-item extend" href="#"><i class="fa-regular fa-user"></i> Personal area</a>
-                    </li>
-                    <li>
-                        <a class="menu-item extend" href="#"><i class="fa-regular fa-heart"></i> My Wishlist</a>
-                    </li>
-                    <li>
-                        <a class="menu-item extend" href="#"><i class="fa-solid fa-globe"></i> Italy</a>
-                    </li>
-                    <li>
-                        <a class="menu-item extend" href="#"><i class="fa-solid fa-headset"></i> Contact Us</a>
-                    </li>
-                    <li>
-                        <a class="menu-item extend" href="#"><i class="fa-solid fa-phone-flip"></i> +39 075 886 0497</a>
-                    </li>
-                    <li>
-                        <a class="menu-item extend" href="#"><i class="fa-solid fa-location-dot"></i> Boutique</a>
-                    </li>
-                    <li>
-                        <a class="menu-item extend" href="#"><i class="fa-regular fa-envelope"></i> Newsletter</a>
-                    </li>
-                </div>
+                <li>
+                    <a class="menu-item extend" href="#"><i class="fa-regular fa-user"></i> Personal area</a>
+                </li>
+                <li>
+                    <a class="menu-item extend" href="#"><i class="fa-regular fa-heart"></i> My Wishlist</a>
+                </li>
+                <li>
+                    <a class="menu-item extend" href="#"><i class="fa-solid fa-globe"></i> Italy</a>
+                </li>
+                <li>
+                    <a class="menu-item extend" href="#"><i class="fa-solid fa-headset"></i> Contact Us</a>
+                </li>
+                <li>
+                    <a class="menu-item extend" href="#"><i class="fa-solid fa-phone-flip"></i> +39 075 886 0497</a>
+                </li>
+                <li>
+                    <a class="menu-item extend" href="#"><i class="fa-solid fa-location-dot"></i> Boutique</a>
+                </li>
+                <li>
+                    <a class="menu-item extend" href="#"><i class="fa-regular fa-envelope"></i> Newsletter</a>
+                </li>
             </ul>
         </div>
         <div class="bottom-row br" id="bottom-row-nav">
@@ -188,103 +238,6 @@
                 <i class="fa-solid fa-chevron-right"></i>
             </button>
         </div>
-        <!-- <div class="row selected-nav-container" id="selected-nav-container-1"
-            onmouseenter="showDiv('selected-nav-container-1')" onmouseleave="hideDiv('selected-nav-container-1')">
-            <div class="col col-xs-12 nav-container-item">
-                <img src="./images/new-arrivals-01.avif" class="image-nav-area" />
-                <a class="redirect-link" href="#">WOMEN</a>
-            </div>
-            <div class="col col-xs-12 nav-container-item">
-                <img src="./images/new-arrivals-02.avif" class="image-nav-area" />
-                <a class="redirect-link" href="#">MEN</a>
-            </div>
-            <div class="col col-xs-12 nav-container-item">
-                <img src="./images/new-arrivals-03.avif" class="image-nav-area" id="kids-photo" />
-                <a class="redirect-link" href="#">KIDS</a>
-            </div>
-            <div class="col col-xs-12 nav-container-item">
-                <img src="./images/new-arrivals-04.avif" class="image-nav-area" />
-                <a class="redirect-link" href="#">EYEWEAR</a>
-            </div>
-            <div class=" col col-xs-12 nav-container-item">
-                <img src="./images/new-arrivals-05.avif" class="image-nav-area" />
-                <a class="redirect-link" href="#">LIFESTYLE</a>
-            </div>
-        </div> -->
-        <!-- <div class="row selected-nav-container" id="selected-nav-container-2"
-                onmouseenter="showDiv('selected-nav-container-2')" onmouseleave="hideDiv('selected-nav-container-2')">
-                <div class="col-md-3 col-xs-12">
-                    <div class="row">
-                        <div class="col-md-12 col-xs-12">
-                            <a class="heading-links">READY TO WEAR</a>
-                        </div>
-                    </div>
-                    <a class="content-links" href="./category.html">Coats & Jackets</a>
-                    <a class="content-links">Knitwear</a>
-                    <a class="content-links">Blazers</a>
-                    <a class="content-links">Dresses & Jumpsuits</a>
-                    <a class="content-links">Matching Sets</a>
-                    <a class="content-links">T-shirts & Tops</a>
-                    <a class="content-links">Shirts</a>
-                    <a class="content-links">Skirts</a>
-                    <a class="content-links">Pants</a>
-                    <a class="content-links">Denim</a>
-                    <a class="content-links">Travelwear</a>
-                    <a class="content-links">All Ready to Wear</a>
-                </div>
-                <div class="nav-container-women">
-                    <a class="heading-links">SHOES</a>
-                    <a class="content-links">Heels</a>
-                    <a class="content-links">Sneakers</a>
-                    <a class="content-links">Boots</a>
-                    <a class="content-links">Loafers & Flat Shoes</a>
-                    <a class="content-links">Sandals</a>
-                    <a class="content-links">All Shoes</a>
-                </div>
-                <div class="nav-container-women">
-                    <a class="heading-links">ACCESSORIES</a>
-                    <a class="content-links">Eyewear</a>
-                    <a class="content-links">Small Leather Goods</a>
-                    <a class="content-links">Jewelry Creations</a>
-                    <a class="content-links">Scarves</a>
-                    <a class="content-links">Matching Sets</a>
-                    <a class="content-links">Hats</a>
-                    <a class="content-links">Belts</a>
-                    <a class="content-links">Other Accessories</a>
-                    <a class="content-links">All Accessories</a>
-                    <a class="heading-links">BAGS</a>
-                    <a class="content-links">Mini Bags & Clutches</a>
-                    <a class="content-links">Crossbody Bags & Backpacks</a>
-                    <a class="content-links">Handbags & Shoppers</a>
-                    <a class="content-links">All Bags</a>
-                </div>
-                <div class="nav-container-women">
-                    <a class="heading-links">NEW ARRIVALS</a>
-                    <a class="heading-links">High Summer</a>
-                    <a class="heading-links">Fragrances</a>
-                    <a class="heading-links">Tennis Sets</a>
-                    <a class="heading-links">Neverending Stories</a>
-                    <a class="heading-links">Cashmere</a>
-                    <a class="heading-links">Shop by Look</a>
-                </div>
-                <div class="nav-container-women">
-                    <a class="heading-links">EXCLUSIVE SERVICES</a>
-                    <a class="heading-links">CASA CUCINELLI</a>
-                    <a class="heading-links">VICUÑA</a>
-                </div>
-                <div class="last-elements">
-                    <div class="nav-container-women">
-                        <a class="heading-links">Eyewear</a>
-                        <img src="./images/women-eyewear.avif" class="women-nav-img" />
-                        <a class="content-links">discover more</a>
-                    </div>
-                    <div class="nav-container-women">
-                        <a class="heading-links">New Arrivals</a>
-                        <img src="./images/new-arrivals-women.avif" class="women-nav-img" />
-                        <a class="content-links">discover more</a>
-                    </div>
-                </div>
-            </div> -->
     </section>
 
     <section id="top">

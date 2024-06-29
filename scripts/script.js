@@ -63,28 +63,43 @@ window.addEventListener('scroll', function () {
 });
 
 const menuIcon = document.getElementById('menu-icon');
+const cartIcon = document.getElementById('cart-icon');
 const mobileMenu = document.getElementById('mobile-menu');
+const cartMenu = document.getElementById('cart-menu');
+const closeIcon = document.getElementById('close-icon');
 // const closeButton = document.getElementById('close-btn');
 const overlay = document.getElementById('overlay');
 const menuItems = document.querySelectorAll('.menu-item');
 
-// menuIcon.addEventListener('click', function () {
-//     mobileMenu.style.left = '0'; // Open the menu
-//     mobileMenu.style.display = 'flex';
-//     overlay.style.display = 'block';
+cartIcon.addEventListener('click', function () {
+    cartMenu.style.right = '0'; // Open the menu
+    // mobileMenu.style.display = 'flex';
+    document.body.classList.add('no-scroll');
+    overlay.style.display = 'block';
 
-// });
+});
+
+closeIcon.addEventListener('click', function () {
+    // mobileMenu.style.left = '-100%';
+    // menuIcon.classList.remove('fa-times');
+    // menuIcon.classList.add('fa-bars');
+    overlay.style.display = 'none';
+    document.body.classList.remove('no-scroll');
+    cartMenu.style.right = '-200%';
+});
 
 menuIcon.addEventListener('click', function () {
     if (mobileMenu.style.left === '0px') {
         mobileMenu.style.left = '-100%';
         overlay.style.display = 'none';
+        document.body.classList.remove('no-scroll');
         menuIcon.classList.remove('fa-times');
         menuIcon.classList.add('fa-bars');
     } else {
         mobileMenu.style.left = '0';
         mobileMenu.style.display = 'flex';
         overlay.style.display = 'block';
+        document.body.classList.add('no-scroll');
         menuIcon.classList.remove('fa-bars');
         menuIcon.classList.add('fa-times');
     }
@@ -98,8 +113,10 @@ menuIcon.addEventListener('click', function () {
 overlay.addEventListener('click', function () {
     mobileMenu.style.left = '-100%';
     overlay.style.display = 'none';
+    document.body.classList.remove('no-scroll');
     menuIcon.classList.remove('fa-times');
     menuIcon.classList.add('fa-bars');
+    cartMenu.style.right = '-200%';
 });
 
 menuItems.forEach(item => {
