@@ -358,23 +358,16 @@ body {
 
 .mobile-menu-panel {
     position: fixed;
-    top: 100;
+    top: 0;
+    height: 100vh;
+    margin-top: 92px;
     left: -100%;
     width: 80%;
-    /* Adjust for responsive design */
     max-width: 500px;
-    /* Optional, max width for larger screens */
-    height: 100vh;
-    display: none;
-    overflow-y: scroll;
-    flex-direction: column;
     transition: left 0.3s ease;
+    z-index: 400;
+    overflow-y: auto;
     background-color: white;
-    align-items: flex-start;
-    padding: 1em;
-    /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); */
-    z-index: 300;
-    /* Ensure it appears above other elements */
 }
 
 .mobile-menu-panel .close-btn {
@@ -383,11 +376,19 @@ body {
     padding: 5px;
     cursor: pointer;
 }
-
+.mobile-nav-fixed,
 .mobile-nav-list {
     list-style-type: none;
-    width: 100%;
-    padding: 0;
+    position: relative;
+    text-align: center;
+    overflow-y: auto;
+    font-size: 16px;
+    width: 300px;
+    height: 470px;
+    max-height: 1000px;
+    overflow-y: auto;
+    top: 0;
+    bottom: 0;
 }
 
 .mobile-nav-list li a {
@@ -396,29 +397,12 @@ body {
     /* color: #262626; */
     /* background-color: antiquewhite; */
     display: block;
-    text-transform: uppercase;
     font-size: .75rem;
     font-family: gteesti;
     letter-spacing: 3px;
     padding: 10px;
     cursor: pointer;
     text-transform: uppercase;
-
-    &.centered {
-        &::before {
-            font-size: 17px;
-            float: left;
-            content: "\f104";
-            font-family: 'FontAwesome';
-        }
-    }
-
-    &::before {
-        font-size: 17px;
-        float: right;
-        content: "\f105";
-        font-family: 'FontAwesome';
-    }
 }
 
 .sub-menu {
@@ -471,9 +455,38 @@ body {
 
 .menu-item {
     padding: 16px !important;
-    /* text-align: left; */
     border-bottom: 1px solid #e5e5e5;
-    /* margin: 0 .9375rem; */
+    &.centered {
+        &::before {
+            font-size: 17px;
+            float: left;
+            content: "\f104";
+            font-family: 'FontAwesome';
+        }
+    }
+
+    &::before {
+        font-size: 17px;
+        float: right;
+        content: "\f105";
+        font-family: 'FontAwesome';
+    }
+}
+
+.extend{
+       background-color: #fafafa;
+       border: 0;
+       opacity: 0.8;
+       font-size: 10px !important;
+       letter-spacing: 2px !important;
+       text-transform: none !important;
+
+       &::before {
+        font-size: 17px;
+        float: right;
+        content: "" !important;
+        font-family: 'FontAwesome';
+    }
 }
 
 .mobile-nav-list {
@@ -520,17 +533,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    /* padding: 10px; */
-    /* background-color: #444; */
 }
-
-/* .top-row-left, .top-row-middle, .top-row-right, .bottom-row, .headline{
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 1em;
-} */
 
 .top-row-left,
 .top-row-right,
@@ -544,7 +547,6 @@ body {
 
 .headline {
     padding: 5px;
-    /* background-color: aqua; */
     width: 100%;
 }
 
@@ -699,7 +701,6 @@ body {
 
     .mobile-menu-panel {
         width: 100% !important;
-        height: 100% !important;
     }
 
     .nav-item-text {
