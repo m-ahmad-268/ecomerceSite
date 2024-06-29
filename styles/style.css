@@ -359,7 +359,7 @@ body {
 .mobile-menu-panel {
     position: fixed;
     top: 0;
-    height: 100vh;
+    height: calc(100vh - 92px);
     margin-top: 92px;
     left: -100%;
     width: 80%;
@@ -494,12 +494,14 @@ body {
     width: 100%;
     /* background-color: antiquewhite; */
     padding: 0;
+    height: 100%;
 }
 
 .mobile-nav-list li ul {
     width: 100%;
     padding: 0 !important;
     margin: 0 !important;
+    
 }
 
 .top-row-middle {
