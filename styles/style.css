@@ -362,6 +362,113 @@ body.no-scroll {
     /* Ensure it appears below the mobile menu but above other elements */
 }
 
+.profile {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    padding: 0 1.5rem;
+    bottom: 0;
+    right: -200%;
+    height: 100vh;
+    width: 500px;
+    max-width: 600px;
+    overflow-y: auto;
+    transition: right 0.3s ease;
+    z-index: 400;
+    background-color: white;
+    text-align: left;
+    font-family: 'gteesti-light';
+
+    span {
+        color: black;
+        margin-left: 20px;
+        letter-spacing: 4px;
+    }
+
+    i {
+        color: black;
+    }
+
+    .container {
+        padding-bottom: 3.5rem;
+        border-bottom: solid 1px var(--gray-medium);
+    }
+
+}
+
+.profile-header {
+    margin: 4rem 0;
+    font-size: 1rem;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+
+    span {
+        margin: 0;
+        font-size: 14px;
+        letter-spacing: 2px !important;
+    }
+
+    input {
+        height: 52px;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.reset-btn {
+    span {
+        font-size: .75rem;
+        font-weight: 400;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: .86px;
+        text-transform: lowercase;
+        margin: .5rem 0 !important;
+        padding: .4375rem .3125rem;
+        border-bottom: 1px solid #262626;
+    }
+
+    .chkBox {
+        margin: .5rem 0 !important;
+        font-size: 14px;
+        letter-spacing: .86px;
+        font-weight: 400;
+    }
+}
+
+.profile-last {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-size: 1rem;
+        font-weight: 400;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: .25rem;
+        color: #262626;
+        text-transform: uppercase;
+    }
+
+    span {
+        margin: 0 !important;
+        font-size: 1rem;
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.56;
+        letter-spacing: .6px;
+        color: #262626;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+    }
+}
+
 .cart {
     display: flex;
     flex-direction: column;
@@ -420,11 +527,12 @@ body.no-scroll {
         margin-left: -.1875rem;
     }
 
-    .close-btn {
-        float: right;
-        cursor: pointer;
-        color: #262626;
-    }
+}
+
+.close-btn {
+    float: right;
+    cursor: pointer;
+    color: #262626;
 }
 
 .car-mid {
@@ -826,6 +934,10 @@ body.no-scroll {
     .email-sub-1 {
         margin: 0 !important;
         padding: 0 !important;
+    }
+
+    .profile{
+        display: none;
     }
 
     .cart {

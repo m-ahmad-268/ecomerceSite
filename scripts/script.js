@@ -64,21 +64,36 @@ window.addEventListener('scroll', function () {
 
 const menuIcon = document.getElementById('menu-icon');
 const cartIcon = document.getElementById('cart-icon');
+const userIcon = document.getElementById('user-icon');
 const mobileMenu = document.getElementById('mobile-menu');
 const cartMenu = document.getElementById('cart-menu');
+const userMenu = document.getElementById('user-menu');
 const closeIcon = document.getElementById('close-icon');
+const closeIcon1 = document.getElementById('close-icon-1');
 // const closeButton = document.getElementById('close-btn');
 const overlay = document.getElementById('overlay');
 const menuItems = document.querySelectorAll('.menu-item');
 
 cartIcon.addEventListener('click', function () {
     cartMenu.style.right = '0'; // Open the menu
-    // mobileMenu.style.display = 'flex';
     document.body.classList.add('no-scroll');
     overlay.style.display = 'block';
 
 });
 
+userIcon.addEventListener('click', function () {
+    userMenu.style.right = '0'; // Open the menu
+    document.body.classList.add('no-scroll');
+    overlay.style.display = 'block';
+
+});
+
+closeIcon1.addEventListener('click', function () {
+    overlay.style.display = 'none';
+    document.body.classList.remove('no-scroll');
+    cartMenu.style.right = '-200%';
+    userMenu.style.right = '-200%';
+});
 closeIcon.addEventListener('click', function () {
     // mobileMenu.style.left = '-100%';
     // menuIcon.classList.remove('fa-times');
@@ -86,6 +101,7 @@ closeIcon.addEventListener('click', function () {
     overlay.style.display = 'none';
     document.body.classList.remove('no-scroll');
     cartMenu.style.right = '-200%';
+    userMenu.style.right = '-200%';
 });
 
 menuIcon.addEventListener('click', function () {
@@ -105,11 +121,6 @@ menuIcon.addEventListener('click', function () {
     }
 });
 
-// closeButton.addEventListener('click', function () {
-//     mobileMenu.style.left = '-100%'; // Close the menu
-//     overlay.style.display = 'none';
-// });
-
 overlay.addEventListener('click', function () {
     mobileMenu.style.left = '-100%';
     overlay.style.display = 'none';
@@ -117,6 +128,7 @@ overlay.addEventListener('click', function () {
     menuIcon.classList.remove('fa-times');
     menuIcon.classList.add('fa-bars');
     cartMenu.style.right = '-200%';
+    userMenu.style.right = '-200%';
 });
 
 menuItems.forEach(item => {
