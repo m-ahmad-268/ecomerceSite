@@ -351,13 +351,13 @@ body.no-scroll {
 .overlay {
     display: none;
     position: fixed;
-    top: 150;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     /* background: rgba(0, 0, 0, 0.5); */
     background: #262626;
-    opacity: .9;
+    opacity: .4;
     z-index: 200;
     /* Ensure it appears below the mobile menu but above other elements */
 }
@@ -398,7 +398,7 @@ body.no-scroll {
 }
 
 .profile-header {
-    margin: 4rem 0;
+    margin: 2rem 0 4rem 0;
     font-size: 1rem;
 }
 
@@ -478,11 +478,11 @@ body.no-scroll {
     top: 0;
     padding: 0 1.5rem;
     bottom: 0;
-    /* right: -200%; */
-    right: 0;
+    right: -200%;
+    /* right: 0; */
     height: 100vh;
-    width: 400px;
-    max-width: 500px;
+    width: 100%;
+    max-width: 560px;
     overflow-y: auto;
     transition: right 0.3s ease;
     z-index: 400;
@@ -548,14 +548,17 @@ body.no-scroll {
 
 .cart-item {
     display: flex;
-    flex-direction: row;
+    /* justify-content: space-between; */
     margin-bottom: 15px;
+    width: 100%;
 
     img {
         float: left;
         background-color: #f1f1f1;
         height: 140px;
-        max-width: 90px;
+        max-width: 100px;
+        width: auto;
+        object-fit: cover;
     }
 }
 
@@ -601,6 +604,8 @@ body.no-scroll {
     .value {
         font-size: 16px;
         padding: 5px;
+        color: #000;
+        width: 32px;
     }
 }
 
@@ -952,6 +957,7 @@ body.no-scroll {
         background: white;
         color: black;
         text-align: center;
+        z-index: 400;
     }
 
     .scrolled #logo {
@@ -1007,7 +1013,7 @@ body.no-scroll {
     }
 
     .email-sub {
-        margin-bottom: 0px !important;
+        margin: 0px 15px !important;
     }
 
     .email-sub-1 {
