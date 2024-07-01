@@ -357,7 +357,7 @@ body.no-scroll {
     height: 100%;
     /* background: rgba(0, 0, 0, 0.5); */
     background: #262626;
-    opacity: .4;
+    opacity: .9;
     z-index: 200;
     /* Ensure it appears below the mobile menu but above other elements */
 }
@@ -371,7 +371,7 @@ body.no-scroll {
     bottom: 0;
     right: -200%;
     height: 100vh;
-    width: 500px;
+    width: 100%;
     max-width: 600px;
     overflow-y: auto;
     transition: right 0.3s ease;
@@ -479,10 +479,9 @@ body.no-scroll {
     padding: 0 1.5rem;
     bottom: 0;
     right: -200%;
-    /* right: 0; */
     height: 100vh;
     width: 100%;
-    max-width: 560px;
+    max-width: 600px;
     overflow-y: auto;
     transition: right 0.3s ease;
     z-index: 400;
@@ -517,7 +516,6 @@ body.no-scroll {
     /* display: flex; */
     padding: 40px;
     border-bottom: 1px solid #e5e5e5;
-
     padding: 1.5625rem 0;
 
     .fa-bag-shopping {
@@ -547,15 +545,16 @@ body.no-scroll {
 }
 
 .cart-item {
-    display: flex;
-    /* justify-content: space-between; */
     margin-bottom: 15px;
+    border-bottom: .5px solid rgb(111, 111, 111);
     width: 100%;
+    height: 150px;
 
     img {
         float: left;
         background-color: #f1f1f1;
         height: 140px;
+        background-size: cover;
         max-width: 100px;
         width: auto;
         object-fit: cover;
@@ -565,7 +564,6 @@ body.no-scroll {
 .cart-item-detail {
     display: flex;
     flex-direction: column;
-    float: right;
     padding-left: 20px;
 
     span {
@@ -575,32 +573,36 @@ body.no-scroll {
         text-transform: none;
         color: rgb(111, 111, 111);
     }
+
     .item-price {
         float: right;
         color: black;
         font-size: 14px !important;
-        padding: 30px 0 0 0 !important;
+        padding: 30px 10px 0 0 !important;
     }
+
     .counter-container {
         display: flex;
         border: 1px solid #ccc;
     }
+
     .button {
         border: none;
         color: black;
         cursor: pointer;
         background-color: white;
     }
-    .item-footer{
+
+    .item-footer {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
-    
+
     /* .button:hover {
         background-color: rgb(111, 111, 111);
     } */
-    
+
     .value {
         font-size: 16px;
         padding: 5px;
@@ -678,8 +680,8 @@ body.no-scroll {
     padding: 0;
 }
 
-#mobile-menu{
-     display: none !important;   
+#mobile-menu {
+    display: none !important;
 }
 
 .mobile-menu-panel {
@@ -926,11 +928,15 @@ body.no-scroll {
         padding: 20px;
     }
 
-    #selected-nav-container{
+    #overlay {
+        opacity: .01;
+    }
+
+    #selected-nav-container {
         display: none !important;
     }
-    
-    #sub-nav-container{
+
+    #sub-nav-container {
         display: none !important;
     }
 
@@ -938,9 +944,9 @@ body.no-scroll {
         display: none;
     }
 
-    #mobile-menu{
-        display: flex    !important;   
-   }
+    #mobile-menu {
+        display: flex !important;
+    }
 
     .top-row {
         display: none;
@@ -970,21 +976,17 @@ body.no-scroll {
 }
 
 @media (max-width: 800px) {
-    .email-sub-1 {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    .profile {
-        display: none;
-    }
 
     .cart {
         display: none;
     }
 
-    .email-sub {
-        margin-bottom: 10px !important;
+    .enter-email {
+        gap: .4rem;
+
+        button {
+            width: 400px !important;
+        }
     }
 }
 
@@ -1004,7 +1006,6 @@ body.no-scroll {
 
 @media (max-width: 480px) {
 
-
     #top {
         height: 100vh;
         /* background-color: aqua; */
@@ -1012,16 +1013,8 @@ body.no-scroll {
         /* background-size: contain; / */
     }
 
-    .email-sub {
-        margin: 0px 15px !important;
-    }
-
-    .email-sub-1 {
-        margin: 15px !important;
-    }
-
-    .email-sub input {
-        /* width: inherit !important; */
+    .profile {
+        display: none;
     }
 
     .top-row-middle {
@@ -1032,10 +1025,6 @@ body.no-scroll {
 
     .footer-links-heading.hel {
         text-align: center;
-    }
-
-    .enter-email {
-        gap: .4rem;
     }
 
     .sl-link {
@@ -1147,21 +1136,28 @@ body.no-scroll {
 
 .headline-item {
     opacity: 0;
+    display: none;
+    /* position: relative; */
+    /* transition: opacity 200ms linear; */
+    /* display: none; */
     font-size: 14px;
-    transition: opacity 200ms linear;
+    opacity: 400ms ease-in-out;
     font-weight: normal;
     font-family: "gteesti-light";
     letter-spacing: 0.5px;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.headline-item:last-child {
+/* .headline-item:last-child {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-}
+} */
 
 .headline-item.active {
     opacity: 1;
+    display: block;
+    /* opacity: 0.5; */
 }
 
 .headline-link {
@@ -1570,45 +1566,30 @@ body.no-scroll {
 }
 
 .enter-email {
-    /* align-items: center; */
-    justify-content: center;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    /* align-items: center; */
-}
-
-.email-sub-1 {
-    background-color: black;
-    height: 54px;
-    display: flex;
-    margin-left: -15px;
-    align-items: center;
-    justify-content: center;
-    color: rgb(111, 111, 111);
-
-    span {
-        color: white;
-        font-family: gteesti;
-    }
-}
-
-/* 
-.email-sub input {
-    width: 100%;
-    height: 100%;
-    padding: 0.9rem;
-
-} */
-
-.email-sub {
-    font-size: 16px;
-    width: 100%;
-    height: 54px;
-    font-weight: 700;
     font-family: "gteesti";
-    letter-spacing: 0.15rem;
-    border: 0.8px solid rgb(111, 111, 111);
+
+    input {
+        font-size: 16px;
+        width: 400px;
+        height: 54px;
+        font-weight: 400;
+        padding: 12px 12px 12px 12px;
+        letter-spacing: 0.15rem;
+        border: 0.8px solid rgb(111, 111, 111);
+    }
+
+    button {
+        text-transform: uppercase;
+        color: rgb(255, 255, 255);
+        width: 176px;
+        font-weight: 300;
+        font-size: 12px;
+        background-color: black;
+        height: 54px;
+        letter-spacing: 3px;
+    }
 }
 
 .footer-head {

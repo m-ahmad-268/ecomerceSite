@@ -3,15 +3,15 @@ selectedHeadline = 1
 function toggleHeadline() {
     if (selectedHeadline == 1) {
         document.getElementsByClassName('headline-item')[1].classList.remove('active')
+        document.getElementsByClassName('headline-item')[0].classList.add('active')
         setTimeout(() => {
-            document.getElementsByClassName('headline-item')[0].classList.add('active')
-        }, 400)
+        }, 100)
         selectedHeadline = 0
     } else {
         document.getElementsByClassName('headline-item')[0].classList.remove('active')
+        document.getElementsByClassName('headline-item')[1].classList.add('active')
         setTimeout(() => {
-            document.getElementsByClassName('headline-item')[1].classList.add('active')
-        }, 400)
+        }, 100)
         selectedHeadline = 1
     }
 }
