@@ -37,7 +37,6 @@
                     <span class="nav-item-text flip-text">Newsletter</span>
                 </div>
             </div>
-
             <div class="top-row-right">
                 <div class="nav-item">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -118,15 +117,17 @@
                     <div class="cart-item-detail">
                         <div class="item-header">
                             <span>Down Vest</span>
-                            <i class="fa fa-trash"></i>
+                            <button type="button"><i class="fa fa-trash"></i></button>
                         </div>
                         <span>Color: Lignite Grey</span>
                         <span>Size: 36</span>
                         <span>SKU: 242M0W077855C407802</span>
                         <div class="item-footer">
-                            <span class="add-item">
-                                <i class="fa fa-minus"></i> 1 <i class="fa fa-plus"></i>
-                            </span>
+                            <div class="counter-container">
+                                <button id="decrement" class="button"><i class="fa fa-minus"></i></button>
+                                <div id="value" class="value">0</div>
+                                <button id="increment" class="button"><i class="fa fa-plus"></i></button>
+                            </div>
                             <span class="item-price">
                                 € 5.500,00
                             </span>

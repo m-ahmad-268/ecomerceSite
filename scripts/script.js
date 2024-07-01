@@ -121,6 +121,24 @@ menuIcon.addEventListener('click', function () {
     }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const valueElement = document.getElementById('value');
+    const incrementButton = document.getElementById('increment');
+    const decrementButton = document.getElementById('decrement');
+
+    let currentValue = 0;
+
+    incrementButton.addEventListener('click', () => {
+        currentValue++;
+        valueElement.textContent = currentValue;
+    });
+
+    decrementButton.addEventListener('click', () => {
+        currentValue--;
+        valueElement.textContent = currentValue;
+    });
+});
+
 overlay.addEventListener('click', function () {
     mobileMenu.style.left = '-100%';
     overlay.style.display = 'none';
@@ -134,17 +152,6 @@ overlay.addEventListener('click', function () {
 menuItems.forEach(item => {
     item.addEventListener('click', function (event) {
         event.preventDefault();
-
-
-
-        // Center text
-
-
-        // Show sub-menu if it exists
-        // const subMenu = item.querySelector('.sub-menu');
-        // if (subMenu) {
-        //     subMenu.classList.add('show');
-        // }
 
         const subMenu = this.nextElementSibling;
 
