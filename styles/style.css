@@ -357,7 +357,7 @@ body.no-scroll {
     height: 100%;
     /* background: rgba(0, 0, 0, 0.5); */
     background: #262626;
-    opacity: .9;
+    opacity: .5;
     z-index: 200;
     /* Ensure it appears below the mobile menu but above other elements */
 }
