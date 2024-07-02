@@ -397,6 +397,10 @@ body.no-scroll {
 
 }
 
+#menu-icon {
+    cursor: pointer;
+}
+
 .profile-header {
     margin: 2rem 0 4rem 0;
     font-size: 1rem;
@@ -890,6 +894,7 @@ body.no-scroll {
 .top-row-right {
     justify-content: flex-end;
     float: right;
+    align-items: center;
     /* margin-right: 3rem; */
 }
 
@@ -926,6 +931,9 @@ body.no-scroll {
     .top-row-right {
         display: flex !important;
         padding: 20px;
+        i {
+            color: #000;
+        }
     }
 
     #overlay {
