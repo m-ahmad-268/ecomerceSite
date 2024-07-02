@@ -151,7 +151,7 @@ overlay.addEventListener('click', function () {
 
 menuItems.forEach(item => {
     item.addEventListener('click', function (event) {
-        event.preventDefault();
+        // event.preventDefault();
 
         const subMenu = this.nextElementSibling;
 
