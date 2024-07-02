@@ -357,7 +357,7 @@ body.no-scroll {
     height: 100%;
     /* background: rgba(0, 0, 0, 0.5); */
     background: #262626;
-    opacity: .9;
+    opacity: .5;
     z-index: 200;
     /* Ensure it appears below the mobile menu but above other elements */
 }
@@ -395,6 +395,10 @@ body.no-scroll {
         border-bottom: solid 1px var(--gray-medium);
     }
 
+}
+
+#menu-icon {
+    cursor: pointer;
 }
 
 .profile-header {
@@ -890,6 +894,7 @@ body.no-scroll {
 .top-row-right {
     justify-content: flex-end;
     float: right;
+    align-items: center;
     /* margin-right: 3rem; */
 }
 
@@ -926,6 +931,9 @@ body.no-scroll {
     .top-row-right {
         display: flex !important;
         padding: 20px;
+        i {
+            color: #000;
+        }
     }
 
     #overlay {
