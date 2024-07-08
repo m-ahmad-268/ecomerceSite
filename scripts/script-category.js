@@ -1,13 +1,13 @@
 selectedHeadline = 1
 
-function toggleHeadline(){
-    if(selectedHeadline == 1){
+function toggleHeadline() {
+    if (selectedHeadline == 1) {
         document.getElementsByClassName('headline-item')[1].classList.remove('active')
         setTimeout(() => {
             document.getElementsByClassName('headline-item')[0].classList.add('active')
         }, 400)
         selectedHeadline = 0
-    }else{
+    } else {
         document.getElementsByClassName('headline-item')[0].classList.remove('active')
         setTimeout(() => {
             document.getElementsByClassName('headline-item')[1].classList.add('active')
@@ -16,65 +16,197 @@ function toggleHeadline(){
     }
 }
 
-window.addEventListener('scroll', function() {
+const closeIcon1 = document.getElementById('close-icon1');
+const closeIcon2 = document.getElementById('close-icon2');
+const showNavFilter = document.getElementById('showNavFilter');
+const showSortBy = document.getElementById('showSortBy');
+const toogleBtn = document.querySelectorAll('#showFilterSec .filter button');
+var filterMenu = document.getElementById('filter-menu');
+var sortMenu = document.getElementById('sort-menu');
+const menuItems = document.querySelectorAll('.menu-item');
+
+menuItems.forEach(item => {
+    item.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        const subMenu = this.nextElementSibling;
+
+        if (subMenu && subMenu.classList.contains('sub-menu')) {
+            if (subMenu.style.display === 'block') {
+                item.classList.remove('centered-Cat');
+                subMenu.style.display = 'none';
+                menuItems.forEach(i => {
+                    i.style.display = 'block';
+                });
+            } else {
+                // Hide all menu items
+                // menuItems.forEach(i => {
+                //     if (i !== item) {
+                //         i.style.display = 'none';
+                //     }
+                // });
+                subMenu.style.display = 'block';
+                item.classList.add('centered-Cat');
+            }
+        }
+
+        // Add close button
+        // const closeSubMenuBtn = document.createElement('button');
+        // closeSubMenuBtn.textContent = 'Close';
+        // closeSubMenuBtn.className = 'close-submenu-btn';
+        // item.insertBefore(closeSubMenuBtn, item.firstChild);
+
+        // Close sub-menu button functionality
+        // closeSubMenuBtn.addEventListener('click', function (e) {
+        //     e.stopPropagation();
+        //     // Remove close button
+        //     item.removeChild(closeSubMenuBtn);
+        //     // Remove centered text class
+        //     item.classList.remove('centered');
+        //     // Hide sub-menu
+        //     if (subMenu) {
+        //         subMenu.classList.remove('show');
+        //     }
+        //     // Show all menu items again
+        //     menuItems.forEach(i => {
+        //         i.style.display = 'block';
+        //     });
+        // });
+    });
+});
+
+showNavFilter.addEventListener('click', function () {
+    toggleFilter();
+
+});
+
+showSortBy.addEventListener('click', function () {
+    sortMenu.classList.remove('show');
+});
+
+function hideNavbar() {
+    filterMenu.classList.add('show')
+    sortMenu.classList.add('show')
+    toogleBtn[0].innerHTML = 'show Filters <i class="fa-solid fa-chevron-right"></i>';
+}
+
+closeIcon1.addEventListener('click', function () {
+    hideNavbar();
+});
+closeIcon2.addEventListener('click', function () {
+    hideNavbar();
+});
+
+window.addEventListener('scroll', function () {
     const verticalScrollPosition = window.scrollY
     var flipTexts = document.getElementsByClassName('flip-text')
     var bottomRowNav = document.getElementById('bottom-row-nav')
-    if(verticalScrollPosition >= 10){
+    if (verticalScrollPosition >= 10) {
         document.getElementById('logo').style.display = 'none'
-        
-        for(let i=0; i<flipTexts.length; i++){
+
+        for (let i = 0; i < flipTexts.length; i++) {
             flipTexts[i].style.display = 'none'
         }
 
         bottomRowNav.style.marginTop = '-2.75rem'
 
-    }else{
+    } else {
         document.getElementById('logo').style.display = 'block'
-        
-        for(let i=0; i<flipTexts.length; i++){
+
+        for (let i = 0; i < flipTexts.length; i++) {
             flipTexts[i].style.display = 'block'
         }
 
         bottomRowNav.style.marginTop = '0'
-        
+
     }
 })
 
-function loadProduct(){
+function toggleFilter() {
+
+    if (filterMenu.classList && filterMenu.classList?.length && filterMenu.classList.length > 1) {
+        toogleBtn[0].innerHTML = 'Hide Filters <i class="fa-solid fa-chevron-left"></i>';
+        filterMenu.classList.remove('show');
+    } else {
+        toogleBtn[0].innerHTML = 'show Filters <i class="fa-solid fa-chevron-right"></i>';
+        filterMenu.classList.add('show')
+    }
+    // filterMenu.classList && filterMenu.classList?.length &&
+    //     filterMenu.classList.length > 1 ? filterMenu.classList.remove('show') : filterMenu.classList.add('show');
+}
+
+function setGrid(layout) {
+
+}
+
+function loadProduct() {
     window.location = './product.html'
 }
 
-function girdSelected(type){
+document.getElementById('padding-toggle1').addEventListener('change', function () {
+    const products = document.querySelectorAll('#product-grid .prod');
+    products.forEach(product => {
+        product.classList.toggle('no-padding');
+    });
+});
+document.getElementById('padding-toggle').addEventListener('change', function () {
+    const products = document.querySelectorAll('#product-grid .prod');
+    products.forEach(product => {
+        product.classList.toggle('no-padding');
+    });
+});
+
+function girdSelected(type) {
+    // const productGrid = document.getElementById('product-grid');
     var twoXGrid = document.getElementById('2x2-grid')
     var threeXGrid = document.getElementById('3x3-grid')
-    var categoryProducts = document.getElementById('category-products')
+    const products = document.querySelectorAll('#product-grid .prod');
 
-    if(type === '3x3'){
-        twoXGrid.src = './images/icons/grid-small.png'
-        threeXGrid.src = './images/icons/grid-selected.png'
-        categoryProducts.classList.remove('small')
-    }
-    if(type === '2x2'){
+    if (type === '2x2') {
+        // productGrid.classList.remove('grid-3x3');
+        // productGrid.classList.add('grid-2x2');
+        products.forEach(product => {
+            product.classList.remove('grid-3x3');
+            product.classList.add('grid-2x2');
+        });
         twoXGrid.src = './images/icons/grid-small-selected.png'
         threeXGrid.src = './images/icons/grid.png'
-        categoryProducts.classList.add('small')
+    } else if (type === '3x3') {
+        products.forEach(product => {
+            product.classList.remove('grid-2x2');
+            product.classList.add('grid-3x3');
+        });
+        twoXGrid.src = './images/icons/grid-small.png'
+        threeXGrid.src = './images/icons/grid-selected.png'
+        // productGrid.classList.remove('grid-2x2');
+        // productGrid.classList.add('grid-3x3');
     }
+
+    // var categoryProducts = document.getElementById('category-products')
+
+    // if (type === '3x3') {
+
+    //     categoryProducts.classList.remove('small')
+    // }
+    // if (type === '2x2') {
+    //     
+    //     categoryProducts.classList.add('small')
+    // }
 
 }
 
-function washSelectedNavContainer(){
+function washSelectedNavContainer() {
     var selectedNavContainer = document.getElementById('selected-nav-container')
     selectedNavContainer.classList.remove('active')
     document.getElementsByClassName('headline')[0].classList.remove('disabled')
-    document.getElementById('selected-nav-container').classList.remove('index1')    
+    document.getElementById('selected-nav-container').classList.remove('index1')
     selectedNavContainer.innerHTML = ''
     document.getElementById('sub-nav-container').classList.remove('active')
     document.getElementById('sub-nav-container').innerHTML = ''
 
 }
 
-function populateSelectedNavContainer(index){
+function populateSelectedNavContainer(index) {
     var selectedNavContainer = document.getElementById('selected-nav-container')
     selectedNavContainer.classList.add('active')
     selectedNavContainer.classList.remove('text-items')
@@ -85,7 +217,7 @@ function populateSelectedNavContainer(index){
 
     selectedNavContainer.style.opacity = 0
 
-    if(index == 1){        
+    if (index == 1) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.innerHTML = `
         <div class="nav-container-item">
@@ -110,7 +242,7 @@ function populateSelectedNavContainer(index){
         </div>
         `
         var navContainerItems = document.getElementsByClassName('nav-container-item')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -119,7 +251,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 2){
+    if (index == 2) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.classList.add('text-items')
         selectedNavContainer.innerHTML = `
@@ -193,7 +325,7 @@ function populateSelectedNavContainer(index){
         `
 
         var navContainerItems = document.getElementsByClassName('nav-container-women')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -208,7 +340,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 3){
+    if (index == 3) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.classList.add('text-items')
         selectedNavContainer.innerHTML = `
@@ -276,7 +408,7 @@ function populateSelectedNavContainer(index){
         `
 
         var navContainerItems = document.getElementsByClassName('nav-container-women')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -291,7 +423,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 4){
+    if (index == 4) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.innerHTML = `
         <div class="nav-container-fragrances">
@@ -308,7 +440,7 @@ function populateSelectedNavContainer(index){
         </div>
         `
         var navContainerItems = document.getElementsByClassName('nav-container-fragrances')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -317,7 +449,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 5){
+    if (index == 5) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.innerHTML = `
         <div class="nav-container-eyewear">
@@ -330,7 +462,7 @@ function populateSelectedNavContainer(index){
         </div>
         `
         var navContainerItems = document.getElementsByClassName('nav-container-eyewear')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -339,7 +471,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 6){
+    if (index == 6) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.classList.add('text-items')
         selectedNavContainer.innerHTML = `
@@ -400,7 +532,7 @@ function populateSelectedNavContainer(index){
         `
 
         var navContainerItems = document.getElementsByClassName('nav-container-women')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -415,7 +547,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 7){        
+    if (index == 7) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.innerHTML = `
         <div class="nav-container-item">
@@ -440,7 +572,7 @@ function populateSelectedNavContainer(index){
         </div>
         `
         var navContainerItems = document.getElementsByClassName('nav-container-item')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -454,7 +586,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 8){
+    if (index == 8) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.classList.add('text-items')
         selectedNavContainer.innerHTML = `
@@ -501,7 +633,7 @@ function populateSelectedNavContainer(index){
         `
 
         var navContainerItems = document.getElementsByClassName('nav-container-women')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -516,7 +648,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 9){        
+    if (index == 9) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.innerHTML = `
         <div class="nav-container-stories">
@@ -541,7 +673,7 @@ function populateSelectedNavContainer(index){
             <a href="#" class="central-link-anchor">DISCOVER ALL THE STORIES</a>
         `
         var navContainerItems = document.getElementsByClassName('nav-container-stories')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -555,7 +687,7 @@ fadeInterval = '700ms'
 f_Interval = 250
 interpolationFunction = 'cubic-bezier(1,0,.78,1)'
 
-function resetBg(){
+function resetBg() {
     document.getElementById('bg-element-sl').style.animation = `fadeOut ${fadeInterval} ${interpolationFunction} 1 forwards`
     setTimeout(() => {
         document.getElementById('bg-element-sl').src = './images/both-sl.jpg';
@@ -565,19 +697,19 @@ function resetBg(){
     }, f_Interval)
 }
 
-function changeBg(index){
+function changeBg(index) {
     document.getElementById('bg-element-sl').style.animation = `fadeOut ${fadeInterval} ${interpolationFunction} 1 forwards`
     setTimeout(() => {
-        if(index == 1){
+        if (index == 1) {
             document.getElementById('bg-element-sl').src = './images/women-sl.jpg'
         }
-        if(index == 2){
+        if (index == 2) {
             document.getElementById('bg-element-sl').src = './images/men-sl.jpg'
         }
-        if(index == 3){
+        if (index == 3) {
             document.getElementById('bg-element-sl').src = './images/kids-sl.jpg'
         }
-        if(index == 4){
+        if (index == 4) {
             document.getElementById('bg-element-sl').src = './images/lifestyle-sl.jpg'
         }
     }, f_Interval)
