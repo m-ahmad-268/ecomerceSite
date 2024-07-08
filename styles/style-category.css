@@ -260,6 +260,7 @@
 .sort-nav-list li {
     padding: 40px;
 }
+
 .sort-nav-list li {
     text-decoration: none;
     color: black;
@@ -267,7 +268,8 @@
     /* font-size: .75rem; */
     /* font-family: gteesti; */
     cursor: pointer;
-    span{
+
+    span {
         letter-spacing: 1px;
     }
 
@@ -317,8 +319,13 @@
     }
 }
 
-.product-title{
-  padding-top: 8px;
+.product-title,
+.product-price {
+    padding-left: 10px;
+}
+
+.product-title {
+    padding-top: 8px;
 }
 
 .prod {
