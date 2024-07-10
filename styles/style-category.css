@@ -146,7 +146,6 @@
 .productGrid {
     display: flex;
     flex-wrap: wrap;
-    background-color: aqua;
 }
 
 .filter-men {
@@ -156,12 +155,27 @@
 
 
 .wishlist {
+    z-index: 1;
     position: absolute;
     top: 1rem;
     right: 1rem;
-    padding: 1rem;
-    border-radius: 50%;
+    display: inline-block;
     background-color: rgba(255, 255, 255, .7);
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+        font-size: 9px;
+    }
+}
+
+#activeWall {
+    display: flex;
+    flex-direction: column;
 }
 
 .show {
@@ -169,7 +183,8 @@
 }
 
 .fil {
-    max-width: 400px;
+    max-width: 350px;
+    width: 100%;
     flex: 0 0 30%;
 }
 
@@ -180,20 +195,130 @@
 }
 
 #product-grid {
-    /* display: flex;
-    flex-wrap: wrap; */
-    /* margin: 10px; */
-    padding: 10px;
     display: flex;
-    gap: 1rem;
-    /* background-color: antiquewhite; */
 }
 
-.prod-image {
+/* .prod-image {
     max-height: auto;
     max-width: 100%;
     background-size: cover;
     object-fit: cover;
+} */
+
+.image-container {
+    background-color: antiquewhite;
+    position: relative;
+    display: block;
+}
+
+.prod-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.selectSize {
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    height: 60%;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Light background with transparency */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: flex-start; */
+    font-size: 1em;
+    color: #000;
+    /* Text color */
+    padding: 10px;
+    box-sizing: border-box;
+    /* display: none; */
+    transform: translateY(100%);
+    /* Start from hidden position */
+    opacity: 0;
+    /* Start hidden */
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    /* Smooth transition */
+
+    .sizeTitle {
+        /* justify-content: center; */
+        align-items: flex-end;
+        padding: 20px;
+        flex: 1;
+        display: flex;
+        /* flex: 1; */
+    }
+
+    button {
+        font-family: 'gteesti-light';
+        font-weight: normal;
+        font-size: .70rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+}
+
+.selectSize.show {
+    transform: translateY(0);
+    /* Move to visible position */
+    opacity: 1;
+    /* Fully visible */
+}
+
+.size-buttons {
+    /* flex: 1; */
+    /* display: flex; */
+    padding-left: 25px;
+    height: 40%;
+    margin-bottom: 20px;
+    border-bottom: 1px dotted lightgrey;
+}
+
+.size-button {
+    font-size: .7rem;
+    letter-spacing: 1px;
+    font-family: 'Gteesti-light';
+    margin: 0 26px 10px 0;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.size-button.addBorder {
+    border: 1px solid black;
+}
+
+.add-to-cart {
+    width: 100%;
+    /* margin-left: 20px; */
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #333;
+}
+
+/* .wishlist {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+} */
+
+.mobile-filter-sec {
+    display: flex;
+    justify-content: center;
 }
 
 #MobileFilterSec {
@@ -322,6 +447,7 @@
 .product-title,
 .product-price {
     padding-left: 10px;
+    z-index: 11;
 }
 
 .product-title {
@@ -329,15 +455,15 @@
 }
 
 .prod {
-    /* Adjust to fit 3 images per row */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* align-items: center; */
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 6px;
     border-radius: 5px;
     position: relative;
+    /* align-items: center; */
+    /* Adjust to fit 3 images per row */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
 .no-padding {
@@ -390,6 +516,45 @@
 
 }
 
+/* Hide the default checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Custom checkbox style */
+input[type="checkbox"]+label {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 1px solid black;
+    /* border-radius: 4px; */
+    cursor: pointer;
+    position: relative;
+}
+
+.wallIcon {
+    display: flex;
+    height: 20px;
+    width: 20px;
+    border: 1px solid black;
+}
+
+.wallIcon.show{
+    background-color: black;
+}
+
+/* Checkmark style */
+input[type="checkbox"]:checked+label::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border-radius: 2px;
+}
+
 .sub-menu li {
     margin: 0.5em 0 9px -25px !important;
     padding-bottom: 10px;
@@ -398,6 +563,47 @@
     color: rgb(111, 111, 111);
     font-size: 14px;
 }
+
+.img-wall-overlay {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    /* text-align: center; */
+    /* background-color: #262626; */
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+
+    button {
+        background-color: #fff;
+        transition: all .15s ease-in;
+        display: block;
+        width: 60%;
+        text-align: center;
+        font-family: gteesti;
+        font-weight: 300;
+        color: #262626;
+        font-size: 1rem;
+        letter-spacing: .25rem;
+        padding: .6875rem 1.875rem;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        border: 1px solid #262626;
+        /* background: 0 0; */
+    }
+}
+
+.img-wall-overlay:hover {
+    transition: opacity 100ms;
+    opacity: 1;
+}
+
+
 
 .products-control {
     margin: 2rem 1rem;
@@ -426,6 +632,16 @@
 .view-more:hover {
     background-color: #e5e5e5;
     border-color: #e5e5e5;
+}
+
+@media (max-width: 1200px) {
+    .selectSize {
+        display: none;
+    }
+
+    #menu-icon {
+        display: none;
+    }
 }
 
 @media (max-width: 950px) {

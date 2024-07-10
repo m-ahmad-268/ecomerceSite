@@ -16,14 +16,54 @@ function toggleHeadline() {
     }
 }
 
+const AddtoWish = document.getElementById('AddtoWish');
+const AddtoWish1 = document.getElementById('AddtoWish1');
+const AddtoWish2 = document.getElementById('AddtoWish2');
+const closeIcon = document.getElementById('close-icon');
 const closeIcon1 = document.getElementById('close-icon1');
 const closeIcon2 = document.getElementById('close-icon2');
 const showNavFilter = document.getElementById('showNavFilter');
 const showSortBy = document.getElementById('showSortBy');
+const cartMenu = document.getElementById('cart-menu');
+const overlay = document.getElementById('overlay');
 const toogleBtn = document.querySelectorAll('#showFilterSec .filter button');
 var filterMenu = document.getElementById('filter-menu');
 var sortMenu = document.getElementById('sort-menu');
+var activeWall = document.getElementById('activeWall');
 const menuItems = document.querySelectorAll('.menu-item');
+const selectSize = document.querySelectorAll('.selectSize');
+const menuIcon = document.getElementById('menu-icon');
+const wallIcon = document.getElementById('wallIcon');
+const radios = document.querySelectorAll('input[type="radio"]');
+
+radios.forEach(radio => {
+    radio.addEventListener('change', () => {
+        radios.forEach(r => {
+            if (r !== radio) {
+                r.checked = false;
+            }
+        });
+    });
+});
+
+document.querySelectorAll('.size-button').forEach(button => {
+    button.addEventListener('click', function () {
+        document.querySelectorAll('.size-button').forEach(btn => btn.classList.remove('addBorder'));
+        this.classList.add('addBorder');
+    });
+});
+
+menuIcon.addEventListener('click', function () {
+    if (this.classList.contains('fa-plus')) {
+        this.classList.remove('fa-plus');
+        selectSize[0].classList.add('show')
+        this.classList.add('fa-minus');
+    } else {
+        this.classList.remove('fa-minus');
+        selectSize[0].classList.remove('show')
+        this.classList.add('fa-plus');
+    }
+});
 
 menuItems.forEach(item => {
     item.addEventListener('click', function (event) {
@@ -85,11 +125,44 @@ showSortBy.addEventListener('click', function () {
 });
 
 function hideNavbar() {
-    filterMenu.classList.add('show')
-    sortMenu.classList.add('show')
+    filterMenu.classList.add('show');
+    sortMenu.classList.add('show');
+    cartMenu.style.right = '-200%';
+    overlay.style.display = 'none';
     toogleBtn[0].innerHTML = 'show Filters <i class="fa-solid fa-chevron-right"></i>';
 }
 
+function addToWishlistToggle(activeWish) {
+    const icon = activeWish.querySelector('i');
+    if (icon.classList.contains('fa-regular')) {
+        icon.classList.remove('fa-regular');
+        icon.classList.add('fa', 'fa-heart');
+    } else {
+        icon.classList.remove('fa');
+        icon.classList.add('fa-regular', 'fa-heart');
+    }
+}
+
+function addToCart() {
+    cartMenu.style.right = '0';
+    overlay.style.display = 'block';
+}
+
+overlay.addEventListener('click', function () {
+    hideNavbar();
+});
+AddtoWish.addEventListener('click', function () {
+    addToWishlistToggle(this);
+});
+AddtoWish1.addEventListener('click', function () {
+    addToWishlistToggle(this);
+});
+AddtoWish2.addEventListener('click', function () {
+    addToWishlistToggle(this);
+});
+closeIcon.addEventListener('click', function () {
+    hideNavbar();
+});
 closeIcon1.addEventListener('click', function () {
     hideNavbar();
 });
@@ -143,17 +216,45 @@ function loadProduct() {
     window.location = './product.html'
 }
 
-document.getElementById('padding-toggle1').addEventListener('change', function () {
+
+function setWallActive(value) {
     const products = document.querySelectorAll('#product-grid .prod');
     products.forEach(product => {
-        product.classList.toggle('no-padding');
+        value ?
+        product.classList.add('no-padding') : product.classList.remove('no-padding'); 
     });
+    document.querySelectorAll('.prod').forEach(function (prod) {
+        const overlay = prod.querySelector('.img-wall-overlay');
+        const activeWall = prod.querySelector('#activeWall');
+        if (activeWall.style.display === '' || activeWall.style.display === 'flex') {
+            activeWall.style.display = 'none';
+            overlay.style.display = 'flex';
+        } else {
+            overlay.style.display = 'none';
+            activeWall.style.display = 'flex';
+        }
+        // overlay.addEventListener('click', function() {
+        //     if (activeWall) {
+        //         activeWall.style.display = 'none';
+        //     }
+        // });
+    });
+}
+wallIcon.addEventListener('click', function () {
+    if(wallIcon.classList.length == 1){
+        wallIcon.classList.add('show')
+        setWallActive(true);
+    }else{
+        wallIcon.classList.remove('show');
+        setWallActive(false);
+    }
+});
+
+document.getElementById('padding-toggle1').addEventListener('change', function () {
+    setWallActive();
 });
 document.getElementById('padding-toggle').addEventListener('change', function () {
-    const products = document.querySelectorAll('#product-grid .prod');
-    products.forEach(product => {
-        product.classList.toggle('no-padding');
-    });
+    setWallActive();
 });
 
 function girdSelected(type) {
