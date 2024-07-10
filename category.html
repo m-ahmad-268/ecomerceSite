@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,256 +10,334 @@
     <link rel="icon" type="image/x-icon" href="images/thumbnail.jpeg">
     <script src="https://kit.fontawesome.com/cc10e75e99.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./scripts/script-category.js" defer></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <section id="navigation" class="light">
-        <div class="top-row">
-            <div class="top-row-left">
-                <div class="nav-item">
-                    <i class="fa-solid fa-globe"></i>
-                    <span class="nav-item-text flip-text">Italy</span>
-                </div>
-                <div class="nav-item">
-                    <i class="fa-solid fa-headset"></i>
-                    <span class="nav-item-text flip-text">Contact Us</span>
-                </div>
-                <div class="nav-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span class="nav-item-text flip-text">Boutique</span>
-                </div>
-                <div class="nav-item">
-                    <i class="fa-solid fa-phone-flip"></i>
-                    <span class="nav-item-text flip-text">+39 075 886 0497</span>
-                </div>
-                <div class="nav-item">
-                    <i class="fa-regular fa-envelope"></i>
-                    <span class="nav-item-text flip-text">Newsletter</span>
-                </div>
-            </div>
-           
-            <div class="top-row-right">
-                <div class="nav-item">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-                <div class="nav-item">
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="nav-item">
-                    <i class="fa-regular fa-user"></i>
-                </div>
-                <div class="nav-item">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                </div>
-            </div>
-        </div>
-        <div class="top-row-middle">
-            <span class="logo dark" id="logo"><img src="./images/logo-white.svg"/></span>
-        </div>
-        <div class="bottom-row br" id="bottom-row-nav">
-            <div class="nav-item">
-                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(1)">NEW ARRIVALS</span>
-            </div>
-            <div class="nav-item">
-                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(2)">WOMEN</span>
-            </div>
-            <div class="nav-item">
-                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(3)">MEN</span>
-            </div>
-            <div class="nav-item">
-                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(4)">FRAGRANCES</span>
-            </div>
-            <div class="nav-item">
-                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(5)">EYE WEAR</span>
-            </div>
-            <div class="nav-item">
-                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(6)">KIDS</span>
-            </div>
-            <div class="nav-item">
-                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(7)">GIFTS</span>
-            </div>
-            <div class="nav-item">
-                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(8)">LIFESTYLE</span>
-            </div>
-            <div class="nav-item">
-                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(9)">STORIES</span>
-            </div>
-        </div>
-        <div class="selected-nav-container" id="selected-nav-container" onmouseleave="washSelectedNavContainer()"></div>
-        <div class="sub-nav-container" id="sub-nav-container"></div>
-        <div class="gap"></div>
-        <div class="headline">
-            <button class="button-control" onclick="toggleHeadline()">
-                <i class="fa-solid fa-chevron-left"></i>
-            </button>
-            <div class="headline-text-content">
-                <span class="headline-item active">Get the latest updates by subscribing to our <a class="headline-link">Newsletter</a></span>
-                <span class="headline-item">Book an <a class="headline-link">appointment</a> to our Boutiques</span>
-            </div>
-            <button class="button-control" onclick="toggleHeadline()">
-                <i class="fa-solid fa-chevron-right"></i>
-            </button>
-        </div>
+
+<body class="category-page">
+    <section
+        style="background-color: rgb(210, 231, 231); height: 20vh; display: flex; justify-content: center; align-items: center; text-align: center;">
+        <h2>Add Header section here</h2>
+    </section>
+    <section class="category-nav-top-row">
+        <a class="visited-link">Women</a>
+        <span class="visited-link">/</span>
+        <a class="visited-link">Ready to Wear</a>
+        <span class="visited-link">/</span>
+        <a class="unvisited-link">Coats & Jackets</a>
     </section>
     <section id="category-nav-area">
-        <div class="category-nav-top-row">
-            <a class="visited-link">Women</a>
-            <span class="visited-link">/</span>
-            <a class="visited-link">Ready to Wear</a>
-            <span class="visited-link">/</span>
-            <a class="unvisited-link">Coats & Jackets</a>
+        <span class="middle-category-heading">Coats & Jackets</span>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 middle-category-sub-text">
+                <span>Coats and Overcoats, sporty Jackets, Leather Jackets and lightweight
+                    Down Jackets.Elegant silhouettes and refined materials accompany the women's outerwear line every
+                    season.</span>
+            </div>
         </div>
-        <div class="category-nav-middle-row">
-            <span class="middle-category-heading">Coats & Jackets</span>
-            <span class="middle-category-sub-text">Coats and Overcoats, sporty Jackets, Leather Jackets and lightweight Down Jackets.</span>
-            <span class="middle-category-sub-text">Elegant silhouettes and refined materials accompany the women's outerwear line</span>
-            <span class="middle-category-sub-text">every season.</span>
+    </section>
+    <div class="row borderd m-2" id="MobileFilterSec">
+        <div class="mobile-filter-sec">
+            <span>WALL</span>
+            <span class="wallIcon" id="wallIcon"></span>
+            <span>GRID</span>
+            <span class="box"><img src="./images/icons/grid-small-selected.png" class="selection-icons"
+                    onclick="girdSelected('2x2')" /></span>
+
         </div>
-        <div class="category-nav-bottom-row">
-            <div class="bottom-left">
-                <span class="filter">Show Filters</span>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <div class="cart" id="cart-menu">
+        <div class="cart-header">
+            <i class="fa-solid fa-bag-shopping float-left"></i>
+            <span class="float-left">Your Selection (1)</span>
+            <div class="close-btn">
+                <i class="fa-solid fa-times" id="close-icon"></i>
+            </div>
+        </div>
+
+        <div class="car-mid">
+            <div class="cart-item">
+                <img src="images/exclusive-01.jpeg" alt="PayPal Logo">
+                <div class="cart-item-detail">
+                    <div class="item-header">
+                        <span>Down Vest</span>
+                        <button type="button"><i class="fa fa-trash"></i></button>
+                    </div>
+                    <span>Color: Lignite Grey</span>
+                    <span>Size: 36</span>
+                    <span>SKU: 242M0W077855C407802</span>
+                    <div class="item-footer">
+                        <div class="counter-container">
+                            <button id="decrement" class="button"><i class="fa fa-minus"></i></button>
+                            <div id="value" class="value">0</div>
+                            <button id="increment" class="button"><i class="fa fa-plus"></i></button>
+                        </div>
+                        <span class="item-price">
+                            € 5.500,00
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="totalAmount">
+            <span class="float-left">Subtotal</span>
+            <span class="float-right p-0 m-0">€ 5.500,00</span>
+        </div>
+
+        <div class="button-content">
+            <div class="cart-btn">
+                <button class="cartBtn" type="button">Go to Cart</button>
+            </div>
+            <div class="checkout-text">
+                or proceed with quick payment
+            </div>
+            <div class="payPal-btn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal Logo">
+            </div>
+            <div class="btn-last-stat">
+                The gift option is not available with Express Checkout
+            </div>
+        </div>
+    </div>
+    <div class="row borderd m-2" id="showFilterSec">
+        <div class="col-md-4">
+            <div class="filter">
                 <button class="button-control dark" onclick="toggleFilter()">
-                    <i class="fa-solid fa-chevron-right"></i>
+                    Show Filters <i class="fa-solid fa-chevron-right"></i>
                 </button>
             </div>
-            <div class="bottom-right">
-                <span class="filter">Sort By:</span>
+        </div>
+        <div class="col-md-8">
+            <div class="right-bottom float-right">
+                <span>Sort By:</span>
                 <select id="selection-preference">
-                    <!-- <i class="fa-solid fa-sort-down"></i> -->
                     <option value="NA" selected class="option-selected">Select...</option>
                     <option value="price-lth" class="option-selected">Price: Low to High</option>
                     <option value="price-htl" class="option-selected">Price: High to Low</option>
                     <option value="new" class="option-selected">New In</option>
                 </select>
-                <!-- <span class="filter">WALL</span>
-                <i class="fa-regular fa-square"></i> -->
-                <span class="filter">GRID</span>
-                <span class="box"><img src="./images/icons/grid-small.png" class="selection-icons" id="2x2-grid" onclick="girdSelected('2x2')" /></span>
-                <span class="box"><img src="./images/icons/grid-selected.png" class="selection-icons" id="3x3-grid" onclick="girdSelected('3x3')" /></span>
+                <!-- <span>WALL</span>
+                <input class="mt-30" type="checkbox" id="padding-toggle"> -->
+                <span>GRID</span>
+                <span class="box"><img src="./images/icons/grid-small.png" class="selection-icons" id="2x2-grid"
+                        onclick="girdSelected('2x2')" /></span>
+                <span class="box"><img src="./images/icons/grid-selected.png" class="selection-icons" id="3x3-grid"
+                        onclick="girdSelected('3x3')" /></span>
             </div>
         </div>
-    </section>
-    <section id="category-products">
-        <div class="product">
-            <span class="wishlist"><i class="fa-regular fa-heart"></i></span>
-            <img class="product-image" src="./images/category/01.jpg"/>
-            <span class="product-title">Double-knit cardigan</span>
-            <span class="product-price">€ 6.500,00</span>
+    </div>
+    <!-- <section id="category-products"> -->
+    <div id="sort-menu" class="show">
+        <ul class="sort-nav-list">
+            <li class="menu-item-1">
+                <span>Sort BY:</span>
+                <div class="close-btn">
+                    <i class="fa-solid fa-times" id="close-icon1"></i>
+                </div>
+            </li>
+            <li>
+                <input type="radio" checked> <span> Price: Low to High</span>
+            </li>
+            <li>
+                <input type="radio"> <span> Price: High to Low</span>
+            </li>
+            <li>
+                <input type="radio"> <span> New In</span>
+            </li>
+        </ul>
+    </div>
+    <section id="product-grid">
+        <div class="fil show" id="filter-menu">
+            <ul class="filter-nav-list">
+                <li class="menu-item-1">
+                    <span>Filter BY:</span>
+                    <div class="close-btn">
+                        <i class="fa-solid fa-times" id="close-icon2"></i>
+                    </div>
+                </li>
+                <li>
+                    <a class="menu-item">Categories</a>
+                    <ul class="sub-menu">
+                        <li><input type="checkbox" id="extended-toggle"> Blazer ( 1 )</li>
+                        <li><input type="checkbox" id="extended-toggle"> Coat ( 5 ) </li>
+                        <li><input type="checkbox" id="extended-toggle"> Down Vest ( 6 )</li>
+                        <li><input type="checkbox" id="extended-toggle"> Leather ( 9 )</li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="menu-item">Color</a>
+                    <ul class="sub-menu">
+                        <li><input type="checkbox" id="extended-toggle"> Black ( 12 )</li>
+                        <li><input type="checkbox" id="extended-toggle"> Blue ( 3 ) </li>
+                        <li><input type="checkbox" id="extended-toggle"> Brown ( 1 )</li>
+                        <li><input type="checkbox" id="extended-toggle"> Grey ( 4 )</li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="menu-item">Collection</a>
+                    <ul class="sub-menu">
+                        <li><input type="checkbox" id="extended-toggle"> Spring-Summer ( 1 )</li>
+                        <li><input type="checkbox" id="extended-toggle"> Autumn-Winter ( 4 )</li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="menu-item">Size</a>
+                    <ul class="sub-menu">
+                        <li><input type="checkbox" id="extended-toggle"> XXS ( 49 )</li>
+                        <li><input type="checkbox" id="extended-toggle"> XL ( 46 ) </li>
+                        <li><input type="checkbox" id="extended-toggle"> S ( 54 )</li>
+                        <li><input type="checkbox" id="extended-toggle"> M ( 51 )</li>
+                        <li><input type="checkbox" id="extended-toggle"> L ( 51 )</li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-        <div class="product" onclick="loadProduct()">
-            <span class="wishlist"><i class="fa-regular fa-heart"></i></span>
-            <img class="product-image" src="./images/category/02.jpg"/>
-            <span class="product-title">Double-knit cardigan</span>
-            <span class="product-price">€ 6.500,00</span>
-        </div>
-        <div class="product">
-            <span class="wishlist"><i class="fa-regular fa-heart"></i></span>
-            <img class="product-image" src="./images/category/01.jpg"/>
-            <span class="product-title">Double-knit cardigan</span>
-            <span class="product-price">€ 6.500,00</span>
-        </div>
-        <div class="product">
-            <span class="wishlist"><i class="fa-regular fa-heart"></i></span>
-            <img class="product-image" src="./images/category/02.jpg"/>
-            <span class="product-title">Double-knit cardigan</span>
-            <span class="product-price">€ 6.500,00</span>
-        </div>
-        <div class="product">
-            <span class="wishlist"><i class="fa-regular fa-heart"></i></span>
-            <img class="product-image" src="./images/category/01.jpg"/>
-            <span class="product-title">Double-knit cardigan</span>
-            <span class="product-price">€ 6.500,00</span>
-        </div>
-        <div class="product">
-            <span class="wishlist"><i class="fa-regular fa-heart"></i></span>
-            <img class="product-image" src="./images/category/02.jpg"/>
-            <span class="product-title">Double-knit cardigan</span>
-            <span class="product-price">€ 6.500,00</span>
-        </div>
-        <div class="product">
-            <span class="wishlist"><i class="fa-regular fa-heart"></i></span>
-            <img class="product-image" src="./images/category/01.jpg"/>
-            <span class="product-title">Double-knit cardigan</span>
-            <span class="product-price">€ 6.500,00</span>
-        </div>
-        <div class="product">
-            <span class="wishlist"><i class="fa-regular fa-heart"></i></span>
-            <img class="product-image" src="./images/category/02.jpg"/>
-            <span class="product-title">Double-knit cardigan</span>
-            <span class="product-price">€ 6.500,00</span>
-        </div>
-        <div class="product">
-            <span class="wishlist"><i class="fa-regular fa-heart"></i></span>
-            <img class="product-image" src="./images/category/01.jpg"/>
-            <span class="product-title">Double-knit cardigan</span>
-            <span class="product-price">€ 6.500,00</span>
+        <div class="sec">
+            <div class="prod grid-3x3">
+                <span class="wishlist" id="AddtoWish"><i class="fa fa-heart"></i></span>
+                <div class="image-container">
+                    <img class="prod-image" src="./images/category/01.jpg" />
+                    <div class="img-wall-overlay" onclick="loadProduct()">
+                        <button type="button">Discover</button>
+                    </div>
+                </div>
+                <div id="activeWall">
+                    <span class="product-title">Double-knit cardigan </span>
+                    <span class="product-price">€ 6.500,00</span>
+                </div>
+            </div>
+            <div class="prod grid-3x3">
+                <span class="wishlist" id="AddtoWish1"><i class="fa fa-heart"></i></span>
+                <div class="image-container">
+                    <img class="prod-image" onclick="loadProduct()" src="./images/category/02.jpg" />
+                    <div class="img-wall-overlay" onclick="loadProduct()">
+                        <button type="button">Discover</button>
+                    </div>
+                    <div class="selectSize">
+                        <span class="sizeTitle">Available Size</span>
+                        <div class="size-buttons">
+                            <span class="size-button">38</span>
+                            <span class="size-button">40</span>
+                            <span class="size-button">42</span>
+                            <span class="size-button addBorder">44</span>
+                            <span class="size-button">46</span>
+                            <span class="size-button">48</span>
+                            <span class="size-button">50</span>
+                            <span class="size-button">52</span>
+                            <span class="size-button">53</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    </div>
+                </div>
+                <div id="activeWall">
+                    <span class="product-title">Double-knit cardigan <i class="fa fa-plus float-right pr-2"
+                            id="menu-icon"></i> </span>
+                    <span class="product-price">€ 6.500,00</span>
+                </div>
+            </div>
+            <div class="prod grid-3x3">
+                <span class="wishlist" id="AddtoWish2"><i class="fa fa-heart"></i></span>
+                <div class="image-container">
+                    <img class="prod-image" src="./images/category/01.jpg" />
+                    <div class="img-wall-overlay" onclick="loadProduct()">
+                        <button type="button">Discover</button>
+                    </div>
+                    <div class="selectSize">
+                        <span class="sizeTitle">Available Size</span>
+                        <div class="size-buttons">
+                            <span class="size-button">38</span>
+                            <span class="size-button">40</span>
+                            <span class="size-button">42</span>
+                            <span class="size-button addBorder">44</span>
+                            <span class="size-button">46</span>
+                            <span class="size-button">48</span>
+                            <span class="size-button">50</span>
+                            <span class="size-button">52</span>
+                            <span class="size-button">53</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    </div>
+                </div>
+                <div id="activeWall">
+                    <span class="product-title">Double-knit cardigan </span>
+                    <span class="product-price">€ 6.500,00</span>
+                </div>
+            </div>
+            <div class="prod grid-3x3">
+                <span class="wishlist" id="AddtoWish2"><i class="fa fa-heart"></i></span>
+                <div class="image-container">
+                    <img class="prod-image" src="./images/category/01.jpg" />
+                    <div class="img-wall-overlay" onclick="loadProduct()">
+                        <button type="button">Discover</button>
+                    </div>
+                    <div class="selectSize">
+                        <span class="sizeTitle">Available Size</span>
+                        <div class="size-buttons">
+                            <span class="size-button">38</span>
+                            <span class="size-button">40</span>
+                            <span class="size-button">42</span>
+                            <span class="size-button addBorder">44</span>
+                            <span class="size-button">46</span>
+                            <span class="size-button">48</span>
+                            <span class="size-button">50</span>
+                            <span class="size-button">52</span>
+                            <span class="size-button">53</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    </div>
+                </div>
+                <div id="activeWall">
+                    <span class="product-title">Double-knit cardigan </span>
+                    <span class="product-price">€ 6.500,00</span>
+                </div>
+            </div>
+            <div class="prod grid-3x3">
+                <span class="wishlist" id="AddtoWish2"><i class="fa fa-heart"></i></span>
+                <div class="image-container">
+                    <img class="prod-image" src="./images/category/01.jpg" />
+                    <div class="img-wall-overlay" onclick="loadProduct()">
+                        <button type="button">Discover</button>
+                    </div>
+                    <div class="selectSize">
+                        <span class="sizeTitle">Available Size</span>
+                        <div class="size-buttons">
+                            <span class="size-button">38</span>
+                            <span class="size-button">40</span>
+                            <span class="size-button">42</span>
+                            <span class="size-button addBorder">44</span>
+                            <span class="size-button">46</span>
+                            <span class="size-button">48</span>
+                            <span class="size-button">50</span>
+                            <span class="size-button">52</span>
+                            <span class="size-button">53</span>
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                    </div>
+                </div>
+                <div id="activeWall">
+                    <span class="product-title">Double-knit cardigan </span>
+                    <span class="product-price">€ 6.500,00</span>
+                </div>
+            </div>
         </div>
     </section>
     <div class="products-control">
-        <span class="product-listing">1-9 of 40 products</span>
+        <span>1-9 of 40 products</span>
         <button class="view-more"><span>View 31 More</span></button>
     </div>
-    <section id="footer">
-        <div class="footer-subscription">
-            <span class="footer-links-heading">Newsletter</span>
-            <div class="enter-email">
-                <input type="text" placeholder="Enter e-mail" class="email-sub" />
-                <button class="email-sub-button">
-                    <i class="fa-regular fa-envelope"></i>
-                    <span>SUBSCRIBE</span>
-                </button>
-            </div>
-        </div>
-        <div class="footer-area">
-            <div class="footer-links">
-                <span class="footer-links-heading">Customer Care</span>
-                <div class="footer-link-container">
-                    <a href="#" class="footer-link-bottom link">Exclusive Services</a>
-                    <a href="#" class="footer-link-bottom link">Orders and Returns</a>
-                    <a href="#" class="footer-link-bottom link">Size Guide</a>
-                    <a href="#" class="footer-link-bottom link">Contact Us</a>
-                    <a href="#" class="footer-link-bottom link">Boutique Locator</a>
-                    <a href="#" class="footer-link-bottom link">Wishlist</a>
-                    <a href="#" class="footer-link-bottom link">FAQ</a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <span class="footer-links-heading">Philosophy</span>
-                <div class="footer-link-container">
-                    <a href="#" class="footer-link-bottom link">Beauty</a>
-                    <a href="#" class="footer-link-bottom link">The Company</a>
-                    <a href="#" class="footer-link-bottom link">Craftsmanship and Manual Skills</a>
-                    <a href="#" class="footer-link-bottom link">Solomeo</a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <span class="footer-links-heading">General Information</span>
-                <div class="footer-link-container">
-                    <a href="#" class="footer-link-bottom link">Legal Area</a>
-                    <a href="#" class="footer-link-bottom link">Privacy Policy</a>
-                    <a href="#" class="footer-link-bottom link">Cookie Policy</a>
-                    <a href="#" class="footer-link-bottom link">Investor Relations</a>
-                </div>
-            </div>
-            <div class="footer-subscription">
-                <span class="footer-links-subheading">Follow us on</span>
-                <div class="footer-socials">
-                    <a href="#" class="footer-socials-icon"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="footer-socials-icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" class="footer-socials-icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="footer-socials-icon"><i class="fa-brands fa-pinterest"></i></a>
-                    <a href="#" class="footer-socials-icon"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="#" class="footer-socials-icon"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="#" class="footer-socials-icon"><i class="fa-brands fa-spotify"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="footer-bottom-left">
-                <span class="copy-right-text">2024 &copy; Brunello Cucinelli SpA Vat 01886120540</span>
-            </div>
-            <div class="footer-bottom-right">
-            </div>
-        </div>
+    <section class="fixed-filter">
+        <button type="button" id="showNavFilter">show filters</button>
+        <button type="button" id="showSortBy">sort by</button>
+    </section>
+    <section style="height: auto;">
+
+    </section>
+    <section
+        style="background-color: rgb(210, 231, 231); height: 20vh; display: flex; justify-content: center; align-items: center; text-align: center;">
+        <h2>Add Footer section here</h2>
     </section>
 </body>
+
 </html>
