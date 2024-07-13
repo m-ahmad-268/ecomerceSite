@@ -41,7 +41,7 @@
             <span>WALL</span>
             <span class="wallIcon" id="wallIcon"></span>
             <span>GRID</span>
-            <span class="box"><img src="./images/icons/grid-small-selected.png" class="selection-icons"
+            <span class="box"><img src="./images/icons/grid-small-selected.png" id="2x1-grid" class="selection-icons"
                     onclick="girdSelected('2x2')" /></span>
 
         </div>
@@ -109,8 +109,7 @@
                 </button>
             </div>
         </div>
-        <div class="col-md-8">
-            <div class="right-bottom float-right">
+        <div class="right-bottom">
                 <span>Sort By:</span>
                 <select id="selection-preference">
                     <option value="NA" selected class="option-selected">Select...</option>
@@ -118,14 +117,13 @@
                     <option value="price-htl" class="option-selected">Price: High to Low</option>
                     <option value="new" class="option-selected">New In</option>
                 </select>
-                <!-- <span>WALL</span>
-                <input class="mt-30" type="checkbox" id="padding-toggle"> -->
+                <span>WALL</span>
+                <span class="wallIcon" id="wallIcon1"></span>
                 <span>GRID</span>
                 <span class="box"><img src="./images/icons/grid-small.png" class="selection-icons" id="2x2-grid"
                         onclick="girdSelected('2x2')" /></span>
                 <span class="box"><img src="./images/icons/grid-selected.png" class="selection-icons" id="3x3-grid"
                         onclick="girdSelected('3x3')" /></span>
-            </div>
         </div>
     </div>
     <!-- <section id="category-products"> -->
@@ -196,7 +194,7 @@
         </div>
         <div class="sec">
             <div class="prod grid-3x3">
-                <span class="wishlist" id="AddtoWish"><i class="fa fa-heart"></i></span>
+                <span class="wishlist" id="AddtoWish"><i class="fa-regular fa-heart"></i></span>
                 <div class="image-container">
                     <img class="prod-image" src="./images/category/01.jpg" />
                     <div class="img-wall-overlay" onclick="loadProduct()">
@@ -214,6 +212,7 @@
                     <img class="prod-image" onclick="loadProduct()" src="./images/category/02.jpg" />
                     <div class="img-wall-overlay" onclick="loadProduct()">
                         <button type="button">Discover</button>
+                        <!-- <span>€ 6.500,00 <br> Long Overcoat White</span> -->
                     </div>
                     <div class="selectSize">
                         <span class="sizeTitle">Available Size</span>

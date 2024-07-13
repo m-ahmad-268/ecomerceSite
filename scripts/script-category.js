@@ -34,7 +34,13 @@ const menuItems = document.querySelectorAll('.menu-item');
 const selectSize = document.querySelectorAll('.selectSize');
 const menuIcon = document.getElementById('menu-icon');
 const wallIcon = document.getElementById('wallIcon');
+const wallIcon1 = document.getElementById('wallIcon1');
 const radios = document.querySelectorAll('input[type="radio"]');
+const twoXGrid = document.getElementById('2x2-grid');
+const threeXGrid = document.getElementById('3x3-grid');
+const OnexGrid = document.getElementById('2x1-grid');
+const products = document.querySelectorAll('#product-grid .prod');
+const iconEnable = document.querySelectorAll('.wallIcon');
 
 radios.forEach(radio => {
     radio.addEventListener('change', () => {
@@ -218,82 +224,81 @@ function loadProduct() {
 
 
 function setWallActive(value) {
-    const products = document.querySelectorAll('#product-grid .prod');
     products.forEach(product => {
-        value ?
-        product.classList.add('no-padding') : product.classList.remove('no-padding'); 
+        if (value) {
+            product.classList.add('no-padding');
+        }
+        else {
+            product.classList.remove('no-padding');
+        }
     });
     document.querySelectorAll('.prod').forEach(function (prod) {
         const overlay = prod.querySelector('.img-wall-overlay');
         const activeWall = prod.querySelector('#activeWall');
-        if (activeWall.style.display === '' || activeWall.style.display === 'flex') {
+        if (value) {
             activeWall.style.display = 'none';
             overlay.style.display = 'flex';
+            menuIcon.classList.remove('fa-minus');
+            selectSize[0].classList.remove('show')
+            menuIcon.classList.add('fa-plus');
         } else {
             overlay.style.display = 'none';
             activeWall.style.display = 'flex';
         }
-        // overlay.addEventListener('click', function() {
-        //     if (activeWall) {
-        //         activeWall.style.display = 'none';
-        //     }
-        // });
     });
 }
+wallIcon1.addEventListener('click', function () {
+    iconEnable.forEach(x => {
+        x.classList.add('show');
+    })
+    threeXGrid.src = './images/icons/grid.png';
+    OnexGrid.src = './images/icons/grid-small.png';
+    twoXGrid.src = './images/icons/grid-small.png';
+    setWallActive(true);
+});
 wallIcon.addEventListener('click', function () {
-    if(wallIcon.classList.length == 1){
-        wallIcon.classList.add('show')
-        setWallActive(true);
-    }else{
-        wallIcon.classList.remove('show');
-        setWallActive(false);
-    }
+    iconEnable.forEach(x => {
+        x.classList.add('show');
+    })
+    threeXGrid.src = './images/icons/grid.png';
+    twoXGrid.src = './images/icons/grid-small.png';
+    OnexGrid.src = './images/icons/grid-small.png';
+    setWallActive(true);
+
 });
 
-document.getElementById('padding-toggle1').addEventListener('change', function () {
-    setWallActive();
-});
-document.getElementById('padding-toggle').addEventListener('change', function () {
-    setWallActive();
-});
+// document.getElementById('padding-toggle1').addEventListener('change', function () {
+//     setWallActive();
+// });
+// document.getElementById('padding-toggle').addEventListener('change', function () {
+//     setWallActive();
+// });
 
 function girdSelected(type) {
-    // const productGrid = document.getElementById('product-grid');
-    var twoXGrid = document.getElementById('2x2-grid')
-    var threeXGrid = document.getElementById('3x3-grid')
-    const products = document.querySelectorAll('#product-grid .prod');
-
+    setWallActive(false);
     if (type === '2x2') {
-        // productGrid.classList.remove('grid-3x3');
-        // productGrid.classList.add('grid-2x2');
         products.forEach(product => {
             product.classList.remove('grid-3x3');
             product.classList.add('grid-2x2');
         });
-        twoXGrid.src = './images/icons/grid-small-selected.png'
-        threeXGrid.src = './images/icons/grid.png'
+        OnexGrid.src = './images/icons/grid-small-selected.png';
+        twoXGrid.src = './images/icons/grid-small-selected.png';
+        threeXGrid.src = './images/icons/grid.png';
+        iconEnable.forEach(x => {
+            x.classList.remove('show');
+        })
     } else if (type === '3x3') {
         products.forEach(product => {
             product.classList.remove('grid-2x2');
             product.classList.add('grid-3x3');
         });
-        twoXGrid.src = './images/icons/grid-small.png'
-        threeXGrid.src = './images/icons/grid-selected.png'
-        // productGrid.classList.remove('grid-2x2');
-        // productGrid.classList.add('grid-3x3');
+        twoXGrid.src = './images/icons/grid-small.png';
+        OnexGrid.src = './images/icons/grid-small.png';
+        threeXGrid.src = './images/icons/grid-selected.png';
+        iconEnable.forEach(x => {
+            x.classList.remove('show');
+        })
     }
-
-    // var categoryProducts = document.getElementById('category-products')
-
-    // if (type === '3x3') {
-
-    //     categoryProducts.classList.remove('small')
-    // }
-    // if (type === '2x2') {
-    //     
-    //     categoryProducts.classList.add('small')
-    // }
-
 }
 
 function washSelectedNavContainer() {

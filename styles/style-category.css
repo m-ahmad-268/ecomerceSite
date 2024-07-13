@@ -96,16 +96,16 @@
 }
 
 .right-bottom {
-    padding-top: 20px;
-
-    span {
-        text-transform: uppercase;
-        padding-right: 10px;
-        font-size: .75rem;
-        letter-spacing: .1875rem;
-        color: #6f6f6f;
-        margin: auto;
-    }
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: .1875rem;
+    color: #6f6f6f;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-right: 1rem;
 }
 
 .selection-icons {
@@ -163,8 +163,8 @@
     display: inline-block;
     background-color: rgba(255, 255, 255, .7);
     border-radius: 50%;
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2rem;
+    height: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -542,7 +542,7 @@ input[type="checkbox"]+label {
     border: 1px solid black;
 }
 
-.wallIcon.show{
+.wallIcon.show {
     background-color: black;
 }
 
@@ -580,18 +580,19 @@ input[type="checkbox"]:checked+label::after {
     align-items: center;
     flex-direction: column;
     opacity: 0;
+    font-family: 'gteesti-light';
 
     button {
+        letter-spacing: .25rem;
         background-color: #fff;
         transition: all .15s ease-in;
         display: block;
+        position: absolute;
         width: 60%;
         text-align: center;
-        font-family: gteesti;
         font-weight: 300;
         color: #262626;
         font-size: 1rem;
-        letter-spacing: .25rem;
         padding: .6875rem 1.875rem;
         text-align: center;
         text-transform: uppercase;
