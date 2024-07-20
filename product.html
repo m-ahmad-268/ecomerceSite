@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +13,13 @@
     <script type="text/javascript" src="./scripts/script-category.js" defer></script>
     <script type="text/javascript" src="./scripts/script-product.js" defer></script>
 </head>
+
 <body>
-    <section id="navigation" class="light">
+    <section
+        style="background-color: rgb(210, 231, 231); height: 20vh; display: flex; justify-content: center; align-items: center; text-align: center;">
+        <h2>Add Header section here</h2>
+    </section>
+    <!-- <section id="navigation" class="light">
         <div class="top-row">
             <div class="top-row-left">
                 <div class="nav-item">
@@ -37,7 +43,7 @@
                     <span class="nav-item-text flip-text">Newsletter</span>
                 </div>
             </div>
-           
+
             <div class="top-row-right">
                 <div class="nav-item">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -54,11 +60,12 @@
             </div>
         </div>
         <div class="top-row-middle">
-            <span class="logo dark" id="logo"><img src="./images/logo-white.svg"/></span>
+            <span class="logo dark" id="logo"><img src="./images/logo-white.svg" /></span>
         </div>
         <div class="bottom-row br" id="bottom-row-nav">
             <div class="nav-item">
-                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(1)">NEW ARRIVALS</span>
+                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(1)">NEW
+                    ARRIVALS</span>
             </div>
             <div class="nav-item">
                 <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(2)">WOMEN</span>
@@ -67,7 +74,8 @@
                 <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(3)">MEN</span>
             </div>
             <div class="nav-item">
-                <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(4)">FRAGRANCES</span>
+                <span class="nav-item-text special-link"
+                    onmouseenter="populateSelectedNavContainer(4)">FRAGRANCES</span>
             </div>
             <div class="nav-item">
                 <span class="nav-item-text special-link" onmouseenter="populateSelectedNavContainer(5)">EYE WEAR</span>
@@ -88,19 +96,7 @@
         <div class="selected-nav-container" id="selected-nav-container" onmouseleave="washSelectedNavContainer()"></div>
         <div class="sub-nav-container" id="sub-nav-container"></div>
         <div class="gap"></div>
-        <!-- <div class="headline">
-            <button class="button-control" onclick="toggleHeadline()">
-                <i class="fa-solid fa-chevron-left"></i>
-            </button>
-            <div class="headline-text-content">
-                <span class="headline-item active">Get the latest updates by subscribing to our <a class="headline-link">Newsletter</a></span>
-                <span class="headline-item">Book an <a class="headline-link">appointment</a> to our Boutiques</span>
-            </div>
-            <button class="button-control" onclick="toggleHeadline()">
-                <i class="fa-solid fa-chevron-right"></i>
-            </button>
-        </div> -->
-    </section>
+    </section> -->
     <section id="category-nav-area">
         <div class="category-nav-top-row">
             <a class="visited-link">Women</a>
@@ -118,11 +114,11 @@
             <img id="full-screen-show" src="" />
         </div>
         <div class="product-area-left">
-            <img class="product-images" src="./images/product/01.jpeg" onclick="showImageFullScreen('01')"/>
-            <img class="product-images" src="./images/product/02.jpeg" onclick="showImageFullScreen('02')"/>
-            <img class="product-images" src="./images/product/03.jpeg" onclick="showImageFullScreen('03')"/>
-            <img class="product-images" src="./images/product/04.jpeg" onclick="showImageFullScreen('04')"/>
-            <img class="product-images" src="./images/product/05.jpg" onclick="showImageFullScreen('05')"/>
+            <img class="product-images" src="./images/product/01.jpeg" onclick="showImageFullScreen('01')" />
+            <img class="product-images" src="./images/product/02.jpeg" onclick="showImageFullScreen('02')" />
+            <img class="product-images" src="./images/product/03.jpeg" onclick="showImageFullScreen('03')" />
+            <img class="product-images" src="./images/product/04.jpeg" onclick="showImageFullScreen('04')" />
+            <img class="product-images" src="./images/product/05.jpg" onclick="showImageFullScreen('05')" />
         </div>
         <div class="product-area-right">
             <div class="product-sku-details">
@@ -142,7 +138,7 @@
             <div class="product-color">
                 <span class="product-color-title">Color</span>
                 <div class="color-thumbnail-container">
-                    <img class="product-thumbnail" src="./images/product/title-img.jpeg"/>
+                    <img class="product-thumbnail" src="./images/product/title-img.jpeg" />
                     <span class="color-description">Dark Grey (C002)</span>
                 </div>
             </div>
@@ -162,127 +158,126 @@
             </div>
             <div class="full-width-button">
                 <button class="email-sub-button light">
-                    <img class="pay-pal-logo" src="./images/product/pay-pal.svg"/>
+                    <img class="pay-pal-logo" src="./images/product/pay-pal.svg" />
                 </button>
             </div>
             <div class="shipping-info">
-                <img class="shipping-icon" src="./images/product/package.svg"/>
+                <img class="shipping-icon" src="./images/product/package.svg" />
                 <span class="shipping-info-text">*Free shipping and 30 days to return</span>
             </div>
             <div class="info-links">
-                <a class="view-details" href="#"><span><i class="fa-solid fa-location-dot"></i></span> Find in Boutique</a>
+                <a class="view-details" href="#"><span><i class="fa-solid fa-location-dot"></i></span> Find in
+                    Boutique</a>
                 <div class="vertical-separator"></div>
-                <a class="view-details" href="#"><span><i class="fa-regular fa-envelope"></i></span> May We Help you?</a>
+                <a class="view-details" href="#"><span><i class="fa-regular fa-envelope"></i></span> May We Help
+                    you?</a>
             </div>
         </div>
     </section>
     <section id="details-area">
-        <div class="accordion top-row" id="accordion-01">
-            <div class="accordion-header" id="accordion-header-01" onclick="toggleAccordion('01')">
-                <span class="accordion-heading">Description</span>
-                <span class="accordion-control" id="accordion-ctrl-01">+</span>
+        <div class="accordSec1">
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span class="accordion-heading">Description</span>
+                    <span class="accordion-icon"><i class="fa fa-plus"></i></span>
+                </div>
+                <div class="accordion-content" id="accordion-text-01">
+                    <p>This new biker jacket reinterprets the tailored feel of virgin wool in
+                        a
+                        bold, casual way.
+                        The classic menswear silhouette, recognizable by the wide lapel, the side zipper closure and the
+                        epaulettes,
+                        is enhanced by the shiny monili details that illuminate the loops at the bottom, completing the
+                        garment in a sophisticated way.</p>
+                </div>
             </div>
-            <div class="accordion-content" id="accordion-text-01">
-                <span class="accordion-text">This new biker jacket reinterprets the tailored feel of virgin wool in a bold, casual way. 
-                    The classic menswear silhouette, recognizable by the wide lapel, the side zipper closure and the epaulettes, 
-                    is enhanced by the shiny monili details that illuminate the loops at the bottom, completing the garment in a sophisticated way.</span>
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span class="accordion-heading">Materials</span>
+                    <span class="accordion-icon"><i class="fa fa-plus"></i></span>
+                </div>
+                <div class="accordion-content" id="accordion-text-01">
+                    <p>
+                        A material of timeless elegance, the virgin wool fabric features a very fluid hand and a
+                        smooth,
+                        compact texture.
+                        A silk-blend crêpe lining completes the garment and provides added comfort.
+                    </p>
+                    <p>
+                        Our items are manufactured in the hamlet of Solomeo, in Italy, respecting human beings and
+                        labor
+                        dignity and in harmony with the land.
+                    </p>
+                    <p>
+                        Our items are manufactured in the hamlet of Solomeo, in Italy, respecting human beings and
+                        labor
+                        dignity and in harmony with the land.
+                    </p>
+                </div>
             </div>
-            <div class="separator acc" id="separator-01"></div>
         </div>
-        <div class="accordion top-row" id="accordion-02">
-            <div class="accordion-header" id="accordion-header-02" onclick="toggleAccordion('02')">
-                <span class="accordion-heading">Materials</span>
-                <span class="accordion-control" id="accordion-ctrl-02">+</span>
+        <div class="accordSec1">
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span class="accordion-heading">Details</span>
+                    <span class="accordion-icon"><i class="fa fa-plus"></i></span>
+                </div>
+                <div class="accordion-content" id="accordion-text-01">
+                    <p> Two-way zip closure<br>
+                        Silk-blend crêpe lining <br>
+                        Biker-jacket style neck <br>
+                        Biker-jacket style neck <br>
+                        Hand pockets with button <br>
+                        Epaulettes with buttons <br>
+                        Button cuffs <br>
+                        Button at hem <br>
+                        Nickel-free monili decoration <br> <br>
+                        100% VIRGIN WOOL
+                    </p>
+                </div>
             </div>
-            <div class="accordion-content" id="accordion-text-02">
-                <span class="accordion-text">
-                    A material of timeless elegance, the virgin wool fabric features a very fluid hand and a smooth, compact texture. 
-                    A silk-blend crêpe lining completes the garment and provides added comfort.
-                </span>
-                <span class="accordion-text">   
-                    Our items are manufactured in the hamlet of Solomeo, in Italy, respecting human beings and labor dignity and in harmony with the land.
-                </span> 
-                <span class="accordion-text">   
-                    Request dry cleaning at specialist cleaner's only, do not bleach. Do not tumble dry, iron at low temperature.
-                </span>
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span class="accordion-heading">Packaging</span>
+                    <span class="accordion-icon"><i class="fa fa-plus"></i></span>
+                </div>
+                <div class="accordion-content" id="accordion-text-01">
+                    <p>
+                        The exclusive packaging of the Brunello Cucinelli Online Boutique is designed in Solomeo and is
+                        made
+                        in Italy according to the company’s values.
+                        Produced with FSC® certified resources, the interior packaging has been designed to be stored
+                        and
+                        reused: thanks to the self-assembly structure,
+                        it can be flattened and stored in a very small space.
+                    </p>
+                    <img class="accordion-image" src="./images/product/packaging.avif" />
+                </div>
             </div>
-            <div class="separator acc" id="separator-02"></div>
         </div>
-        <div class="accordion bottom-row" id="accordion-03">
-            <div class="accordion-header" id="accordion-header-03" onclick="toggleAccordion('03')">
-                <span class="accordion-heading">Details</span>
-                <span class="accordion-control" id="accordion-ctrl-03">+</span>
-            </div>
-            <div class="accordion-content details" id="accordion-text-03">
-                <span class="accordion-text">   
-                    Two-way zip closure
-                </span>
-                <span class="accordion-text">   
-                    Silk-blend crêpe lining
-                </span>
-                <span class="accordion-text">   
-                    Biker-jacket style neck
-                </span>
-                <span class="accordion-text">   
-                    Hand pockets with button
-                </span>
-                <span class="accordion-text">   
-                    Epaulettes with buttons
-                </span>
-                <span class="accordion-text">   
-                    Button cuffs
-                </span>
-                <span class="accordion-text">   
-                    Button at hem
-                </span>
-                <span class="accordion-text">   
-                    Nickel-free monili decoration
-                </span>
-                <span class="accordion-text bottom">   
-                    100% VIRGIN WOOL
-                </span> 
-            </div>
-            <div class="separator acc" id="separator-03"></div>
-        </div>
-        <div class="accordion bottom-row" id="accordion-04">
-            <div class="accordion-header" id="accordion-header-04" onclick="toggleAccordion('04')">
-                <span class="accordion-heading">Packaging</span>
-                <span class="accordion-control" id="accordion-ctrl-04">+</span>
-            </div>
-            <div class="accordion-content packaging" id="accordion-text-04">
-                <img class="accordion-image" src="./images/product/packaging.avif" />
-                <span class="accordion-text">   
-                    The exclusive packaging of the Brunello Cucinelli Online Boutique is designed in Solomeo and is made in Italy according to the company’s values. 
-                    Produced with FSC® certified resources, the interior packaging has been designed to be stored and reused: thanks to the self-assembly structure, 
-                    it can be flattened and stored in a very small space. 
-                </span>
-            </div>
-            <div class="separator acc" id="separator-04"></div>
-        </div>
-    </section>
-    <section id="shipping">
-        <div class="accordion special" id="accordion-05">
-            <div class="accordion-header" id="accordion-header-05" onclick="toggleAccordion('05')">
-                <span class="accordion-heading">Shipping and Returns</span>
-                <span class="accordion-control" id="accordion-ctrl-05">+</span>
-            </div>
-            <div class="accordion-content shipping" id="accordion-text-05">
-                <div class="shipping-left">
+        <div class="accordSec1">
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span class="accordion-heading">Shipping and Returns</span>
+                    <span class="accordion-icon"><i class="fa fa-plus"></i></span>
+                </div>
+                <div class="accordion-content" id="accordion-text-01">
                     <span class="accordion-heading-text">Shipping Times and Costs</span>
-                    <span class="accordion-text">Shipping of all of our products is always free. 
-                        Express Worldwide delivery from Monday to Friday, usually within 5 working days. 
-                        For more information on delivery times, please see the <a class="in-paragraph-link" href="#">Shipping page.</a>
-                    </span>
-                </div>
-                <div class="shipping-right">
+                    <p>
+                        Shipping of all of our products is always free.
+                        Express Worldwide delivery from Monday to Friday, usually within 5 working days.
+                        For more information on delivery times, please see the <a class="in-paragraph-link"
+                            href="#">Shipping page.</a>
+                    </p>
                     <span class="accordion-heading-text">Method of Return</span>
-                    <span class="accordion-text">We guarantee 30 days to request a return or exchange, 
-                        a complimentary service which we are happy to offer to all of our customers. 
-                        For more information, please refer to the <a class="in-paragraph-link" href="#">Return Procedure page.</a>
-                    </span>
+                    <p>
+                        We guarantee 30 days to request a return or exchange,
+                        a complimentary service which we are happy to offer to all of our customers.
+                        For more information, please refer to the <a class="in-paragraph-link" href="#">Return Procedure
+                            page.</a>
+                    </p>
                 </div>
             </div>
-            <div class="separator acc" id="separator-05"></div>
         </div>
     </section>
     <div id="size-guide-div">
@@ -318,138 +313,178 @@
                     </div>
                 </div>
                 <div class="size-guide-grid-row">
-                    <div class="size-guide-grid-item col-01" onmouseenter="highlightGrid(1,1)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-01" onmouseenter="highlightGrid(1,1)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text first r1">XXS</span>
                     </div>
-                    <div class="size-guide-grid-item col-02" onmouseenter="highlightGrid(1,2)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-02" onmouseenter="highlightGrid(1,2)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r1">36</span>
                     </div>
-                    <div class="size-guide-grid-item col-03" onmouseenter="highlightGrid(1,3)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-03" onmouseenter="highlightGrid(1,3)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r1">32</span>
                     </div>
-                    <div class="size-guide-grid-item col-04" onmouseenter="highlightGrid(1,4)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-04" onmouseenter="highlightGrid(1,4)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r1">0</span>
                     </div>
-                    <div class="size-guide-grid-item col-05" onmouseenter="highlightGrid(1,5)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-05" onmouseenter="highlightGrid(1,5)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r1">5</span>
                     </div>
                 </div>
                 <div class="size-guide-grid-row">
-                    <div class="size-guide-grid-item col-01" onmouseenter="highlightGrid(2,1)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-01" onmouseenter="highlightGrid(2,1)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text first r2">XS</span>
                     </div>
-                    <div class="size-guide-grid-item col-02" onmouseenter="highlightGrid(2,2)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-02" onmouseenter="highlightGrid(2,2)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r2">38</span>
                     </div>
-                    <div class="size-guide-grid-item col-03" onmouseenter="highlightGrid(2,3)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-03" onmouseenter="highlightGrid(2,3)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r2">34</span>
                     </div>
-                    <div class="size-guide-grid-item col-04" onmouseenter="highlightGrid(2,4)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-04" onmouseenter="highlightGrid(2,4)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r2">2</span>
                     </div>
-                    <div class="size-guide-grid-item col-05" onmouseenter="highlightGrid(2,5)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-05" onmouseenter="highlightGrid(2,5)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r2">7</span>
                     </div>
                 </div>
                 <div class="size-guide-grid-row">
-                    <div class="size-guide-grid-item col-01" onmouseenter="highlightGrid(3,1)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-01" onmouseenter="highlightGrid(3,1)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text first r3">S</span>
                     </div>
-                    <div class="size-guide-grid-item col-02" onmouseenter="highlightGrid(3,2)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-02" onmouseenter="highlightGrid(3,2)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r3">40</span>
                     </div>
-                    <div class="size-guide-grid-item col-03" onmouseenter="highlightGrid(3,3)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-03" onmouseenter="highlightGrid(3,3)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r3">36</span>
                     </div>
-                    <div class="size-guide-grid-item col-04" onmouseenter="highlightGrid(3,4)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-04" onmouseenter="highlightGrid(3,4)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r3">4</span>
                     </div>
-                    <div class="size-guide-grid-item col-05" onmouseenter="highlightGrid(3,5)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-05" onmouseenter="highlightGrid(3,5)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r3">9</span>
                     </div>
                 </div>
                 <div class="size-guide-grid-row">
-                    <div class="size-guide-grid-item col-01" onmouseenter="highlightGrid(4,1)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-01" onmouseenter="highlightGrid(4,1)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text first r4">M</span>
                     </div>
-                    <div class="size-guide-grid-item col-02" onmouseenter="highlightGrid(4,2)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-02" onmouseenter="highlightGrid(4,2)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r4">42</span>
                     </div>
-                    <div class="size-guide-grid-item col-03" onmouseenter="highlightGrid(4,3)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-03" onmouseenter="highlightGrid(4,3)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r4">38</span>
                     </div>
-                    <div class="size-guide-grid-item col-04" onmouseenter="highlightGrid(4,4)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-04" onmouseenter="highlightGrid(4,4)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r4">6</span>
                     </div>
-                    <div class="size-guide-grid-item col-05" onmouseenter="highlightGrid(4,5)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-05" onmouseenter="highlightGrid(4,5)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r4">11</span>
                     </div>
                 </div>
                 <div class="size-guide-grid-row">
-                    <div class="size-guide-grid-item col-01" onmouseenter="highlightGrid(5,1)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-01" onmouseenter="highlightGrid(5,1)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text first r5">L</span>
                     </div>
-                    <div class="size-guide-grid-item col-02" onmouseenter="highlightGrid(5,2)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-02" onmouseenter="highlightGrid(5,2)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r5">44</span>
                     </div>
-                    <div class="size-guide-grid-item col-03" onmouseenter="highlightGrid(5,3)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-03" onmouseenter="highlightGrid(5,3)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r5">40</span>
                     </div>
-                    <div class="size-guide-grid-item col-04" onmouseenter="highlightGrid(5,4)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-04" onmouseenter="highlightGrid(5,4)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r5">8</span>
                     </div>
-                    <div class="size-guide-grid-item col-05" onmouseenter="highlightGrid(5,5)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-05" onmouseenter="highlightGrid(5,5)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r5">13</span>
                     </div>
                 </div>
                 <div class="size-guide-grid-row">
-                    <div class="size-guide-grid-item col-01" onmouseenter="highlightGrid(6,1)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-01" onmouseenter="highlightGrid(6,1)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text first r6">XL</span>
                     </div>
-                    <div class="size-guide-grid-item col-02" onmouseenter="highlightGrid(6,2)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-02" onmouseenter="highlightGrid(6,2)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r6">46</span>
                     </div>
-                    <div class="size-guide-grid-item col-03" onmouseenter="highlightGrid(6,3)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-03" onmouseenter="highlightGrid(6,3)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r6">42</span>
                     </div>
-                    <div class="size-guide-grid-item col-04" onmouseenter="highlightGrid(6,4)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-04" onmouseenter="highlightGrid(6,4)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r6">10</span>
                     </div>
-                    <div class="size-guide-grid-item col-05" onmouseenter="highlightGrid(6,5)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-05" onmouseenter="highlightGrid(6,5)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r6">15</span>
                     </div>
                 </div>
                 <div class="size-guide-grid-row">
-                    <div class="size-guide-grid-item col-01" onmouseenter="highlightGrid(7,1)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-01" onmouseenter="highlightGrid(7,1)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text first r7">XXL</span>
                     </div>
-                    <div class="size-guide-grid-item col-02" onmouseenter="highlightGrid(7,2)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-02" onmouseenter="highlightGrid(7,2)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r7">48</span>
                     </div>
-                    <div class="size-guide-grid-item col-03" onmouseenter="highlightGrid(7,3)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-03" onmouseenter="highlightGrid(7,3)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r7">44</span>
                     </div>
-                    <div class="size-guide-grid-item col-04" onmouseenter="highlightGrid(7,4)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-04" onmouseenter="highlightGrid(7,4)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r7">12</span>
                     </div>
-                    <div class="size-guide-grid-item col-05" onmouseenter="highlightGrid(7,5)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-05" onmouseenter="highlightGrid(7,5)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r7">17</span>
                     </div>
                 </div>
                 <div class="size-guide-grid-row">
-                    <div class="size-guide-grid-item col-01" onmouseenter="highlightGrid(8,1)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-01" onmouseenter="highlightGrid(8,1)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text first r8">3XL</span>
                     </div>
-                    <div class="size-guide-grid-item col-02" onmouseenter="highlightGrid(8,2)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-02" onmouseenter="highlightGrid(8,2)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r8">50-52</span>
                     </div>
-                    <div class="size-guide-grid-item col-03" onmouseenter="highlightGrid(8,3)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-03" onmouseenter="highlightGrid(8,3)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r8">46-48</span>
                     </div>
-                    <div class="size-guide-grid-item col-04" onmouseenter="highlightGrid(8,4)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-04" onmouseenter="highlightGrid(8,4)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r8">14-16</span>
                     </div>
-                    <div class="size-guide-grid-item col-05" onmouseenter="highlightGrid(8,5)" onmouseleave="clearGrid()">
+                    <div class="size-guide-grid-item col-05" onmouseenter="highlightGrid(8,5)"
+                        onmouseleave="clearGrid()">
                         <span class="size-guide-grid-item-text regular r8">19-21</span>
                     </div>
                 </div>
@@ -467,13 +502,13 @@
     <div class="color-dropdown" id="color-dropdown-div">
         <span class="color-dropdown-title">Available colors</span>
         <div class="horizontal-separator"></div>
-        <img class="product-thumbnail medium" src="./images/product/title-img.jpeg"/>
-        <span class="color-shorthand medium">Dark Grey (C002)</span>
+        <img class="product-thumbnail medium" src="./images/product/title-img.jpeg" />
+        <span class="color-shorthand medium">Brown (C002)</span>
     </div>
     <div class="size-dropdown" id="size-dropdown-div">
         <div class="size-guide-top-row">
             <div class="tr-left">
-                <img class="ruler-icon" src="./images/product/ruler.svg"/>
+                <img class="ruler-icon" src="./images/product/ruler.svg" />
                 <a class="view-details small" href="#" onclick="openSizeGuide()">Size guide</a>
             </div>
             <div class="tr-right">
@@ -521,30 +556,34 @@
             </div>
         </div>
     </div>
-    <section id="shopping-cart-shorthand">
+    <div id="shopping-cart-shorthand">
         <div class="shopping-cart-shorthand-left">
             <span class="shopping-cart-shorthand-title">Virgin wool biker jacket</span>
             <span class="shopping-cart-shorthand-price">€ 3.200,00</span>
         </div>
         <div class="shopping-cart-shorthand-right">
-            <span class="color-shorthand">Color</span>
-            <img class="product-thumbnail small" src="./images/product/title-img.jpeg"/>
-            <i class="fa-solid fa-angle-down" id="color-dropdown" onclick="toggleColorDropdown()"></i>
-            <div class="vertical-separator shorthand"></div>
-            <span class="color-shorthand">Size</span>
-            <i class="fa-solid fa-angle-down" id="size-dropdown" onclick="toggleSizeDropdown()"></i>
-            <div class="full-width-button">
-                <button class="email-sub-button shorthand">
-                    <span class="shorthand-cart-text">Add to Cart</span>
-                </button>
+            <div class="sec1">
+                <span class="color-shorthand">Color</span>
+                <img class="product-thumbnail small" src="./images/product/title-img.jpeg" />
+                <i class="fa-solid fa-angle-down" id="color-dropdown" onclick="toggleColorDropdown()"></i>
+                <div class="vertical-separator shorthand"></div>
+                <span class="color-shorthand">Size</span>
+                <i class="fa-solid fa-angle-down" id="size-dropdown" onclick="toggleSizeDropdown()"></i>
             </div>
-            <div class="full-width-button">
-                <button class="email-sub-button light">
-                    <img class="pay-pal-logo" src="./images/product/pay-pal.svg"/>
-                </button>
+            <div class="sec2">
+                <div class="full-width-button">
+                    <button class="email-sub-button shorthand">
+                        <span class="shorthand-cart-text">Add to Cart</span>
+                    </button>
+                </div>
+                <div class="full-width-button">
+                    <button class="email-sub-button light">
+                        <img class="pay-pal-logo" src="./images/product/pay-pal.svg" />
+                    </button>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
     <div id="shorthand-cart-area">
         <section id="similar-products">
             <span class="similar-products-title">You may also be interested in</span>
@@ -563,7 +602,8 @@
                         <img class="product-card-img" src="./images/product/interested-in/01.jpeg" />
                         <div class="product-card-title-action">
                             <span class="product-card-title">Sparkling sweater</span>
-                            <span class="accordion-control" id="add-cart-01" onclick="addToCart('interested-in-01')">+</span>
+                            <span class="accordion-control" id="add-cart-01"
+                                onclick="addToCart('interested-in-01')">+</span>
                         </div>
                         <span class="product-card-price">€ 1.300,00</span>
                     </div>
@@ -571,7 +611,8 @@
                         <img class="product-card-img" src="./images/product/interested-in/02.jpg" />
                         <div class="product-card-title-action">
                             <span class="product-card-title">Poplin Shirt</span>
-                            <span class="accordion-control" id="add-cart-02" onclick="addToCart('interested-in-02')">+</span>
+                            <span class="accordion-control" id="add-cart-02"
+                                onclick="addToCart('interested-in-02')">+</span>
                         </div>
                         <span class="product-card-price">€ 1.850,00</span>
                     </div>
@@ -579,7 +620,8 @@
                         <img class="product-card-img" src="./images/product/interested-in/03.jpeg" />
                         <div class="product-card-title-action">
                             <span class="product-card-title">Sartorial Mini skirt</span>
-                            <span class="accordion-control" id="add-cart-03" onclick="addToCart('interested-in-03')">+</span>
+                            <span class="accordion-control" id="add-cart-03"
+                                onclick="addToCart('interested-in-03')">+</span>
                         </div>
                         <span class="product-card-price">€ 990,00</span>
                     </div>
@@ -587,7 +629,8 @@
                         <img class="product-card-img" src="./images/product/interested-in/04.jpg" />
                         <div class="product-card-title-action">
                             <span class="product-card-title">Leather belt</span>
-                            <span class="accordion-control" id="add-cart-04" onclick="addToCart('interested-in-04')">+</span>
+                            <span class="accordion-control" id="add-cart-04"
+                                onclick="addToCart('interested-in-04')">+</span>
                         </div>
                         <span class="product-card-price">€ 790,00</span>
                     </div>
@@ -595,7 +638,8 @@
                         <img class="product-card-img" src="./images/product/interested-in/05.jpeg" />
                         <div class="product-card-title-action">
                             <span class="product-card-title">Vetro earrings</span>
-                            <span class="accordion-control" id="add-cart-05" onclick="addToCart('interested-in-05')">+</span>
+                            <span class="accordion-control" id="add-cart-05"
+                                onclick="addToCart('interested-in-05')">+</span>
                         </div>
                         <span class="product-card-price">€ 1.500,00</span>
                     </div>
@@ -603,7 +647,8 @@
                         <img class="product-card-img" src="./images/product/interested-in/06.jpg" />
                         <div class="product-card-title-action">
                             <span class="product-card-title">Calfskin penny loafers</span>
-                            <span class="accordion-control" id="add-cart-06" onclick="addToCart('interested-in-06')">+</span>
+                            <span class="accordion-control" id="add-cart-06"
+                                onclick="addToCart('interested-in-06')">+</span>
                         </div>
                         <span class="product-card-price">€ 1.100,00</span>
                     </div>
@@ -614,8 +659,9 @@
             <div class="bg-banner"></div>
             <span class="meet-stylists-heading">Meet our Style Advisors</span>
             <p class="meet-stylists-subtext">
-                We are available to help you with styling suggestions and inspiration tailored for you. 
-                Book an appointment in one of our Boutiques or via a video conference with a Style Advisor to receive personalized styling advice based on your tastes and interests.
+                We are available to help you with styling suggestions and inspiration tailored for you.
+                Book an appointment in one of our Boutiques or via a video conference with a Style Advisor to receive
+                personalized styling advice based on your tastes and interests.
             </p>
             <div class="full-width-button stylists">
                 <button class="email-sub-button cart">
@@ -624,7 +670,8 @@
             </div>
         </section>
     </div>
-    <section id="footer">
+
+    <!-- <section id="footer">
         <div class="footer-subscription">
             <span class="footer-links-heading">Newsletter</span>
             <div class="enter-email">
@@ -686,6 +733,12 @@
             <div class="footer-bottom-right">
             </div>
         </div>
+    </section> -->
+
+    <section id="footer-socials"
+        style="background-color: rgb(210, 231, 231); height: 20vh; display: flex; justify-content: center; align-items: center; text-align: center;">
+        <h2>Add Footer section here</h2>
     </section>
 </body>
+
 </html>

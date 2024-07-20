@@ -531,14 +531,42 @@ accordion03Open = false
 accordion04Open = false
 accordion05Open = false
 
+
+document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+        const accordionContent = header.nextElementSibling;
+        const accordionIcon = header.querySelectorAll('.accordion-icon');
+
+        // Close all other contents
+        document.querySelectorAll('.accordion-content').forEach(content => {
+            if (content !== accordionContent) {
+                // content.style.maxHeight = null;
+                const icon = content.previousElementSibling.querySelector('.accordion-icon');
+                // icon.textContent = '+';
+            }
+        });
+
+        // Toggle the accordion content display
+        if (accordionContent.style.maxHeight) {
+            accordionContent.style.maxHeight = null;
+            accordionIcon[0].innerHTML= '<i class="fa fa-plus"></i>'
+            // accordionIcon.textContent = '+';
+        } else {
+            accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+           accordionIcon[0].innerHTML= '<i class="fa fa-minus"></i>'
+        }
+    });
+});
+
 function setAppropriateAccordionStatus(flag, accordion, accordionControl, accordionText, accordionHeader, separator){
     if(flag){
-        accordion.style.height = '10rem'
+        debugger
+        // accordion.style.height = '10rem'
         if(accordion.classList.contains('top-row')){
             accordion.style.height = '15rem'
         }
         if(accordion.classList.contains('bottom-row')){
-            accordion.style.height = '26rem'
+            // accordion.style.height = '26rem'
         }
         accordionHeader.style.borderBottom = 'none'
         separator.style.display = 'block'
@@ -547,6 +575,7 @@ function setAppropriateAccordionStatus(flag, accordion, accordionControl, accord
         accordionControl.innerText = '-'
     }
     if(!flag){
+        debugger
         accordionHeader.style.borderBottom = '1px solid rgba(0,0,0,0.2)'
         separator.style.display = 'none'
         accordion.style.height = '4rem'
