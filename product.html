@@ -97,17 +97,14 @@
         <div class="sub-nav-container" id="sub-nav-container"></div>
         <div class="gap"></div>
     </section> -->
-    <section id="category-nav-area">
-        <div class="category-nav-top-row">
-            <a class="visited-link">Women</a>
-            <span class="visited-link">/</span>
-            <a class="visited-link">Ready to Wear</a>
-            <span class="visited-link">/</span>
-            <a class="visited-link">Coats & Jackets</a>
-            <span class="visited-link">/</span>
-            <a class="unvisited-link">Virgin wool biker jacket</a>
-        </div>
-        </div>
+    <section class="category-nav-top-row">
+        <a class="visited-link">Women</a>
+        <span class="visited-link">/</span>
+        <a class="visited-link">Ready to Wear</a>
+        <span class="visited-link">/</span>
+        <a class="visited-link">Coats & Jackets</a>
+        <span class="visited-link">/</span>
+        <a class="unvisited-link">Virgin wool biker jacket</a>
     </section>
     <section id="product-area">
         <div class="full-screen-image" onclick="closeFullScreenImage()">
@@ -138,7 +135,7 @@
             <div class="product-color">
                 <span class="product-color-title">Color</span>
                 <div class="color-thumbnail-container">
-                    <img class="product-thumbnail" src="./images/product/title-img.jpeg" />
+                    <img class="product-thumbnail medium" src="./images/product/title-img.jpeg" />
                     <span class="color-description">Dark Grey (C002)</span>
                 </div>
             </div>
@@ -151,27 +148,23 @@
             </div>
             <div class="separator"></div>
             <a class="view-details" href="#details-area"><span>+</span> View Details</a>
-            <div class="full-width-button">
-                <button class="email-sub-button cart">
-                    <span>Add to Cart</span>
-                </button>
-            </div>
-            <div class="full-width-button">
-                <button class="email-sub-button light">
-                    <img class="pay-pal-logo" src="./images/product/pay-pal.svg" />
-                </button>
+            <div class="btnWrap">
+                <div class="cart-btn">
+                    <button class="cartBtn" type="button">Add to Cart</button>
+                </div>
+                <div class="payPal-btn">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal Logo">
+                </div>
             </div>
             <div class="shipping-info">
                 <img class="shipping-icon" src="./images/product/package.svg" />
                 <span class="shipping-info-text">*Free shipping and 30 days to return</span>
             </div>
-            <div class="info-links">
-                <a class="view-details" href="#"><span><i class="fa-solid fa-location-dot"></i></span> Find in
-                    Boutique</a>
-                <div class="vertical-separator"></div>
-                <a class="view-details" href="#"><span><i class="fa-regular fa-envelope"></i></span> May We Help
-                    you?</a>
-            </div>
+
+            <a class="view-details" href="#"><span><i class="fa-solid fa-location-dot"></i></span> Find in
+                Boutique</a>
+            <a class="view-details" href="#"><span><i class="fa-regular fa-envelope"></i></span> May We Help
+                you?</a>
         </div>
     </section>
     <section id="details-area">

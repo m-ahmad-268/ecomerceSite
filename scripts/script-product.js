@@ -9,7 +9,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     })
 })
 
-function closeFullScreenImage(){
+function closeFullScreenImage() {
     var fullScreenImage = document.getElementsByClassName('full-screen-image')[0]
     var fsImage = document.getElementById('full-screen-show')
 
@@ -17,39 +17,39 @@ function closeFullScreenImage(){
     fsImage.src = ''
 }
 
-function showImageFullScreen(img){
+function showImageFullScreen(img) {
     var fullScreenImage = document.getElementsByClassName('full-screen-image')[0]
     var fsImage = document.getElementById('full-screen-show')
 
     fullScreenImage.style.display = 'block'
-    if(img === '01'){
+    if (img === '01') {
         fsImage.src = './images/product/01.jpeg'
     }
-    if(img === '02'){
+    if (img === '02') {
         fsImage.src = './images/product/02.jpeg'
     }
-    if(img === '03'){
+    if (img === '03') {
         fsImage.src = './images/product/03.jpeg'
     }
-    if(img === '04'){
+    if (img === '04') {
         fsImage.src = './images/product/04.jpeg'
     }
-    if(img === '05'){
+    if (img === '05') {
         fsImage.src = './images/product/05.jpg'
     }
 }
 
-function washSelectedNavContainer(){
+function washSelectedNavContainer() {
     var selectedNavContainer = document.getElementById('selected-nav-container')
     selectedNavContainer.classList.remove('active')
-    document.getElementById('selected-nav-container').classList.remove('index1')    
+    document.getElementById('selected-nav-container').classList.remove('index1')
     selectedNavContainer.innerHTML = ''
     document.getElementById('sub-nav-container').classList.remove('active')
     document.getElementById('sub-nav-container').innerHTML = ''
 
 }
 
-function populateSelectedNavContainer(index){
+function populateSelectedNavContainer(index) {
     var selectedNavContainer = document.getElementById('selected-nav-container')
     selectedNavContainer.classList.add('active')
     selectedNavContainer.classList.remove('text-items')
@@ -59,7 +59,7 @@ function populateSelectedNavContainer(index){
 
     selectedNavContainer.style.opacity = 0
 
-    if(index == 1){        
+    if (index == 1) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.innerHTML = `
         <div class="nav-container-item">
@@ -84,7 +84,7 @@ function populateSelectedNavContainer(index){
         </div>
         `
         var navContainerItems = document.getElementsByClassName('nav-container-item')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -93,7 +93,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 2){
+    if (index == 2) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.classList.add('text-items')
         selectedNavContainer.innerHTML = `
@@ -167,7 +167,7 @@ function populateSelectedNavContainer(index){
         `
 
         var navContainerItems = document.getElementsByClassName('nav-container-women')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -182,7 +182,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 3){
+    if (index == 3) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.classList.add('text-items')
         selectedNavContainer.innerHTML = `
@@ -250,7 +250,7 @@ function populateSelectedNavContainer(index){
         `
 
         var navContainerItems = document.getElementsByClassName('nav-container-women')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -265,7 +265,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 4){
+    if (index == 4) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.innerHTML = `
         <div class="nav-container-fragrances">
@@ -282,7 +282,7 @@ function populateSelectedNavContainer(index){
         </div>
         `
         var navContainerItems = document.getElementsByClassName('nav-container-fragrances')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -291,7 +291,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 5){
+    if (index == 5) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.innerHTML = `
         <div class="nav-container-eyewear">
@@ -304,7 +304,7 @@ function populateSelectedNavContainer(index){
         </div>
         `
         var navContainerItems = document.getElementsByClassName('nav-container-eyewear')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -313,7 +313,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 6){
+    if (index == 6) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.classList.add('text-items')
         selectedNavContainer.innerHTML = `
@@ -374,7 +374,7 @@ function populateSelectedNavContainer(index){
         `
 
         var navContainerItems = document.getElementsByClassName('nav-container-women')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -389,7 +389,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 7){        
+    if (index == 7) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.innerHTML = `
         <div class="nav-container-item">
@@ -414,7 +414,7 @@ function populateSelectedNavContainer(index){
         </div>
         `
         var navContainerItems = document.getElementsByClassName('nav-container-item')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -428,7 +428,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 8){
+    if (index == 8) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.classList.add('text-items')
         selectedNavContainer.innerHTML = `
@@ -475,7 +475,7 @@ function populateSelectedNavContainer(index){
         `
 
         var navContainerItems = document.getElementsByClassName('nav-container-women')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -490,7 +490,7 @@ function populateSelectedNavContainer(index){
         }, 400)
     }
 
-    if(index == 9){        
+    if (index == 9) {
         selectedNavContainer.classList.add('index1')
         selectedNavContainer.innerHTML = `
         <div class="nav-container-stories">
@@ -515,7 +515,7 @@ function populateSelectedNavContainer(index){
             <a href="#" class="central-link-anchor">DISCOVER ALL THE STORIES</a>
         `
         var navContainerItems = document.getElementsByClassName('nav-container-stories')
-        for(let i=0; i<navContainerItems.length; i++){
+        for (let i = 0; i < navContainerItems.length; i++) {
             navContainerItems[i].classList.add('active')
         }
 
@@ -549,23 +549,23 @@ document.querySelectorAll('.accordion-header').forEach(header => {
         // Toggle the accordion content display
         if (accordionContent.style.maxHeight) {
             accordionContent.style.maxHeight = null;
-            accordionIcon[0].innerHTML= '<i class="fa fa-plus"></i>'
+            accordionIcon[0].innerHTML = '<i class="fa fa-plus"></i>'
             // accordionIcon.textContent = '+';
         } else {
             accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
-           accordionIcon[0].innerHTML= '<i class="fa fa-minus"></i>'
+            accordionIcon[0].innerHTML = '<i class="fa fa-minus"></i>'
         }
     });
 });
 
-function setAppropriateAccordionStatus(flag, accordion, accordionControl, accordionText, accordionHeader, separator){
-    if(flag){
+function setAppropriateAccordionStatus(flag, accordion, accordionControl, accordionText, accordionHeader, separator) {
+    if (flag) {
         debugger
         // accordion.style.height = '10rem'
-        if(accordion.classList.contains('top-row')){
+        if (accordion.classList.contains('top-row')) {
             accordion.style.height = '15rem'
         }
-        if(accordion.classList.contains('bottom-row')){
+        if (accordion.classList.contains('bottom-row')) {
             // accordion.style.height = '26rem'
         }
         accordionHeader.style.borderBottom = 'none'
@@ -574,7 +574,7 @@ function setAppropriateAccordionStatus(flag, accordion, accordionControl, accord
         accordionText.style.opacity = '1'
         accordionControl.innerText = '-'
     }
-    if(!flag){
+    if (!flag) {
         debugger
         accordionHeader.style.borderBottom = '1px solid rgba(0,0,0,0.2)'
         separator.style.display = 'none'
@@ -585,14 +585,14 @@ function setAppropriateAccordionStatus(flag, accordion, accordionControl, accord
     }
 }
 
-function toggleAccordion(id){
+function toggleAccordion(id) {
     var accordion = null
     var accordionControl = null
     var accordionText = null
     var accordionHeader = null
     var separator = null
-    
-    if(id === '01'){
+
+    if (id === '01') {
         accordion01Open = !accordion01Open
         accordion = document.getElementById('accordion-01')
         accordionControl = document.getElementById('accordion-ctrl-01')
@@ -602,7 +602,7 @@ function toggleAccordion(id){
         setAppropriateAccordionStatus(accordion01Open, accordion, accordionControl, accordionText, accordionHeader, separator)
         return
     }
-    if(id === '02'){
+    if (id === '02') {
         accordion02Open = !accordion02Open
         accordion = document.getElementById('accordion-02')
         accordionControl = document.getElementById('accordion-ctrl-02')
@@ -612,7 +612,7 @@ function toggleAccordion(id){
         setAppropriateAccordionStatus(accordion02Open, accordion, accordionControl, accordionText, accordionHeader, separator)
         return
     }
-    if(id === '03'){
+    if (id === '03') {
         accordion03Open = !accordion03Open
         accordion = document.getElementById('accordion-03')
         accordionControl = document.getElementById('accordion-ctrl-03')
@@ -622,7 +622,7 @@ function toggleAccordion(id){
         setAppropriateAccordionStatus(accordion03Open, accordion, accordionControl, accordionText, accordionHeader, separator)
         return
     }
-    if(id === '04'){
+    if (id === '04') {
         accordion04Open = !accordion04Open
         accordion = document.getElementById('accordion-04')
         accordionControl = document.getElementById('accordion-ctrl-04')
@@ -632,7 +632,7 @@ function toggleAccordion(id){
         setAppropriateAccordionStatus(accordion04Open, accordion, accordionControl, accordionText, accordionHeader, separator)
         return
     }
-    if(id === '05'){
+    if (id === '05') {
         accordion05Open = !accordion05Open
         accordion = document.getElementById('accordion-05')
         accordionControl = document.getElementById('accordion-ctrl-05')
@@ -651,35 +651,35 @@ addedToCart04 = false
 addedToCart05 = false
 addedToCart06 = false
 
-function addToCart(id){
-    if(id === 'interested-in-01'){
+function addToCart(id) {
+    if (id === 'interested-in-01') {
         addedToCart01 = !addedToCart01
-        if(addedToCart01) document.getElementById('add-cart-01').innerText = '-'
+        if (addedToCart01) document.getElementById('add-cart-01').innerText = '-'
         else document.getElementById('add-cart-01').innerText = '+'
     }
-    if(id === 'interested-in-02'){
+    if (id === 'interested-in-02') {
         addedToCart02 = !addedToCart02
-        if(addedToCart02) document.getElementById('add-cart-02').innerText = '-'
+        if (addedToCart02) document.getElementById('add-cart-02').innerText = '-'
         else document.getElementById('add-cart-02').innerText = '+'
     }
-    if(id === 'interested-in-03'){
+    if (id === 'interested-in-03') {
         addedToCart03 = !addedToCart03
-        if(addedToCart03) document.getElementById('add-cart-03').innerText = '-'
+        if (addedToCart03) document.getElementById('add-cart-03').innerText = '-'
         else document.getElementById('add-cart-03').innerText = '+'
     }
-    if(id === 'interested-in-04'){
+    if (id === 'interested-in-04') {
         addedToCart04 = !addedToCart04
-        if(addedToCart04) document.getElementById('add-cart-04').innerText = '-'
+        if (addedToCart04) document.getElementById('add-cart-04').innerText = '-'
         else document.getElementById('add-cart-04').innerText = '+'
     }
-    if(id === 'interested-in-05'){
+    if (id === 'interested-in-05') {
         addedToCart05 = !addedToCart05
-        if(addedToCart05) document.getElementById('add-cart-05').innerText = '-'
+        if (addedToCart05) document.getElementById('add-cart-05').innerText = '-'
         else document.getElementById('add-cart-05').innerText = '+'
     }
-    if(id === 'interested-in-06'){
+    if (id === 'interested-in-06') {
         addedToCart06 = !addedToCart06
-        if(addedToCart06) document.getElementById('add-cart-06').innerText = '-'
+        if (addedToCart06) document.getElementById('add-cart-06').innerText = '-'
         else document.getElementById('add-cart-06').innerText = '+'
     }
 }
@@ -687,70 +687,73 @@ function addToCart(id){
 position = 0
 maxPosition = 2
 
-function moveConveyorBelt(direction){
+function moveConveyorBelt(direction) {
     similarProductsContainer = document.getElementById('similar-products-container')
     arrowLeft = document.getElementById('move-left-button')
     arrowRight = document.getElementById('move-right-button')
     increment = 450
 
-    if(direction == -1){
-        if(position == 0){
+    if (direction == -1) {
+        if (position == 0) {
             return
         }
         position--
-        similarProductsContainer.style.transform = `translateX(-${position*increment}px)`
-        if(position < maxPosition){
+        similarProductsContainer.style.transform = `translateX(-${position * increment}px)`
+        if (position < maxPosition) {
             arrowRight.classList.remove('inactive')
         }
-        if(position == 0){
+        if (position == 0) {
             arrowLeft.classList.add('inactive')
         }
     }
 
-    if(direction == 1){
-        if(position == maxPosition){
+    if (direction == 1) {
+        if (position == maxPosition) {
             return
         }
         position++
-        similarProductsContainer.style.transform = `translateX(-${position*increment}px)`
-        if(position > 0){
+        similarProductsContainer.style.transform = `translateX(-${position * increment}px)`
+        if (position > 0) {
             arrowLeft.classList.remove('inactive')
         }
-        if(position == maxPosition){
+        if (position == maxPosition) {
             arrowRight.classList.add('inactive')
         }
     }
 }
 
-observerShorthandCartArea = new IntersectionObserver((element) => {
-    if(element[0].isIntersecting){
-        if(element[0].target.getAttribute('id') === 'shorthand-cart-area'){
+ count = 0;
+
+observerFooterSocials = new IntersectionObserver((element) => {
+    if (!element[0].isIntersecting && count > 0) {
+        if (element[0].target.getAttribute('id') === 'footer-socials') {
             document.getElementById('shopping-cart-shorthand').style.display = 'flex'
-            return
-        }else{
-            document.getElementById('shopping-cart-shorthand').style.display = 'none'
             clearDropDowns()
             return
+        } else {
+            document.getElementById('shopping-cart-shorthand').style.display = 'flex'
+            return
         }
-    }else{
+    } else {
+        count = count + 1;
         document.getElementById('shopping-cart-shorthand').style.display = 'none'
-        clearDropDowns()
         return
     }
 })
 
-observerFooterSocials = new IntersectionObserver((element) => {
-    if(element[0].isIntersecting){
-        if(element[0].target.getAttribute('id') === 'footer-socials'){
+observerShorthandCartArea = new IntersectionObserver((element) => {
+    if (element[0].isIntersecting) {
+        if (element[0].target.getAttribute('id') === 'shorthand-cart-area') {
+            document.getElementById('shopping-cart-shorthand').style.display = 'flex'
+            return
+        } else {
             document.getElementById('shopping-cart-shorthand').style.display = 'none'
             clearDropDowns()
             return
-        }else{
-            document.getElementById('shopping-cart-shorthand').style.display = 'flex'
-            return
         }
-    }else{
-        document.getElementById('shopping-cart-shorthand').style.display = 'flex'
+    } else {
+        document.getElementById('shopping-cart-shorthand').style.display = 'none'
+        clearDropDowns()
         return
     }
 })
@@ -760,7 +763,7 @@ observerFooterSocials.observe(document.getElementById('footer-socials'))
 
 colorDropDownOpen = false
 sizeDropDownOpen = false
-function clearDropDowns(){
+function clearDropDowns() {
     document.getElementById('color-dropdown').classList.remove('fa-angle-up')
     document.getElementById('color-dropdown').classList.add('fa-angle-down')
     document.getElementById('size-dropdown').classList.remove('fa-angle-up')
@@ -768,72 +771,72 @@ function clearDropDowns(){
     document.getElementById('color-dropdown-div').style.display = 'none'
     document.getElementById('size-dropdown-div').style.display = 'none'
 }
-function toggleColorDropdown(){
+function toggleColorDropdown() {
     colorDropDownOpen = !colorDropDownOpen
     clearDropDowns()
-    if(colorDropDownOpen){
+    if (colorDropDownOpen) {
         document.getElementById('color-dropdown').classList.add('fa-angle-up')
         document.getElementById('color-dropdown').classList.remove('fa-angle-down')
         document.getElementById('color-dropdown-div').style.display = 'flex'
-    }else{
+    } else {
         document.getElementById('color-dropdown').classList.remove('fa-angle-up')
         document.getElementById('color-dropdown').classList.add('fa-angle-down')
         document.getElementById('color-dropdown-div').style.display = 'none'
     }
 }
 
-function toggleSizeDropdown(){
+function toggleSizeDropdown() {
     sizeDropDownOpen = !sizeDropDownOpen
     clearDropDowns()
-    if(sizeDropDownOpen){
+    if (sizeDropDownOpen) {
         document.getElementById('size-dropdown').classList.add('fa-angle-up')
         document.getElementById('size-dropdown').classList.remove('fa-angle-down')
         document.getElementById('size-dropdown-div').style.display = 'flex'
-    }else{
+    } else {
         document.getElementById('size-dropdown').classList.remove('fa-angle-up')
         document.getElementById('size-dropdown').classList.add('fa-angle-down')
         document.getElementById('size-dropdown-div').style.display = 'none'
     }
 }
 
-function clearGrid(){
+function clearGrid() {
     maxCols = 5
-    for(let j=0; j<maxCols; j++){
-        cols = document.getElementsByClassName(`col-0${j+1}`)
-        for(let x=0; x<cols.length; x++){
+    for (let j = 0; j < maxCols; j++) {
+        cols = document.getElementsByClassName(`col-0${j + 1}`)
+        for (let x = 0; x < cols.length; x++) {
             cols[x].style.backgroundColor = 'transparent'
         }
     }
     maxRows = 8
-    for(let i=0; i<maxRows; i++){
-        rows = document.getElementsByClassName(`r${i+1}`)
-        for(let a=0; a<rows.length; a++){
+    for (let i = 0; i < maxRows; i++) {
+        rows = document.getElementsByClassName(`r${i + 1}`)
+        for (let a = 0; a < rows.length; a++) {
             rows[a].style.color = '#6f6f6f'
-            if(a == 0){
+            if (a == 0) {
                 rows[a].style.color = '#262626'
             }
         }
     }
 }
 
-function highlightGrid(row, col){
+function highlightGrid(row, col) {
     clearGrid()
     r = document.getElementsByClassName(`r${row}`)
-    for(let a=0; a<r.length; a++){
+    for (let a = 0; a < r.length; a++) {
         r[a].style.color = '#537876'
     }
     cols = document.getElementsByClassName(`col-0${col}`)
-    for(let i=0; i<row; i++){
+    for (let i = 0; i < row; i++) {
         cols[i].style.backgroundColor = '#eef1f1'
-        if(i == row-1){
+        if (i == row - 1) {
             cols[i].style.backgroundColor = '#e1e1e1'
         }
     }
 }
-function openSizeGuide(){
+function openSizeGuide() {
     document.getElementById('size-guide-div').style.display = 'flex'
 }
 
-function closeSizeGuide(){
+function closeSizeGuide() {
     document.getElementById('size-guide-div').style.display = 'none'
 }
