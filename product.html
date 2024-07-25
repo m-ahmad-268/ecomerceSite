@@ -12,6 +12,7 @@
     <script src="https://kit.fontawesome.com/cc10e75e99.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./scripts/script-category.js" defer></script>
     <script type="text/javascript" src="./scripts/script-product.js" defer></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -160,11 +161,40 @@
                 <img class="shipping-icon" src="./images/product/package.svg" />
                 <span class="shipping-info-text">*Free shipping and 30 days to return</span>
             </div>
-
-            <a class="view-details" href="#"><span><i class="fa-solid fa-location-dot"></i></span> Find in
-                Boutique</a>
-            <a class="view-details" href="#"><span><i class="fa-regular fa-envelope"></i></span> May We Help
-                you?</a>
+            <div class="linkSection">
+                <a class="customAnchor" href="#"><span><i class="fa-solid fa-location-dot"></i></span> Find in
+                    Boutique</a>
+                <a class="customAnchor" href="#"><span><i class="fa-regular fa-envelope"></i></span> May We Help
+                    you?</a>
+            </div>
+        </div>
+    </section>
+    <section id="shopping-cart-shorthand">
+        <div class="shopping-cart-shorthand-left">
+            <span class="shopping-cart-shorthand-title">Virgin wool biker jacket</span>
+            <span class="shopping-cart-shorthand-price">€ 3.200,00</span>
+        </div>
+        <div class="shopping-cart-shorthand-right">
+            <div class="sec1">
+                <span class="color-shorthand">Color</span>
+                <img class="product-thumbnail small" src="./images/product/title-img.jpeg" />
+                <i class="fa-solid fa-angle-down" id="color-dropdown" onclick="toggleColorDropdown()"></i>
+                <div class="vertical-separator shorthand"></div>
+                <span class="color-shorthand">Size</span>
+                <i class="fa-solid fa-angle-down" id="size-dropdown" onclick="toggleSizeDropdown()"></i>
+            </div>
+            <div class="sec2">
+                <div class="full-width-button">
+                    <button class="email-sub-button shorthand">
+                        <span class="shorthand-cart-text">Add to Cart</span>
+                    </button>
+                </div>
+                <div class="full-width-button">
+                    <button class="email-sub-button light">
+                        <img class="pay-pal-logo" src="./images/product/pay-pal.svg" />
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
     <section id="details-area">
@@ -549,101 +579,245 @@
             </div>
         </div>
     </div>
-    <div id="shopping-cart-shorthand">
-        <div class="shopping-cart-shorthand-left">
-            <span class="shopping-cart-shorthand-title">Virgin wool biker jacket</span>
-            <span class="shopping-cart-shorthand-price">€ 3.200,00</span>
-        </div>
-        <div class="shopping-cart-shorthand-right">
-            <div class="sec1">
-                <span class="color-shorthand">Color</span>
-                <img class="product-thumbnail small" src="./images/product/title-img.jpeg" />
-                <i class="fa-solid fa-angle-down" id="color-dropdown" onclick="toggleColorDropdown()"></i>
-                <div class="vertical-separator shorthand"></div>
-                <span class="color-shorthand">Size</span>
-                <i class="fa-solid fa-angle-down" id="size-dropdown" onclick="toggleSizeDropdown()"></i>
-            </div>
-            <div class="sec2">
-                <div class="full-width-button">
-                    <button class="email-sub-button shorthand">
-                        <span class="shorthand-cart-text">Add to Cart</span>
-                    </button>
-                </div>
-                <div class="full-width-button">
-                    <button class="email-sub-button light">
-                        <img class="pay-pal-logo" src="./images/product/pay-pal.svg" />
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
     <div id="shorthand-cart-area">
         <section id="similar-products">
             <span class="similar-products-title">You may also be interested in</span>
-            <div class="bg-similar-products-list"></div>
-            <div class="control-buttons-interested-in">
-                <button class="button-control dark inactive" id="move-left-button" onclick="moveConveyorBelt(-1)">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <button class="button-control dark" id="move-right-button" onclick="moveConveyorBelt(1)">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-            </div>
-            <div class="similar-products-list">
-                <div id="similar-products-container">
-                    <div class="product-card">
-                        <img class="product-card-img" src="./images/product/interested-in/01.jpeg" />
-                        <div class="product-card-title-action">
-                            <span class="product-card-title">Sparkling sweater</span>
-                            <span class="accordion-control" id="add-cart-01"
-                                onclick="addToCart('interested-in-01')">+</span>
+            <div class="bg-similar-products-list">
+                <div class="control-buttons-interested-in">
+                    <button class="button-control dark inactive" id="move-left-button" onclick="moveConveyorBelt(-1)">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="button-control dark" id="move-right-button" onclick="moveConveyorBelt(1)">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="similar-products-list">
+                    <div id="similar-products-container">
+                        <div class="prod slide">
+                            <div class="image-container">
+                                <img class="prod-image" src="./images/product/interested-in/01.jpeg" />
+                                <div class="img-wall-overlay">
+                                    <button type="button">Discover</button>
+                                </div>
+                                <div class="selectSize block">
+                                    <span class="sizeTitle">Available Size</span>
+                                    <div class="size-buttons">
+                                        <span class="size-button">38</span>
+                                        <span class="size-button">40</span>
+                                        <span class="size-button">42</span>
+                                        <span class="size-button addBorder">44</span>
+                                        <span class="size-button">46</span>
+                                        <span class="size-button">48</span>
+                                        <span class="size-button">50</span>
+                                        <span class="size-button">52</span>
+                                        <span class="size-button">53</span>
+                                    </div>
+                                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div id="activeWallProduct">
+                                <span class="product-title">Double-knit cardigan<i class="fa fa-plus float-right pr-2 block"
+                                        id="menu-icon"></i> </span>
+                                <span class="product-price">€ 6.500,00</span>
+                            </div>
                         </div>
-                        <span class="product-card-price">€ 1.300,00</span>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-card-img" src="./images/product/interested-in/02.jpg" />
-                        <div class="product-card-title-action">
-                            <span class="product-card-title">Poplin Shirt</span>
-                            <span class="accordion-control" id="add-cart-02"
-                                onclick="addToCart('interested-in-02')">+</span>
+                        <div class="prod slide">
+                            <div class="image-container">
+                                <img class="prod-image" src="./images/product/interested-in/02.jpg" />
+                                <div class="img-wall-overlay">
+                                    <button type="button">Discover</button>
+                                </div>
+                                <div class="selectSize">
+                                    <span class="sizeTitle">Available Size</span>
+                                    <div class="size-buttons">
+                                        <span class="size-button">38</span>
+                                        <span class="size-button">40</span>
+                                        <span class="size-button">42</span>
+                                        <span class="size-button addBorder">44</span>
+                                        <span class="size-button">46</span>
+                                        <span class="size-button">48</span>
+                                        <span class="size-button">50</span>
+                                        <span class="size-button">52</span>
+                                        <span class="size-button">53</span>
+                                    </div>
+                                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div id="activeWallProduct">
+                                <span class="product-title">Double-knit cardigan <i class="fa fa-plus float-right pr-2 block"
+                                        id="menu-icon"></i> </span>
+                                <span class="product-price">€ 6.500,00</span>
+                            </div>
                         </div>
-                        <span class="product-card-price">€ 1.850,00</span>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-card-img" src="./images/product/interested-in/03.jpeg" />
-                        <div class="product-card-title-action">
-                            <span class="product-card-title">Sartorial Mini skirt</span>
-                            <span class="accordion-control" id="add-cart-03"
-                                onclick="addToCart('interested-in-03')">+</span>
+                        <div class="prod slide">
+                            <div class="image-container">
+                                <img class="prod-image" src="./images/product/interested-in/05.jpeg" />
+                                <div class="img-wall-overlay">
+                                    <button type="button">Discover</button>
+                                </div>
+                                <div class="selectSize">
+                                    <span class="sizeTitle">Available Size</span>
+                                    <div class="size-buttons">
+                                        <span class="size-button">38</span>
+                                        <span class="size-button">40</span>
+                                        <span class="size-button">42</span>
+                                        <span class="size-button addBorder">44</span>
+                                        <span class="size-button">46</span>
+                                        <span class="size-button">48</span>
+                                        <span class="size-button">50</span>
+                                        <span class="size-button">52</span>
+                                        <span class="size-button">53</span>
+                                    </div>
+                                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div id="activeWallProduct">
+                                <span class="product-title">Double-knit cardigan <i class="fa fa-plus float-right pr-2 block"
+                                        id="menu-icon"></i> </span>
+                                <span class="product-price">€ 6.500,00</span>
+                            </div>
                         </div>
-                        <span class="product-card-price">€ 990,00</span>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-card-img" src="./images/product/interested-in/04.jpg" />
-                        <div class="product-card-title-action">
-                            <span class="product-card-title">Leather belt</span>
-                            <span class="accordion-control" id="add-cart-04"
-                                onclick="addToCart('interested-in-04')">+</span>
+                        <div class="prod slide">
+                            <div class="image-container">
+                                <img class="prod-image" src="./images/product/interested-in/06.jpg" />
+                                <div class="img-wall-overlay">
+                                    <button type="button">Discover</button>
+                                </div>
+                                <div class="selectSize">
+                                    <span class="sizeTitle">Available Size</span>
+                                    <div class="size-buttons">
+                                        <span class="size-button">38</span>
+                                        <span class="size-button">40</span>
+                                        <span class="size-button">42</span>
+                                        <span class="size-button addBorder">44</span>
+                                        <span class="size-button">46</span>
+                                        <span class="size-button">48</span>
+                                        <span class="size-button">50</span>
+                                        <span class="size-button">52</span>
+                                        <span class="size-button">53</span>
+                                    </div>
+                                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div id="activeWallProduct">
+                                <span class="product-title">Double-knit cardigan <i class="fa fa-plus float-right pr-2 block"
+                                        id="menu-icon"></i> </span>
+                                <span class="product-price">€ 6.500,00</span>
+                            </div>
                         </div>
-                        <span class="product-card-price">€ 790,00</span>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-card-img" src="./images/product/interested-in/05.jpeg" />
-                        <div class="product-card-title-action">
-                            <span class="product-card-title">Vetro earrings</span>
-                            <span class="accordion-control" id="add-cart-05"
-                                onclick="addToCart('interested-in-05')">+</span>
+                        <div class="prod slide">
+                            <div class="image-container">
+                                <img class="prod-image" src="./images/product/interested-in/04.jpg" />
+                                <div class="img-wall-overlay">
+                                    <button type="button">Discover</button>
+                                </div>
+                                <div class="selectSize">
+                                    <span class="sizeTitle">Available Size</span>
+                                    <div class="size-buttons">
+                                        <span class="size-button">38</span>
+                                        <span class="size-button">40</span>
+                                        <span class="size-button">42</span>
+                                        <span class="size-button addBorder">44</span>
+                                        <span class="size-button">46</span>
+                                        <span class="size-button">48</span>
+                                        <span class="size-button">50</span>
+                                        <span class="size-button">52</span>
+                                        <span class="size-button">53</span>
+                                    </div>
+                                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div id="activeWallProduct">
+                                <span class="product-title">Double-knit cardigan <i class="fa fa-plus float-right pr-2 block"
+                                        id="menu-icon"></i> </span>
+                                <span class="product-price">€ 6.500,00</span>
+                            </div>
                         </div>
-                        <span class="product-card-price">€ 1.500,00</span>
-                    </div>
-                    <div class="product-card">
-                        <img class="product-card-img" src="./images/product/interested-in/06.jpg" />
-                        <div class="product-card-title-action">
-                            <span class="product-card-title">Calfskin penny loafers</span>
-                            <span class="accordion-control" id="add-cart-06"
-                                onclick="addToCart('interested-in-06')">+</span>
+                        <!-- ////////////////////////////// -->
+                        <!-- <div class="prod">
+                            <span class="wishlist" id="AddtoWish1"><i class="fa fa-heart"></i></span>
+                            <div class="image-container">
+                                <img class="prod-image" src="./images/product/interested-in/04.jpg" />
+                                <div class="img-wall-overlay">
+                                    <button type="button">Discover</button>
+                                </div>
+                                <div class="selectSize">
+                                    <span class="sizeTitle">Available Size</span>
+                                    <div class="size-buttons">
+                                        <span class="size-button">38</span>
+                                        <span class="size-button">40</span>
+                                        <span class="size-button">42</span>
+                                        <span class="size-button addBorder">44</span>
+                                        <span class="size-button">46</span>
+                                        <span class="size-button">48</span>
+                                        <span class="size-button">50</span>
+                                        <span class="size-button">52</span>
+                                        <span class="size-button">53</span>
+                                    </div>
+                                    <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div id="activeWallProduct">
+                                <span class="product-title">Double-knit cardigan <i class="fa fa-plus float-right pr-2"
+                                        id="menu-icon"></i> </span>
+                                <span class="product-price">€ 6.500,00</span>
+                            </div>
+                        </div> -->
+                        <!-- <div class="product-card">
+                            <img class="product-card-img" src="./images/product/interested-in/01.jpeg" />
+                            <div class="product-card-title-action">
+                                <span class="product-card-title">Sparkling sweater</span>
+                                <span class="accordion-control" id="add-cart-01"
+                                    onclick="addToCart('interested-in-01')">+</span>
+                            </div>
+                            <span class="product-card-price">€ 1.300,00</span>
+                        </div> -->
+                        <!-- <div class="product-card">
+                            <img class="product-card-img" src="./images/product/interested-in/02.jpg" />
+                            <div class="product-card-title-action">
+                                <span class="product-card-title">Poplin Shirt</span>
+                                <span class="accordion-control" id="add-cart-02"
+                                    onclick="addToCart('interested-in-02')">+</span>
+                            </div>
+                            <span class="product-card-price">€ 1.850,00</span>
                         </div>
-                        <span class="product-card-price">€ 1.100,00</span>
+                        <div class="product-card">
+                            <img class="product-card-img" src="./images/product/interested-in/03.jpeg" />
+                            <div class="product-card-title-action">
+                                <span class="product-card-title">Sartorial Mini skirt</span>
+                                <span class="accordion-control" id="add-cart-03"
+                                    onclick="addToCart('interested-in-03')">+</span>
+                            </div>
+                            <span class="product-card-price">€ 990,00</span>
+                        </div>
+                        <div class="product-card">
+                            <img class="product-card-img" src="./images/product/interested-in/04.jpg" />
+                            <div class="product-card-title-action">
+                                <span class="product-card-title">Leather belt</span>
+                                <span class="accordion-control" id="add-cart-04"
+                                    onclick="addToCart('interested-in-04')">+</span>
+                            </div>
+                            <span class="product-card-price">€ 790,00</span>
+                        </div>
+                        <div class="product-card">
+                            <img class="product-card-img" src="./images/product/interested-in/05.jpeg" />
+                            <div class="product-card-title-action">
+                                <span class="product-card-title">Vetro earrings</span>
+                                <span class="accordion-control" id="add-cart-05"
+                                    onclick="addToCart('interested-in-05')">+</span>
+                            </div>
+                            <span class="product-card-price">€ 1.500,00</span>
+                        </div>
+                        <div class="product-card">
+                            <img class="product-card-img" src="./images/product/interested-in/06.jpg" />
+                            <div class="product-card-title-action">
+                                <span class="product-card-title">Calfskin penny loafers</span>
+                                <span class="accordion-control" id="add-cart-06"
+                                    onclick="addToCart('interested-in-06')">+</span>
+                            </div>
+                            <span class="product-card-price">€ 1.100,00</span>
+                        </div> -->
                     </div>
                 </div>
             </div>
