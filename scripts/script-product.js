@@ -9,6 +9,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     })
 })
 
+$(document).ready(function () {
+    $('#similar-products-container').slick({
+        infinite: false,
+        speed: true,
+        slidesToShow: 2,
+        slidesToShow: 1,
+        dots:true,
+        appendArrows:'.control-buttons-interested-in',
+        centerMode: true,
+        variableWidth: true,
+        appendDots: '#dotPlace'
+    });
+});
+
 function closeFullScreenImage() {
     var fullScreenImage = document.getElementsByClassName('full-screen-image')[0]
     var fsImage = document.getElementById('full-screen-show')
@@ -722,7 +736,7 @@ function moveConveyorBelt(direction) {
     }
 }
 
- count = 0;
+count = 0;
 
 observerFooterSocials = new IntersectionObserver((element) => {
     if (!element[0].isIntersecting && count > 0) {
