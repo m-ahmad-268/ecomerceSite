@@ -1058,6 +1058,7 @@ i {
 
     .slide {
         max-width: 260px !important;
+        padding: 20px 10px !important;
     }
 
     #meet-stylists {
