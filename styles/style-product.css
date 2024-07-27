@@ -479,7 +479,7 @@
 }
 
 #similar-products-container {
-    margin: 0px 30px;
+    /* margin: 0px 30px; */
     /* background-color: #537876; */
 }
 
@@ -489,7 +489,11 @@
 }
 
 .slide {
-    max-width: 350px;
+    max-width: 330px;
+}
+
+.draggable{
+    padding: 0 !important;
 }
 
 .product-card {
@@ -1050,6 +1054,14 @@ i {
 @media (max-width: 768px) {
     #product-area {
         flex-direction: column;
+    }
+
+    .slide {
+        max-width: 260px !important;
+    }
+
+    #meet-stylists {
+        margin-top: 12rem;
     }
 
     #shopping-cart-shorthand {
