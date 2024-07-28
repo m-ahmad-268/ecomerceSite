@@ -492,6 +492,10 @@
     max-width: 330px;
 }
 
+.slick-track {
+    padding: 0 20px !important;
+}
+
 .draggable{
     padding: 0 !important;
 }
@@ -727,7 +731,7 @@ i {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
-    left: 30%;
+    right: 30%;
     padding: 1.5rem;
     z-index: 20;
     bottom: 7.2rem;
@@ -744,7 +748,7 @@ i {
     padding: 1.5rem;
     z-index: 21;
     bottom: 7rem;
-    left: 45%;
+    right: 20%;
 }
 
 .ruler-icon {

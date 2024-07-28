@@ -17,7 +17,7 @@ $(document).ready(function () {
         slidesToShow: 1,
         dots:true,
         appendArrows:'.control-buttons-interested-in',
-        centerMode: true,
+        // centerMode: true,
         variableWidth: true,
         appendDots: '#dotPlace'
     });
