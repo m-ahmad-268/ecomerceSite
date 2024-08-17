@@ -665,38 +665,38 @@ addedToCart04 = false
 addedToCart05 = false
 addedToCart06 = false
 
-function addToCart(id) {
-    if (id === 'interested-in-01') {
-        addedToCart01 = !addedToCart01
-        if (addedToCart01) document.getElementById('add-cart-01').innerText = '-'
-        else document.getElementById('add-cart-01').innerText = '+'
-    }
-    if (id === 'interested-in-02') {
-        addedToCart02 = !addedToCart02
-        if (addedToCart02) document.getElementById('add-cart-02').innerText = '-'
-        else document.getElementById('add-cart-02').innerText = '+'
-    }
-    if (id === 'interested-in-03') {
-        addedToCart03 = !addedToCart03
-        if (addedToCart03) document.getElementById('add-cart-03').innerText = '-'
-        else document.getElementById('add-cart-03').innerText = '+'
-    }
-    if (id === 'interested-in-04') {
-        addedToCart04 = !addedToCart04
-        if (addedToCart04) document.getElementById('add-cart-04').innerText = '-'
-        else document.getElementById('add-cart-04').innerText = '+'
-    }
-    if (id === 'interested-in-05') {
-        addedToCart05 = !addedToCart05
-        if (addedToCart05) document.getElementById('add-cart-05').innerText = '-'
-        else document.getElementById('add-cart-05').innerText = '+'
-    }
-    if (id === 'interested-in-06') {
-        addedToCart06 = !addedToCart06
-        if (addedToCart06) document.getElementById('add-cart-06').innerText = '-'
-        else document.getElementById('add-cart-06').innerText = '+'
-    }
-}
+// function addToCart(id) {
+//     if (id === 'interested-in-01') {
+//         addedToCart01 = !addedToCart01
+//         if (addedToCart01) document.getElementById('add-cart-01').innerText = '-'
+//         else document.getElementById('add-cart-01').innerText = '+'
+//     }
+//     if (id === 'interested-in-02') {
+//         addedToCart02 = !addedToCart02
+//         if (addedToCart02) document.getElementById('add-cart-02').innerText = '-'
+//         else document.getElementById('add-cart-02').innerText = '+'
+//     }
+//     if (id === 'interested-in-03') {
+//         addedToCart03 = !addedToCart03
+//         if (addedToCart03) document.getElementById('add-cart-03').innerText = '-'
+//         else document.getElementById('add-cart-03').innerText = '+'
+//     }
+//     if (id === 'interested-in-04') {
+//         addedToCart04 = !addedToCart04
+//         if (addedToCart04) document.getElementById('add-cart-04').innerText = '-'
+//         else document.getElementById('add-cart-04').innerText = '+'
+//     }
+//     if (id === 'interested-in-05') {
+//         addedToCart05 = !addedToCart05
+//         if (addedToCart05) document.getElementById('add-cart-05').innerText = '-'
+//         else document.getElementById('add-cart-05').innerText = '+'
+//     }
+//     if (id === 'interested-in-06') {
+//         addedToCart06 = !addedToCart06
+//         if (addedToCart06) document.getElementById('add-cart-06').innerText = '-'
+//         else document.getElementById('add-cart-06').innerText = '+'
+//     }
+// }
 
 position = 0
 maxPosition = 2

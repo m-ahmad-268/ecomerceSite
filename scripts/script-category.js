@@ -125,10 +125,10 @@ showSortBy.addEventListener('click', function () {
 });
 
 function hideNavbar() {
-    filterMenu.classList.add('show');
-    sortMenu.classList.add('show');
     cartMenu.style.right = '-200%';
     overlay.style.display = 'none';
+    filterMenu.classList.add('show');
+    sortMenu.classList.add('show');
     toogleBtn[0].innerHTML = 'show Filters <i class="fa-solid fa-chevron-right"></i>';
 }
 

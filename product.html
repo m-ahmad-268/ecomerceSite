@@ -153,7 +153,7 @@
             <a class="view-details" href="#details-area"><span>+</span> View Details</a>
             <div class="btnWrap">
                 <div class="cart-btn">
-                    <button class="cartBtn" type="button">Add to Cart</button>
+                    <button class="cartBtn" type="button" onclick="addToCart()">Add to Cart</button>
                 </div>
                 <div class="payPal-btn">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal Logo">
@@ -171,6 +171,61 @@
             </div>
         </div>
     </section>
+    <div class="overlay" id="overlay" onclick="hideNavbar()"></div>
+    <div class="cart" id="cart-menu">
+        <div class="cart-header">
+            <i class="fa-solid fa-bag-shopping float-left"></i>
+            <span class="float-left">Your Selection (1)</span>
+            <div class="close-btn" onclick="hideNavbar()">
+                <i class="fa-solid fa-times" id="close-icon"></i>
+            </div>
+        </div>
+
+        <div class="car-mid">
+            <div class="cart-item">
+                <img src="images/exclusive-01.jpeg" alt="PayPal Logo">
+                <div class="cart-item-detail">
+                    <div class="item-header">
+                        <span>Down Vest</span>
+                        <button type="button"><i class="fa fa-trash"></i></button>
+                    </div>
+                    <span>Color: Lignite Grey</span>
+                    <span>Size: 36</span>
+                    <span>SKU: 242M0W077855C407802</span>
+                    <div class="item-footer">
+                        <div class="counter-container">
+                            <button id="decrement" class="button"><i class="fa fa-minus"></i></button>
+                            <div id="value" class="value">0</div>
+                            <button id="increment" class="button"><i class="fa fa-plus"></i></button>
+                        </div>
+                        <span class="item-price">
+                            € 5.500,00
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="totalAmount">
+            <span class="float-left">Subtotal</span>
+            <span class="float-right p-0 m-0">€ 5.500,00</span>
+        </div>
+
+        <div class="button-content">
+            <div class="cart-btn">
+                <button class="cartBtn" type="button">Go to Cart</button>
+            </div>
+            <div class="checkout-text">
+                or proceed with quick payment
+            </div>
+            <div class="payPal-btn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal Logo">
+            </div>
+            <div class="btn-last-stat">
+                The gift option is not available with Express Checkout
+            </div>
+        </div>
+    </div>
     <section id="shopping-cart-shorthand">
         <div class="shopping-cart-shorthand-left">
             <span class="shopping-cart-shorthand-title">Virgin wool biker jacket</span>
@@ -831,11 +886,7 @@
                 Book an appointment in one of our Boutiques or via a video conference with a Style Advisor to receive
                 personalized styling advice based on your tastes and interests.
             </p>
-            <div class="full-width-button stylists">
-                <button class="email-sub-button cart">
-                    <span>BOOK A BOUTIQUE APPOINTMENT</span>
-                </button>
-            </div>
+            <button class="appointmentBtn" type="button">BOOK A BOUTIQUE APPOINTMENT</button>
         </section>
     </div>
 
