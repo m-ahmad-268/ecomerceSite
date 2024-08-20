@@ -145,7 +145,8 @@
             <div class="separator"></div>
             <div class="select-size">
                 <span class="select-size-title">Select your size</span>
-                <button class="button-control dark icons-container" onclick="toggleFilter()">
+                <button class="button-control dark icons-container" onclick="showSizeMenu()">
+                    <!-- onclick="toggleFilter()" -->
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
             </div>
@@ -596,6 +597,64 @@
             </div>
         </div>
         <div class="size-list">
+            <div class="size-list-container">
+                <div class="size-list-item">
+                    <span class="size-list-item-text inactive">34</span>
+                    <a class="view-details medium" href="#" onclick="launchRequestSize()">Request product</a>
+                </div>
+                <div class="size-list-item">
+                    <span class="size-list-item-text" onclick="setSize(36)">36</span>
+                    <a class="view-details medium" href="#" onclick="launchRequestSize()"></a>
+                </div>
+                <div class="size-list-item">
+                    <span class="size-list-item-text" onclick="setSize(38)">38</span>
+                    <a class="view-details medium" href="#" onclick="launchRequestSize()"></a>
+                </div>
+                <div class="size-list-item">
+                    <span class="size-list-item-text" onclick="setSize(40)">40</span>
+                    <a class="view-details medium" href="#" onclick="launchRequestSize()"></a>
+                </div>
+                <div class="size-list-item">
+                    <span class="size-list-item-text" onclick="setSize(42)">42</span>
+                    <a class="view-details medium" href="#" onclick="launchRequestSize()"></a>
+                </div>
+                <div class="size-list-item">
+                    <span class="size-list-item-text" onclick="setSize(44)">44</span>
+                    <a class="view-details medium" href="#" onclick="launchRequestSize()"></a>
+                </div>
+                <div class="size-list-item">
+                    <span class="size-list-item-text" onclick="setSize(46)">46</span>
+                    <a class="view-details medium" href="#" onclick="launchRequestSize()"></a>
+                </div>
+                <div class="size-list-item">
+                    <span class="size-list-item-text" onclick="setSize(48)">48</span>
+                    <a class="view-details medium" href="#" onclick="launchRequestSize()"></a>
+                </div>
+                <div class="size-list-item">
+                    <span class="size-list-item-text" onclick="setSize(50)">50</span>
+                    <a class="view-details medium" href="#" onclick="launchRequestSize()"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="size-menu" id="size-menu-div">
+        <div class="sizemenu-header">
+            <!-- <i class="fa-solid fa-bag-shopping float-left"></i> -->
+            <span class="float-left">Select your size</span>
+            <div class="close-btn" onclick="closeMenu()">
+                <i class="fa-solid fa-times" id="close-icon"></i>
+            </div>
+        </div>
+        <div class="size-guide-top-row">
+            <div class="tr-left">
+                <img class="ruler-icon" src="./images/product/ruler.svg" />
+                <a class="view-details small" href="#" onclick="openSizeGuide()">Size guide</a>
+            </div>
+            <div class="tr-right">
+                <a class="view-details small" href="#" onclick="launchSizeGuideHelp()">Need help with sizes?</a>
+            </div>
+        </div>
+        <div class="sizemenu-list">
             <div class="size-list-container">
                 <div class="size-list-item">
                     <span class="size-list-item-text inactive">34</span>

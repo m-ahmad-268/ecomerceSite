@@ -15,8 +15,8 @@ $(document).ready(function () {
         speed: true,
         slidesToShow: 2,
         slidesToShow: 1,
-        dots:true,
-        appendArrows:'.control-buttons-interested-in',
+        dots: true,
+        appendArrows: '.control-buttons-interested-in',
         // centerMode: true,
         variableWidth: true,
         appendDots: '#dotPlace'
@@ -545,7 +545,6 @@ accordion03Open = false
 accordion04Open = false
 accordion05Open = false
 
-
 document.querySelectorAll('.accordion-header').forEach(header => {
     header.addEventListener('click', () => {
         const accordionContent = header.nextElementSibling;
@@ -848,7 +847,9 @@ function highlightGrid(row, col) {
     }
 }
 function openSizeGuide() {
-    document.getElementById('size-guide-div').style.display = 'flex'
+    document.getElementById('size-guide-div').style.display = 'flex';
+    document.getElementById('size-menu-div').style.right = '-200%';
+    document.getElementById('overlay').style.display = 'none';
 }
 
 function closeSizeGuide() {

@@ -35,6 +35,17 @@ const selectSize = document.querySelectorAll('.selectSize');
 const menuIcon = document.getElementById('menu-icon');
 const wallIcon = document.getElementById('wallIcon');
 const radios = document.querySelectorAll('input[type="radio"]');
+const sizeMenu = document.getElementById('size-menu-div');
+
+function showSizeMenu() {
+    sizeMenu.style.right = '0';
+    overlay.style.display = 'block';
+}
+
+function closeMenu() {
+    sizeMenu.style.right = '-200%';
+    overlay.style.display = 'none';
+}
 
 radios.forEach(radio => {
     radio.addEventListener('change', () => {
@@ -127,6 +138,7 @@ showSortBy.addEventListener('click', function () {
 function hideNavbar() {
     cartMenu.style.right = '-200%';
     overlay.style.display = 'none';
+    sizeMenu.style.right = '-200%';
     filterMenu.classList.add('show');
     sortMenu.classList.add('show');
     toogleBtn[0].innerHTML = 'show Filters <i class="fa-solid fa-chevron-right"></i>';
@@ -221,7 +233,7 @@ function setWallActive(value) {
     const products = document.querySelectorAll('#product-grid .prod');
     products.forEach(product => {
         value ?
-        product.classList.add('no-padding') : product.classList.remove('no-padding'); 
+            product.classList.add('no-padding') : product.classList.remove('no-padding');
     });
     document.querySelectorAll('.prod').forEach(function (prod) {
         const overlay = prod.querySelector('.img-wall-overlay');
@@ -241,10 +253,10 @@ function setWallActive(value) {
     });
 }
 wallIcon.addEventListener('click', function () {
-    if(wallIcon.classList.length == 1){
+    if (wallIcon.classList.length == 1) {
         wallIcon.classList.add('show')
         setWallActive(true);
-    }else{
+    } else {
         wallIcon.classList.remove('show');
         setWallActive(false);
     }
