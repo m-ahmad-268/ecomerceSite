@@ -36,11 +36,26 @@ const menuIcon = document.getElementById('menu-icon');
 const wallIcon = document.getElementById('wallIcon');
 const wallIcon1 = document.getElementById('wallIcon1');
 const radios = document.querySelectorAll('input[type="radio"]');
+///////
+
+// merging conflict
 const twoXGrid = document.getElementById('2x2-grid');
 const threeXGrid = document.getElementById('3x3-grid');
 const OnexGrid = document.getElementById('2x1-grid');
 const products = document.querySelectorAll('#product-grid .prod');
 const iconEnable = document.querySelectorAll('.wallIcon');
+////////
+const sizeMenu = document.getElementById('size-menu-div');
+
+function showSizeMenu() {
+    sizeMenu.style.right = '0';
+    overlay.style.display = 'block';
+}
+
+function closeMenu() {
+    sizeMenu.style.right = '-200%';
+    overlay.style.display = 'none';
+}
 
 radios.forEach(radio => {
     radio.addEventListener('change', () => {
@@ -131,10 +146,11 @@ showSortBy.addEventListener('click', function () {
 });
 
 function hideNavbar() {
-    filterMenu.classList.add('show');
-    sortMenu.classList.add('show');
     cartMenu.style.right = '-200%';
     overlay.style.display = 'none';
+    sizeMenu.style.right = '-200%';
+    filterMenu.classList.add('show');
+    sortMenu.classList.add('show');
     toogleBtn[0].innerHTML = 'show Filters <i class="fa-solid fa-chevron-right"></i>';
 }
 
@@ -225,12 +241,8 @@ function loadProduct() {
 
 function setWallActive(value) {
     products.forEach(product => {
-        if (value) {
-            product.classList.add('no-padding');
-        }
-        else {
-            product.classList.remove('no-padding');
-        }
+        value ?
+            product.classList.add('no-padding') : product.classList.remove('no-padding');
     });
     document.querySelectorAll('.prod').forEach(function (prod) {
         const overlay = prod.querySelector('.img-wall-overlay');
@@ -247,6 +259,8 @@ function setWallActive(value) {
         }
     });
 }
+///////
+// merging conflict...
 wallIcon1.addEventListener('click', function () {
     iconEnable.forEach(x => {
         x.classList.add('show');
@@ -255,6 +269,15 @@ wallIcon1.addEventListener('click', function () {
     OnexGrid.src = './images/icons/grid-small.png';
     twoXGrid.src = './images/icons/grid-small.png';
     setWallActive(true);
+    ////////////////////
+// wallIcon.addEventListener('click', function () {
+//     if (wallIcon.classList.length == 1) {
+//         wallIcon.classList.add('show')
+//         setWallActive(true);
+//     } else {
+//         wallIcon.classList.remove('show');
+//         setWallActive(false);
+//     }
 });
 wallIcon.addEventListener('click', function () {
     iconEnable.forEach(x => {
